@@ -79,8 +79,8 @@ onMounted(() => {
           Nuestros <span class="products__title-highlight">Productos</span>
         </h2>
         <p class="products__subtitle">
-          Descubre nuestra línea completa de pastas dentales naturales con bambú.
-          Cada producto está diseñado para cuidar tu sonrisa de manera natural y efectiva.
+          Descubre nuestra línea completa de pastas dentales naturales con aceites esenciales puros. <br/>
+          Todas las pastas: cuidan el esmalte, refrescan y tienen buen sabor. 
         </p>
       </div>
       
