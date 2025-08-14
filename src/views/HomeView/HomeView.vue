@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HeroSection from './HeroSection.vue'
+import ProductGallery from './ProductGallery.vue'
 
 const scrollToProducts = () => {
   const productsSection = document.getElementById('products')
@@ -13,8 +14,7 @@ const scrollToProducts = () => {
   <div class="home-view">
     <HeroSection @scroll-to-products="scrollToProducts" />
     
-    <!-- Aquí irán los demás componentes de la landing page -->
-    <!-- <ProductGallery id="products" /> -->
+    <ProductGallery id="products" />
     <!-- <FirstCTA /> -->
     <!-- <TestimonialsSection /> -->
     <!-- <SecondCTA /> -->

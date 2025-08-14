@@ -79,6 +79,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
+@use 'sass:string';
 @import '@/styles/colorVariables.module.scss';
 
 .hero {
@@ -97,7 +98,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="bamboo" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23#{str-slice(#{$BAMBOO-GREEN}, 2)}" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23bamboo)"/></svg>') repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="bamboo" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23#{string.slice(#{$BAMBOO-GREEN}, 2)}" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23bamboo)"/></svg>') repeat;
     z-index: 1;
   }
 
