@@ -61,11 +61,11 @@ onMounted(() => {
               alt="bambooSmile - Cuidado dental natural" 
               class="hero__logo"
             >
-            <div class="hero__decorative-elements">
+            <!-- <div class="hero__decorative-elements">
               <div class="hero__leaf hero__leaf--1"></div>
               <div class="hero__leaf hero__leaf--2"></div>
               <div class="hero__leaf hero__leaf--3"></div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -372,33 +372,47 @@ onMounted(() => {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
 }
 
 @keyframes leafFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   33% {
     transform: translateY(-15px) rotate(5deg);
   }
+
   66% {
     transform: translateY(-5px) rotate(-3deg);
   }
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
+
   40% {
     transform: translateX(-50%) translateY(-10px);
   }
+
   60% {
     transform: translateX(-50%) translateY(-5px);
   }
