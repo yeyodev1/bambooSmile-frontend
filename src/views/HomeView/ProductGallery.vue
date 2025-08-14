@@ -13,31 +13,35 @@ const whatsappNumber = '+593960800024'
 const products = [
   {
     id: 1,
-    name: 'Pasta Dental Bambú Natural',
-    description: 'Fórmula natural con extracto de bambú para una limpieza profunda y suave.',
+    name: 'Pasta Dental Natural Kids 125ml',
+    description: 'Sin alcohol para los más pequeñitos',
     image: pasta1Image,
-    benefits: ['Sin químicos', 'Antibacterial natural', 'Protege el esmalte']
+    benefits: ['Sin químicos', 'Antibacterial natural', 'Protege el esmalte'],
+    price: 7.73
   },
   {
     id: 2,
-    name: 'Pasta Dental Bambú Blanqueadora',
-    description: 'Blanquea naturalmente tus dientes mientras cuida las encías.',
+    name: 'Pasta Dental Natural Carbón Activado 125ml',
+    description: 'Blanqueamiento natural con el poder del carbón activado.',
     image: pasta2Image,
-    benefits: ['Blanqueamiento natural', 'Fortalece encías', 'Aliento fresco']
+    benefits: ['Blanqueamiento natural', 'Carbón activado', 'Fórmula natural'],
+    price: 7.73
   },
   {
     id: 3,
-    name: 'Pasta Dental Bambú Sensitiva',
-    description: 'Especialmente formulada para dientes sensibles con ingredientes naturales.',
+    name: 'Pasta Dental Natural Fresh 125ml',
+    description: 'Fórmula natural con acción refrescante para una limpieza profunda.',
     image: pasta3Image,
-    benefits: ['Para dientes sensibles', 'Alivio inmediato', 'Protección duradera']
+    benefits: ['Acción refrescante', 'Fórmula natural', 'Limpieza profunda'],
+    price: 7.73
   },
   {
     id: 4,
-    name: 'Pasta Dental Bambú Kids',
-    description: 'Fórmula suave y segura para los más pequeños de la casa.',
+    name: 'Pasta Dental Natural Sangre de Drago 125ml',
+    description: 'Fórmula especial para dientes sensibles con sangre de drago.',
     image: pasta4Image,
-    benefits: ['Segura para niños', 'Sabor agradable', 'Sin flúor artificial']
+    benefits: ['Para dientes sensibles', 'Con sangre de drago', 'Fórmula natural'],
+    price: 7.73
   }
 ]
 
@@ -59,7 +63,7 @@ onMounted(() => {
     },
     { threshold: 0.2 }
   )
-  
+
   const element = document.querySelector('.products')
   if (element) {
     observer.observe(element)
@@ -401,6 +405,7 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -408,12 +413,19 @@ onMounted(() => {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-10px);
   }
+
   60% {
     transform: translateY(-5px);
   }
