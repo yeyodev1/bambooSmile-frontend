@@ -362,8 +362,41 @@ onMounted(() => {
   }
 
   &__role {
-    color: $text-light;
-    font-size: 0.875rem;
+    display: inline-block;
+    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1) 0%, rgba($BAMBOO-GREEN, 0.05) 100%);
+    color: $BAMBOO-GREEN;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba($BAMBOO-GREEN, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba($white, 0.4), transparent);
+      transition: left 0.6s ease;
+    }
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba($BAMBOO-GREEN, 0.2);
+      background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.15) 0%, rgba($BAMBOO-GREEN, 0.08) 100%);
+      border-color: rgba($BAMBOO-GREEN, 0.3);
+
+      &::before {
+        left: 100%;
+      }
+    }
   }
 
   &__watch-btn {
