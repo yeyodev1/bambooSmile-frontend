@@ -104,7 +104,7 @@ onMounted(() => {
           <span class="ceo-video__title-highlight">Henry</span>
         </h2>
         <p class="ceo-video__subtitle">
-          Director de BambooSmile, comprometido con tu salud y el planeta
+          Director de bambooSmile, comprometido con tu salud y el planeta
         </p>
       </div>
 
@@ -133,7 +133,7 @@ onMounted(() => {
             </div>
             <div class="ceo-video__video-info">
               <h3>Mensaje Inspirador</h3>
-              <p>Descubre la visión detrás de BambooSmile</p>
+              <p>Descubre la visión detrás de bambooSmile</p>
             </div>
           </div>
         </div>
