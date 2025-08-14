@@ -518,7 +518,8 @@ onMounted(() => {
 
   &__description {
     font-size: 0.875rem;
-    color: $text-light;
+    color: color.adjust($BAMBOO-BLACK, $lightness: 15%);
+    font-weight: 500;
     line-height: 1.4;
   }
 }
