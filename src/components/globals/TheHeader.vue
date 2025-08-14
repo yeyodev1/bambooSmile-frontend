@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useAuthStore } from '@/stores/auth.store'
 
-const authStore = useAuthStore()
 const isMenuOpen = ref(false)
-const isUserMenuOpen = ref(false)
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -12,16 +9,10 @@ const toggleMenu = () => {
 
 const closeMenu = () => {
   isMenuOpen.value = false
-  isUserMenuOpen.value = false
 }
 
-const toggleUserMenu = () => {
-  isUserMenuOpen.value = !isUserMenuOpen.value
-}
-
-const handleLogout = () => {
-  authStore.logout()
-  closeMenu()
+const contactWhatsApp = () => {
+  window.open('https://wa.me/593960800024', '_blank')
 }
 </script>
 
@@ -30,59 +21,29 @@ const handleLogout = () => {
     <nav class="nav">
       <div class="nav__container">
         <!-- Logo -->
-        <RouterLink :to="authStore.isAuthenticated ? '/dashboard' : '/'" class="nav__logo" @click="closeMenu">
+        <RouterLink to="/" class="nav__logo" @click="closeMenu">
           <img 
-            src="@/assets/logos/bakano-dark.png" 
-            alt="Bakano" 
+            src="@/assets/logos/bamboo-green.png" 
+            alt="bambooSmile" 
             class="nav__logo-img"
           />
         </RouterLink>
 
-        <div class="nav__auth">
-          <div v-if="!authStore.isAuthenticated" class="nav__auth-guest">
-            <RouterLink to="/login" class="nav__auth-link" @click="closeMenu">
-              Iniciar sesión
-            </RouterLink>
-            <RouterLink to="/register" class="nav__auth-button" @click="closeMenu">
-              Registrarse
-            </RouterLink>
-          </div>
+        <!-- Navigation Menu -->
+        <div class="nav__menu">
+          <a href="#productos" class="nav__link" @click="closeMenu">Productos</a>
+          <a href="#testimonios" class="nav__link" @click="closeMenu">Testimonios</a>
+          <a href="#certificaciones" class="nav__link" @click="closeMenu">Certificaciones</a>
+        </div>
 
-          <!-- User Menu -->
-          <div v-else class="nav__auth-user">
-            <div class="nav__user-menu">
-              <button 
-                @click="toggleUserMenu" 
-                class="nav__user-button"
-                :class="{ 'nav__user-button--active': isUserMenuOpen }"
-              >
-                <div class="nav__user-avatar">
-                  {{ authStore.userName.charAt(0).toUpperCase() }}
-                </div>
-                <span class="nav__user-name">{{ authStore.userName }}</span>
-                <svg class="nav__user-chevron" :class="{ 'nav__user-chevron--open': isUserMenuOpen }" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              
-              <!-- User Dropdown -->
-              <div class="nav__user-dropdown" :class="{ 'nav__user-dropdown--open': isUserMenuOpen }">
-                <div class="nav__user-info">
-                  <p class="nav__user-email">{{ authStore.userEmail }}</p>
-                  <span v-if="!authStore.isVerified" class="nav__user-status">No verificado</span>
-                </div>
-                <hr class="nav__user-divider" />
-                <button @click="handleLogout" class="nav__user-logout">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <polyline points="16,17 21,12 16,7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  Cerrar sesión
-                </button>
-              </div>
-            </div>
-          </div>
+        <!-- Contact Button -->
+        <div class="nav__contact">
+          <button @click="contactWhatsApp" class="nav__contact-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516" fill="currentColor"/>
+            </svg>
+            Contactar
+          </button>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -101,36 +62,21 @@ const handleLogout = () => {
       <!-- Mobile Navigation -->
       <div class="nav__mobile" :class="{ 'nav__mobile--open': isMenuOpen }">
         <div class="nav__mobile-menu">
-          <!-- Mobile Auth Section -->
-          <div class="nav__mobile-auth">
-            <div v-if="!authStore.isAuthenticated" class="nav__mobile-auth-guest">
-              <RouterLink to="/login" class="nav__mobile-auth-link" @click="closeMenu">
-                Iniciar sesión
-              </RouterLink>
-              <RouterLink to="/register" class="nav__mobile-auth-button" @click="closeMenu">
-                Registrarse
-              </RouterLink>
-            </div>
-            
-            <div v-else class="nav__mobile-auth-user">
-              <div class="nav__mobile-user-info">
-                <div class="nav__mobile-user-avatar">
-                  {{ authStore.userName.charAt(0).toUpperCase() }}
-                </div>
-                <div class="nav__mobile-user-details">
-                  <p class="nav__mobile-user-name">{{ authStore.userName }}</p>
-                  <p class="nav__mobile-user-email">{{ authStore.userEmail }}</p>
-                </div>
-              </div>
-              <button @click="handleLogout" class="nav__mobile-logout">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="16,17 21,12 16,7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Cerrar sesión
-              </button>
-            </div>
+          <!-- Mobile Menu Links -->
+          <div class="nav__mobile-links">
+            <a href="#productos" class="nav__mobile-link" @click="closeMenu">Productos</a>
+            <a href="#testimonios" class="nav__mobile-link" @click="closeMenu">Testimonios</a>
+            <a href="#certificaciones" class="nav__mobile-link" @click="closeMenu">Certificaciones</a>
+          </div>
+          
+          <!-- Mobile Contact -->
+          <div class="nav__mobile-contact">
+            <button @click="contactWhatsApp" class="nav__mobile-contact-button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516" fill="currentColor"/>
+              </svg>
+              Contactar por WhatsApp
+            </button>
           </div>
         </div>
       </div>
@@ -139,15 +85,18 @@ const handleLogout = () => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+@import '@/styles/colorVariables.module.scss';
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba($white, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba($BAKANO-PURPLE, 0.1);
+  background: rgba($white, 0.98);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
+  box-shadow: 0 2px 20px rgba($BAMBOO-GREEN, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -177,11 +126,11 @@ const handleLogout = () => {
     }
 
     &-img {
-      height: 32px;
+      height: 36px;
       width: auto;
 
       @media (min-width: 768px) {
-        height: 40px;
+        height: 44px;
       }
     }
   }
@@ -189,14 +138,14 @@ const handleLogout = () => {
   &__menu {
     display: none;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 
     @media (min-width: 768px) {
       display: flex;
     }
   }
 
-  &__auth {
+  &__contact {
     display: none;
     align-items: center;
 
@@ -204,45 +153,30 @@ const handleLogout = () => {
       display: flex;
     }
 
-    &-guest {
+    &-button {
       display: flex;
       align-items: center;
-      gap: 1rem;
-    }
-
-    &-link {
-      color: $BAKANO-DARK;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-
-      &:hover {
-        color: $BAKANO-PINK;
-        background: rgba($BAKANO-PINK, 0.1);
-      }
-    }
-
-    &-button {
-      background: linear-gradient(135deg, $BAKANO-PINK 0%, darken($BAKANO-PINK, 10%) 100%);
+      gap: 0.5rem;
+      background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
       color: white;
-      text-decoration: none;
+      border: none;
       font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.5rem 1.25rem;
-      border-radius: 6px;
-      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.2);
 
       &:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba($BAKANO-PINK, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.3);
+        background: linear-gradient(135deg, color.adjust($BAMBOO-GREEN, $lightness: -5%) 0%, color.adjust($BAMBOO-GREEN, $lightness: -15%) 100%);
       }
-    }
 
-    &-user {
-      position: relative;
+      svg {
+        flex-shrink: 0;
+      }
     }
   }
 
@@ -260,14 +194,14 @@ const handleLogout = () => {
     padding: 0.5rem;
     border-radius: 8px;
     transition: all 0.2s ease;
-    color: $BAKANO-DARK;
+    color: $BAMBOO-BLACK;
 
     &:hover {
-      background: rgba($BAKANO-PINK, 0.1);
+      background: rgba($BAMBOO-GREEN, 0.1);
     }
 
     &--active {
-      background: rgba($BAKANO-PINK, 0.1);
+      background: rgba($BAMBOO-GREEN, 0.1);
     }
   }
 
@@ -275,7 +209,7 @@ const handleLogout = () => {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: linear-gradient(135deg, $BAKANO-PINK 0%, darken($BAKANO-PINK, 10%) 100%);
+    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -295,7 +229,7 @@ const handleLogout = () => {
 
   &__user-chevron {
     transition: transform 0.2s ease;
-    color: $BAKANO-DARK;
+    color: $BAMBOO-BLACK;
 
     &--open {
       transform: rotate(180deg);
@@ -316,7 +250,7 @@ const handleLogout = () => {
     transform: translateY(-10px);
     transition: all 0.2s ease;
     z-index: 1000;
-    border: 1px solid rgba($BAKANO-PURPLE, 0.1);
+    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
 
     &--open {
       opacity: 1;
@@ -331,7 +265,7 @@ const handleLogout = () => {
 
   &__user-email {
     font-size: 0.875rem;
-    color: $BAKANO-DARK;
+    color: $BAMBOO-BLACK;
     margin: 0 0 0.25rem 0;
     font-weight: 500;
   }
@@ -348,7 +282,7 @@ const handleLogout = () => {
   &__user-divider {
     border: none;
     height: 1px;
-    background: rgba($BAKANO-PURPLE, 0.1);
+    background: rgba($BAMBOO-GREEN, 0.1);
     margin: 0.75rem 0;
   }
 
@@ -373,31 +307,18 @@ const handleLogout = () => {
   }
 
   &__link {
-    color: $BAKANO-DARK;
+    color: $BAMBOO-BLACK;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
-    padding: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
     position: relative;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
-      color: $BAKANO-PINK;
-    }
-
-    &.router-link-active {
-      color: $BAKANO-PINK;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: $BAKANO-PINK;
-        border-radius: 1px;
-      }
+      color: $BAMBOO-GREEN;
+      background: rgba($BAMBOO-GREEN, 0.1);
     }
   }
 
@@ -425,7 +346,7 @@ const handleLogout = () => {
     &-line {
       width: 20px;
       height: 2px;
-      background: $BAKANO-DARK;
+      background: $BAMBOO-BLACK;
       margin: 2px 0;
       transition: all 0.3s ease;
       border-radius: 1px;
@@ -454,12 +375,12 @@ const handleLogout = () => {
     left: 0;
     right: 0;
     background: $white;
-    border-bottom: 1px solid rgba($BAKANO-PURPLE, 0.1);
+    border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba($BAKANO-DARK, 0.1);
+    box-shadow: 0 4px 20px rgba($BAMBOO-GREEN, 0.15);
 
     @media (min-width: 768px) {
       display: none;
@@ -472,150 +393,69 @@ const handleLogout = () => {
     }
 
     &-menu {
-      padding: 1rem;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    &-links {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
     }
 
     &-link {
-      color: $BAKANO-DARK;
+      color: $BAMBOO-BLACK;
       text-decoration: none;
       font-weight: 500;
-      padding: 0.75rem 1rem;
+      font-size: 1.1rem;
+      padding: 1rem;
       border-radius: 8px;
-      transition: all 0.2s ease;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
 
       &:hover {
-        background: $overlay-purple;
-        color: $BAKANO-PINK;
-      }
-
-      &.router-link-active {
-        background: $overlay-purple;
-        color: $BAKANO-PINK;
+        background: rgba($BAMBOO-GREEN, 0.1);
+        color: $BAMBOO-GREEN;
+        padding-left: 1.5rem;
       }
     }
 
-    &-auth {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba($BAKANO-PURPLE, 0.1);
-
-      &-guest {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-
-      &-link {
-        color: $BAKANO-DARK;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.75rem 1rem;
-        border-radius: 8px;
-        text-align: center;
-        transition: all 0.2s ease;
-        border: 1px solid rgba($BAKANO-PURPLE, 0.2);
-
-        &:hover {
-          background: rgba($BAKANO-PINK, 0.1);
-          color: $BAKANO-PINK;
-          border-color: $BAKANO-PINK;
-        }
-      }
+    &-contact {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba($BAMBOO-GREEN, 0.1);
 
       &-button {
-        background: linear-gradient(135deg, $BAKANO-PINK 0%, darken($BAKANO-PINK, 10%) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
         color: white;
-        text-decoration: none;
+        border: none;
         font-weight: 600;
-        padding: 0.75rem 1rem;
-        border-radius: 8px;
-        text-align: center;
-        transition: all 0.2s ease;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.2);
 
         &:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba($BAKANO-PINK, 0.3);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.3);
+        }
+
+        svg {
+          flex-shrink: 0;
         }
       }
-
-      &-user {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
     }
 
-    &-user-info {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.75rem 1rem;
-      background: rgba($BAKANO-PINK, 0.05);
-      border-radius: 8px;
-    }
 
-    &-user-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, $BAKANO-PINK 0%, darken($BAKANO-PINK, 10%) 100%);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    &-user-details {
-      flex: 1;
-      min-width: 0;
-    }
-
-    &-user-name {
-      font-weight: 600;
-      color: $BAKANO-DARK;
-      margin: 0 0 0.25rem 0;
-      font-size: 0.95rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    &-user-email {
-      font-size: 0.875rem;
-      color: rgba($BAKANO-DARK, 0.7);
-      margin: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    &-logout {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      background: none;
-      border: 1px solid #dc2626;
-      color: #dc2626;
-      font-size: 0.875rem;
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-
-      &:hover {
-        background: #dc2626;
-        color: white;
-      }
-    }
   }
 }
 </style>

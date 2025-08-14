@@ -8,16 +8,16 @@ import Footer from './components/globals/TheFooter.vue'
   <main class="main-content">
     <RouterView />
   </main>
-  <ConfirmationDialog/>
-  <ToastNotification/>
   <Footer />
 </template>
 
 <style lang="scss">
+@import '@/styles/colorVariables.module.scss';
+
 .main-content {
   margin-top: 56px;
   min-height: 100vh;
-  background: $BAKANO-LIGHT;
+  background: $white;
 }
 </style>
 
