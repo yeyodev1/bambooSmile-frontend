@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+// Imports de imágenes
+import pasta1Image from '@/assets/products/pastas/pasta-1.jpeg'
+import pasta2Image from '@/assets/products/pastas/pasta-2.jpeg'
+import pasta3Image from '@/assets/products/pastas/pasta-3.jpeg'
+import pasta4Image from '@/assets/products/pastas/pasta-4.jpeg'
+
 const isVisible = ref(false)
 const whatsappNumber = '+593960800024'
 
@@ -9,28 +15,28 @@ const products = [
     id: 1,
     name: 'Pasta Dental Bambú Natural',
     description: 'Fórmula natural con extracto de bambú para una limpieza profunda y suave.',
-    image: '/src/assets/products/pastas/pasta-1.jpeg',
+    image: pasta1Image,
     benefits: ['Sin químicos', 'Antibacterial natural', 'Protege el esmalte']
   },
   {
     id: 2,
     name: 'Pasta Dental Bambú Blanqueadora',
     description: 'Blanquea naturalmente tus dientes mientras cuida las encías.',
-    image: '/src/assets/products/pastas/pasta-2.jpeg',
+    image: pasta2Image,
     benefits: ['Blanqueamiento natural', 'Fortalece encías', 'Aliento fresco']
   },
   {
     id: 3,
     name: 'Pasta Dental Bambú Sensitiva',
     description: 'Especialmente formulada para dientes sensibles con ingredientes naturales.',
-    image: '/src/assets/products/pastas/pasta-3.jpeg',
+    image: pasta3Image,
     benefits: ['Para dientes sensibles', 'Alivio inmediato', 'Protección duradera']
   },
   {
     id: 4,
     name: 'Pasta Dental Bambú Kids',
     description: 'Fórmula suave y segura para los más pequeños de la casa.',
-    image: '/src/assets/products/pastas/pasta-4.jpeg',
+    image: pasta4Image,
     benefits: ['Segura para niños', 'Sabor agradable', 'Sin flúor artificial']
   }
 ]
