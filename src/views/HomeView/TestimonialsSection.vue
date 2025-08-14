@@ -9,14 +9,14 @@ const testimonials = ref([
     id: 1,
     name: 'Carlos Mendoza',
     image: persona1Image,
-    quote: '"BambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios y mi sonrisa es más brillante que nunca."',
+    quote: '"bambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios y mi sonrisa es más brillante que nunca."',
     videoUrl: 'https://www.youtube.com/watch?v=_Jk38-QH8_8&list=PLggk7H-KGC_zBvXXMDM1crF5g9sBJ1rIt&index=3'
   },
   {
     id: 2,
     name: 'María González',
     image: persona2Image,
-    quote: '"Desde que uso BambooSmile, mi dentista nota la diferencia. Es increíble cómo un producto natural puede ser tan efectivo."',
+    quote: '"Desde que uso bambooSmile, mi dentista nota la diferencia. Es increíble cómo un producto natural puede ser tan efectivo."',
     videoUrl: 'https://www.youtube.com/watch?v=LrvhRLCKbBc&list=PLggk7H-KGC_wfGoOgSpqC-4-xknXH0NH9'
   }
 ])
@@ -62,7 +62,7 @@ onMounted(() => {
           <span class="testimonials__title-highlight">clientes</span>
         </h2>
         <p class="testimonials__subtitle">
-          Historias reales de personas que han transformado su sonrisa con BambooSmile
+          Historias reales de personas que han transformado su sonrisa con bambooSmile
         </p>
       </div>
 
@@ -100,7 +100,7 @@ onMounted(() => {
             
             <div class="testimonial-card__author">
               <h4 class="testimonial-card__name">{{ testimonial.name }}</h4>
-              <p class="testimonial-card__role">Cliente BambooSmile</p>
+              <p class="testimonial-card__role">Cliente bambooSmile</p>
             </div>
 
             <!-- Botón para ver testimonio -->
@@ -123,7 +123,7 @@ onMounted(() => {
           ¿Quieres ser parte de estas historias de éxito?
         </p>
         <button 
-          @click="watchTestimonial('https://wa.me/593960800024?text=Hola,%20quiero%20conocer%20más%20sobre%20BambooSmile')"
+          @click="watchTestimonial('https://wa.me/593960800024?text=Hola,%20quiero%20conocer%20más%20sobre%20bambooSmile')"
           class="testimonials__cta-btn"
         >
           Comienza tu transformación
