@@ -4,6 +4,7 @@ import ProductGallery from './ProductGallery.vue'
 import FirstCTA from './FirstCTA.vue'
 import TestimonialsSection from './TestimonialsSection.vue'
 import CEOVideoSection from './CEOVideoSection.vue'
+import CertificationsSection from './CertificationsSection.vue'
 
 const scrollToProducts = () => {
   const productsSection = document.getElementById('products')
@@ -20,6 +21,7 @@ const scrollToProducts = () => {
     <FirstCTA />
     <TestimonialsSection />
     <CEOVideoSection />
+    <CertificationsSection />
     <!-- <CEOVideoSection /> -->
     <!-- <ThirdCTA /> -->
     <!-- <CertificationsSection /> -->
