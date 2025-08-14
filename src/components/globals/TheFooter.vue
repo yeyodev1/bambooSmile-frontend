@@ -101,10 +101,10 @@ const contactInfo = {
             © {{ currentYear }} bambooSmile. Todos los derechos reservados.
           </p>
           <div class="footer__bottom-links">
-            <a href="#" class="footer__policies-link">
+            <a href="https://mkt.bamboosmile.org/politicas-y-condiciones" target="_blank" class="footer__policies-link">
               Términos y Condiciones
             </a>
-            <a href="#" class="footer__policies-link">
+            <a href="https://mkt.bamboosmile.org/politicas-y-condiciones" target="_blank" class="footer__policies-link">
               Política de Privacidad
             </a>
           </div>
@@ -358,5 +358,4 @@ const contactInfo = {
   }
 }
 
-// Font Awesome icons are used directly with fab fa-* classes
-</style>
+// Font Awesome icons are used directly with fab fa-* classes</style>
