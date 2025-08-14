@@ -15,6 +15,8 @@ const products = [
     id: 1,
     name: 'Pasta Dental Natural Kids 125ml',
     description: 'Sin alcohol para los más pequeñitos',
+    flavor: 'Naranja dulce',
+    flavorIcon: '🍊',
     image: pasta1Image,
     benefits: ['Sin químicos', 'Antibacterial natural', 'Protege el esmalte'],
     price: 7.73
@@ -22,7 +24,9 @@ const products = [
   {
     id: 3,
     name: 'Pasta Dental Natural Fresh 125ml',
-    description: 'Fórmula natural con acción refrescante para una limpieza profunda.',
+    description: 'Fórmula natural con acción refrescante',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     image: pasta3Image,
     benefits: ['Acción refrescante', 'Fórmula natural', 'Limpieza profunda'],
     price: 7.73
@@ -30,7 +34,9 @@ const products = [
   {
     id: 4,
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
-    description: 'Fórmula especial para dientes sensibles con sangre de drago.',
+    description: 'Fórmula especial para dientes sensibles',
+    flavor: 'Canela',
+    flavorIcon: '🌰',
     image: pasta4Image,
     benefits: ['Para dientes sensibles', 'Con sangre de drago', 'Fórmula natural'],
     price: 7.73
@@ -38,7 +44,9 @@ const products = [
   {
     id: 2,
     name: 'Pasta Dental Natural Carbón Activado 125ml',
-    description: 'Blanqueamiento natural con el poder del carbón activado.',
+    description: 'Blanqueamiento natural con carbón activado',
+    flavor: 'Clavo de olor',
+    flavorIcon: '🌸',
     image: pasta2Image,
     benefits: ['Blanqueamiento natural', 'Carbón activado', 'Fórmula natural'],
     price: 7.73
@@ -105,7 +113,13 @@ onMounted(() => {
           </div>
           
           <div class="products__card-content">
-            <h3 class="products__card-title">{{ product.name }}</h3>
+            <div class="products__card-header">
+              <h3 class="products__card-title">{{ product.name }}</h3>
+              <div class="products__flavor-badge">
+                <span class="products__flavor-icon">{{ product.flavorIcon }}</span>
+                <span class="products__flavor-text">{{ product.flavor }}</span>
+              </div>
+            </div>
             <p class="products__card-description">{{ product.description }}</p>
             
             <div class="products__benefits">
@@ -233,6 +247,13 @@ onMounted(() => {
       transform: translateY(-10px);
       box-shadow: 0 20px 40px rgba($BAMBOO-GREEN, 0.2);
     }
+
+    &-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
   }
 
   &--visible &__card {
@@ -296,8 +317,31 @@ onMounted(() => {
     font-size: 1.3rem;
     font-weight: 700;
     color: $BAMBOO-BLACK;
-    margin: 0 0 0.75rem 0;
+    margin: 0;
     line-height: 1.3;
+  }
+
+  &__flavor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1) 0%, rgba($BAMBOO-GREEN, 0.05) 100%);
+    border: 1px solid rgba($BAMBOO-GREEN, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    align-self: flex-start;
+  }
+
+  &__flavor-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  &__flavor-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $BAMBOO-GREEN;
+    text-transform: capitalize;
   }
 
   &__card-description {
