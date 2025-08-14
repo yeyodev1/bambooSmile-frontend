@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroSection from './HeroSection.vue'
 import ProductGallery from './ProductGallery.vue'
+import FirstCTA from './FirstCTA.vue'
 
 const scrollToProducts = () => {
   const productsSection = document.getElementById('products')
@@ -15,7 +16,7 @@ const scrollToProducts = () => {
     <HeroSection @scroll-to-products="scrollToProducts" />
     
     <ProductGallery id="products" />
-    <!-- <FirstCTA /> -->
+    <FirstCTA />
     <!-- <TestimonialsSection /> -->
     <!-- <SecondCTA /> -->
     <!-- <CEOVideoSection /> -->
