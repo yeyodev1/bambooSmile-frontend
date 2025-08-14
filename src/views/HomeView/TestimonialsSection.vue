@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import persona1Image from '@/assets/testimonios/persona-1.png'
+import persona2Image from '@/assets/testimonios/persona-2.png'
 
 // Datos de los testimonios
 const testimonials = ref([
   {
     id: 1,
     name: 'María González',
-    image: '/src/assets/testimonios/persona-1.png',
+    image: persona1Image,
     quote: '"BambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios y mi sonrisa es más brillante que nunca."',
     videoUrl: 'https://www.youtube.com/watch?v=_Jk38-QH8_8&list=PLggk7H-KGC_zBvXXMDM1crF5g9sBJ1rIt&index=3'
   },
   {
     id: 2,
     name: 'Carlos Mendoza',
-    image: '/src/assets/testimonios/persona-2.png',
+    image: persona2Image,
     quote: '"Desde que uso BambooSmile, mi dentista nota la diferencia. Es increíble cómo un producto natural puede ser tan efectivo."',
     videoUrl: 'https://www.youtube.com/watch?v=LrvhRLCKbBc&list=PLggk7H-KGC_wfGoOgSpqC-4-xknXH0NH9'
   }
