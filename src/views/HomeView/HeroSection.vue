@@ -16,7 +16,6 @@ onMounted(() => {
       <div class="hero__content">
         <div class="hero__text">
           <h1 class="hero__title">
-            <span class="hero__title-highlight">bambooSmile</span>
             <br>
             La revolución natural
             <br>
