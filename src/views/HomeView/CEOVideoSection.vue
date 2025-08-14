@@ -190,7 +190,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
-@import '../../styles/colorVariables.module.scss';
 
 .ceo-video {
   padding: 100px 0;

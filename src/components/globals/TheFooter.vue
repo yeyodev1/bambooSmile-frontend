@@ -121,7 +121,6 @@ const contactInfo = {
 </template>
 
 <style lang="scss" scoped>
-@import '@/styles/colorVariables.module.scss';
 
 .footer {
   background: $BAMBOO-BLACK;

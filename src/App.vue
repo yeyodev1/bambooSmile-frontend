@@ -12,8 +12,6 @@ import Footer from './components/globals/TheFooter.vue'
 </template>
 
 <style lang="scss">
-@import '@/styles/colorVariables.module.scss';
-
 .main-content {
   margin-top: 56px;
   min-height: 100vh;

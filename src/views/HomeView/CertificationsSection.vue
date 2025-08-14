@@ -112,7 +112,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
-@import '@/styles/colorVariables.module.scss';
 
 .certifications {
   padding: 80px 0;
@@ -129,7 +128,7 @@ onMounted(() => {
     right: 0;
     bottom: 0;
     background-image: radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.03) 0%, transparent 50%);
+      radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.03) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -175,7 +174,7 @@ onMounted(() => {
     &-highlight {
       color: $BAMBOO-GREEN;
       position: relative;
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -372,6 +371,7 @@ onMounted(() => {
 
   // Animaciones de entrada
   &--visible {
+
     .certifications__header,
     .certifications__card,
     .certifications__features {

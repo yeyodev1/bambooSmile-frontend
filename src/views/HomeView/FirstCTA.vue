@@ -22,7 +22,7 @@ onMounted(() => {
     },
     { threshold: 0.3 }
   )
-  
+
   const element = document.querySelector('.first-cta')
   if (element) {
     observer.observe(element)
@@ -124,7 +124,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use 'sass:color';
 @use 'sass:string';
-@import '@/styles/colorVariables.module.scss';
 
 .first-cta {
   padding: 6rem 0;
@@ -393,18 +392,24 @@ onMounted(() => {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   50% {
     transform: translateY(-20px) rotate(180deg);
   }

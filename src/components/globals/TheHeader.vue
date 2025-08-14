@@ -93,7 +93,7 @@ const scrollToSection = (sectionId: string) => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
-@import '@/styles/colorVariables.module.scss';
+
 .header {
   position: fixed;
   top: 0;

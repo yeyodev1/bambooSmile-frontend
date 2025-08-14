@@ -147,7 +147,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 @use 'sass:color';
 @use 'sass:string';
-@import '@/styles/colorVariables.module.scss';
 
 .products {
   padding: 5rem 0;
