@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+import certificado1Image from '@/assets/certificates/certificado-1.png'
+import certificado2Image from '@/assets/certificates/certificado-2.png'
+
 // Certificaciones disponibles
 const certifications = ref([
   {
     id: 1,
     name: 'Certificación de Calidad Premium',
-    image: '/src/assets/certificates/certificado-1.png',
+    image: certificado1Image,
     description: 'Fórmula alemana certificada'
   },
   {
     id: 2,
     name: 'Sello de Sostenibilidad',
-    image: '/src/assets/certificates/certificado-2.png',
+    image: certificado2Image,
     description: 'Compromiso ecológico verificado'
   }
 ])
