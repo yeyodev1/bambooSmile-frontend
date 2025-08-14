@@ -78,11 +78,11 @@ onMounted(() => {
     videoRef.value.addEventListener('play', () => {
       isVideoPlaying.value = true
     })
-    
+
     videoRef.value.addEventListener('pause', () => {
       isVideoPlaying.value = false
     })
-    
+
     videoRef.value.addEventListener('ended', () => {
       isVideoPlaying.value = false
     })
@@ -180,7 +180,7 @@ onMounted(() => {
             class="ceo-video__cta-button"
           >
             <i class="fab fa-whatsapp"></i>
-            Hablar con Henry
+            Hablar con nuestro agente
           </button>
         </div>
       </div>
@@ -460,10 +460,21 @@ onMounted(() => {
   transition: all 0.3s ease;
 
   // Animación escalonada
-  &--1 { animation-delay: 0.1s; }
-  &--2 { animation-delay: 0.2s; }
-  &--3 { animation-delay: 0.3s; }
-  &--4 { animation-delay: 0.4s; }
+  &--1 {
+    animation-delay: 0.1s;
+  }
+
+  &--2 {
+    animation-delay: 0.2s;
+  }
+
+  &--3 {
+    animation-delay: 0.3s;
+  }
+
+  &--4 {
+    animation-delay: 0.4s;
+  }
 
   &:hover {
     transform: translateY(-4px);
