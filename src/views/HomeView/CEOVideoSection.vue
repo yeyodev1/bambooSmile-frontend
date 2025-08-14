@@ -104,7 +104,7 @@ onMounted(() => {
           <span class="ceo-video__title-highlight">Henry</span>
         </h2>
         <p class="ceo-video__subtitle">
-          Fundador de BambooSmile, comprometido con tu salud y el planeta
+          Director de BambooSmile, comprometido con tu salud y el planeta
         </p>
       </div>
 
@@ -260,7 +260,7 @@ onMounted(() => {
 
   &__subtitle {
     font-size: 1.25rem;
-    color: $text-light;
+    color: black;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;

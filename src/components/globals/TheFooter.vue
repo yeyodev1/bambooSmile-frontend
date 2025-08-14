@@ -27,7 +27,8 @@ const socialLinks = [
 const contactInfo = {
   email: 'team.bamboosmile@gmail.com',
   phone: '+593 96 080 0024',
-  address: 'Quito, Ecuador'
+  address: 'Simon Bolivar Palacios 512, Guayaquil 090313, Ecuador',
+  mapUrl: 'https://maps.app.goo.gl/w9EDbiZ1s1aV4zWP9'
 }
 </script>
 
@@ -68,10 +69,15 @@ const contactInfo = {
               <i class="fas fa-phone"></i>
               {{ contactInfo.phone }}
             </a>
-            <div class="footer__contact-item">
+            <a 
+              :href="contactInfo.mapUrl" 
+              class="footer__contact-item"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <i class="fas fa-map-marker-alt"></i>
               {{ contactInfo.address }}
-            </div>
+            </a>
           </div>
         </div>
 
