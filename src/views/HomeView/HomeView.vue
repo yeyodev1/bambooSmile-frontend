@@ -7,7 +7,7 @@ import CEOVideoSection from './CEOVideoSection.vue'
 import CertificationsSection from './CertificationsSection.vue'
 
 const scrollToProducts = () => {
-  const productsSection = document.getElementById('products')
+  const productsSection = document.getElementById('productos')
   if (productsSection) {
     productsSection.scrollIntoView({ behavior: 'smooth' })
   }
@@ -17,11 +17,11 @@ const scrollToProducts = () => {
 <template>
   <div class="home-view">
     <HeroSection @scroll-to-products="scrollToProducts" />
-    <ProductGallery id="products" />
+    <ProductGallery id="productos" />
     <FirstCTA />
-    <TestimonialsSection />
+    <TestimonialsSection id="testimonios" />
     <CEOVideoSection />
-    <CertificationsSection />
+    <CertificationsSection id="certificaciones" />
     <!-- <CEOVideoSection /> -->
     <!-- <ThirdCTA /> -->
     <!-- <CertificationsSection /> -->

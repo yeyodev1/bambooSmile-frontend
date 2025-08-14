@@ -14,6 +14,13 @@ const closeMenu = () => {
 const contactWhatsApp = () => {
   window.open('https://wa.me/593960800024', '_blank')
 }
+
+const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId)
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <template>
@@ -31,9 +38,9 @@ const contactWhatsApp = () => {
 
         <!-- Navigation Menu -->
         <div class="nav__menu">
-          <a href="#productos" class="nav__link" @click="closeMenu">Productos</a>
-          <a href="#testimonios" class="nav__link" @click="closeMenu">Testimonios</a>
-          <a href="#certificaciones" class="nav__link" @click="closeMenu">Certificaciones</a>
+          <button class="nav__link" @click="scrollToSection('productos'); closeMenu()">Productos</button>
+          <button class="nav__link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
+          <button class="nav__link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
         </div>
 
         <!-- Contact Button -->
@@ -64,9 +71,9 @@ const contactWhatsApp = () => {
         <div class="nav__mobile-menu">
           <!-- Mobile Menu Links -->
           <div class="nav__mobile-links">
-            <a href="#productos" class="nav__mobile-link" @click="closeMenu">Productos</a>
-            <a href="#testimonios" class="nav__mobile-link" @click="closeMenu">Testimonios</a>
-            <a href="#certificaciones" class="nav__mobile-link" @click="closeMenu">Certificaciones</a>
+            <button class="nav__mobile-link" @click="scrollToSection('productos'); closeMenu()">Productos</button>
+            <button class="nav__mobile-link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
+            <button class="nav__mobile-link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
           </div>
           
           <!-- Mobile Contact -->
@@ -315,6 +322,10 @@ const contactWhatsApp = () => {
     border-radius: 8px;
     position: relative;
     transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
 
     &:hover {
       color: $BAMBOO-GREEN;
@@ -414,6 +425,14 @@ const contactWhatsApp = () => {
       border-radius: 8px;
       transition: all 0.3s ease;
       border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      cursor: pointer;
+      font-family: inherit;
+      width: 100%;
+      text-align: left;
 
       &:hover {
         background: rgba($BAMBOO-GREEN, 0.1);
