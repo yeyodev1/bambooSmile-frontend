@@ -206,10 +206,15 @@ onMounted(() => {
 
   &__subtitle {
     font-size: 1.125rem;
-    color: $text-light;
+    color: color.adjust($BAMBOO-BLACK, $lightness: 25%);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 500;
+    background: linear-gradient(135deg, color.adjust($BAMBOO-BLACK, $lightness: 25%) 0%, color.adjust($BAMBOO-GREEN, $lightness: -20%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   &__grid {
