@@ -20,14 +20,6 @@ const products = [
     price: 7.73
   },
   {
-    id: 2,
-    name: 'Pasta Dental Natural Carbón Activado 125ml',
-    description: 'Blanqueamiento natural con el poder del carbón activado.',
-    image: pasta2Image,
-    benefits: ['Blanqueamiento natural', 'Carbón activado', 'Fórmula natural'],
-    price: 7.73
-  },
-  {
     id: 3,
     name: 'Pasta Dental Natural Fresh 125ml',
     description: 'Fórmula natural con acción refrescante para una limpieza profunda.',
@@ -42,7 +34,15 @@ const products = [
     image: pasta4Image,
     benefits: ['Para dientes sensibles', 'Con sangre de drago', 'Fórmula natural'],
     price: 7.73
-  }
+  },
+  {
+    id: 2,
+    name: 'Pasta Dental Natural Carbón Activado 125ml',
+    description: 'Blanqueamiento natural con el poder del carbón activado.',
+    image: pasta2Image,
+    benefits: ['Blanqueamiento natural', 'Carbón activado', 'Fórmula natural'],
+    price: 7.73
+  },
 ]
 
 const contactWhatsApp = (productName: string) => {
