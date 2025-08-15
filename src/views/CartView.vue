@@ -87,7 +87,7 @@ const getItemSubtotal = (price: string, quantity: number) => {
   <div class="cart-view">
     <!-- Header -->
     <div class="cart-header">
-      <h1 class="cart-title">🛒 Mi Carrito</h1>
+      <h1 class="cart-title"><i class="fas fa-shopping-cart"></i> Mi Carrito</h1>
       <p class="cart-subtitle">{{ cartStore.itemCount }} {{ cartStore.itemCount === 1 ? 'producto' : 'productos' }}</p>
     </div>
 
@@ -152,7 +152,7 @@ const getItemSubtotal = (price: string, quantity: number) => {
             class="remove-btn"
             title="Eliminar producto"
           >
-            🗑️
+            <i class="fas fa-trash-alt"></i>
           </button>
         </div>
       </div>
@@ -186,7 +186,7 @@ const getItemSubtotal = (price: string, quantity: number) => {
 
     <!-- Empty Cart -->
     <div v-else class="empty-cart">
-      <div class="empty-icon">🛒</div>
+      <div class="empty-icon"><i class="fas fa-shopping-cart"></i></div>
       <h2 class="empty-title">Tu carrito está vacío</h2>
       <p class="empty-message">¡Agrega algunos productos increíbles de BambooSmile!</p>
       <button @click="continueShopping" class="shop-btn">
@@ -200,7 +200,7 @@ const getItemSubtotal = (price: string, quantity: number) => {
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title">Finalizar Pedido</h2>
-          <button @click="cancelCheckout" class="close-btn">✕</button>
+          <button @click="cancelCheckout" class="close-btn"><i class="fas fa-times"></i></button>
         </div>
 
         <div class="modal-body">
