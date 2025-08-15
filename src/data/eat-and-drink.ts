@@ -1,4 +1,4 @@
-interface EatAndDrink {
+export interface EatAndDrink {
   name: string
   precio: string
   images: string[]
