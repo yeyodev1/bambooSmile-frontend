@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useCartStore } from '@/stores/cart'
 
+const router = useRouter()
+const cartStore = useCartStore()
 const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
@@ -21,6 +25,16 @@ const scrollToSection = (sectionId: string) => {
     section.scrollIntoView({ behavior: 'smooth' })
   }
 }
+
+const goToCart = () => {
+  router.push('/carrito')
+  closeMenu()
+}
+
+const goToProducts = () => {
+  router.push('/productos')
+  closeMenu()
+}
 </script>
 
 <template>
@@ -38,9 +52,21 @@ const scrollToSection = (sectionId: string) => {
 
         <!-- Navigation Menu -->
         <div class="nav__menu">
-          <button class="nav__link" @click="scrollToSection('productos'); closeMenu()">Productos</button>
+          <button class="nav__link" @click="goToProducts">Productos</button>
           <button class="nav__link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
           <button class="nav__link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
+        </div>
+
+        <!-- Cart Button -->
+        <div class="nav__cart">
+          <button @click="goToCart" class="nav__cart-button">
+            <div class="nav__cart-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span v-if="cartStore.itemCount > 0" class="nav__cart-badge">{{ cartStore.itemCount }}</span>
+            </div>
+          </button>
         </div>
 
         <!-- Contact Button -->
@@ -71,7 +97,11 @@ const scrollToSection = (sectionId: string) => {
         <div class="nav__mobile-menu">
           <!-- Mobile Menu Links -->
           <div class="nav__mobile-links">
-            <button class="nav__mobile-link" @click="scrollToSection('productos'); closeMenu()">Productos</button>
+            <button class="nav__mobile-link" @click="goToProducts">Productos</button>
+            <button class="nav__mobile-link" @click="goToCart">
+              Carrito
+              <span v-if="cartStore.itemCount > 0" class="nav__mobile-cart-badge">({{ cartStore.itemCount }})</span>
+            </button>
             <button class="nav__mobile-link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
             <button class="nav__mobile-link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
           </div>
@@ -149,6 +179,61 @@ const scrollToSection = (sectionId: string) => {
 
     @media (min-width: 768px) {
       display: flex;
+    }
+  }
+
+  &__cart {
+    display: none;
+    align-items: center;
+    margin-right: 1rem;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    &-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 2px solid $BAMBOO-GREEN;
+      color: $BAMBOO-GREEN;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $BAMBOO-GREEN;
+        color: white;
+        transform: scale(1.05);
+      }
+    }
+
+    &-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #ef4444;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite;
     }
   }
 
@@ -433,12 +518,25 @@ const scrollToSection = (sectionId: string) => {
       font-family: inherit;
       width: 100%;
       text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       &:hover {
         background: rgba($BAMBOO-GREEN, 0.1);
         color: $BAMBOO-GREEN;
         padding-left: 1.5rem;
       }
+    }
+
+    &-cart-badge {
+      background: #ef4444;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 12px;
+      margin-left: 0.5rem;
     }
 
     &-contact {
@@ -475,6 +573,18 @@ const scrollToSection = (sectionId: string) => {
     }
 
 
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>
