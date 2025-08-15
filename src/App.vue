@@ -17,5 +17,9 @@ import Footer from './components/globals/TheFooter.vue'
   min-height: 100vh;
   background: $white;
 }
+
+body {
+  margin: 0;
+}
 </style>
 
