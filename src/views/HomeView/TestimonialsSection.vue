@@ -7,7 +7,7 @@ import persona2Image from '@/assets/testimonios/persona-2.png'
 const testimonials = ref([
   {
     id: 1,
-    name: 'Carlos Mendoza',
+    name: 'Gustavo Chiriboga',
     image: persona1Image,
     quote: '"bambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios y mi sonrisa es más brillante que nunca."',
     videoUrl: 'https://www.youtube.com/watch?v=_Jk38-QH8_8&list=PLggk7H-KGC_zBvXXMDM1crF5g9sBJ1rIt&index=3'
