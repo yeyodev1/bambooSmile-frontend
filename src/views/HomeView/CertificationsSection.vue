@@ -90,19 +90,19 @@ onMounted(() => {
       <!-- Características destacadas -->
       <div class="certifications__features">
         <div class="certifications__feature">
-          <div class="certifications__feature-icon">🇩🇪</div>
+          <div class="certifications__feature-icon"><i class="fas fa-flag"></i></div>
           <span class="certifications__feature-text">Fórmula Alemana</span>
         </div>
         <div class="certifications__feature">
-          <div class="certifications__feature-icon">🌱</div>
+          <div class="certifications__feature-icon"><i class="fas fa-leaf"></i></div>
           <span class="certifications__feature-text">100% Natural</span>
         </div>
         <div class="certifications__feature">
-          <div class="certifications__feature-icon">✓</div>
+          <div class="certifications__feature-icon"><i class="fas fa-check"></i></div>
           <span class="certifications__feature-text">Calidad Certificada</span>
         </div>
         <div class="certifications__feature">
-          <div class="certifications__feature-icon">🌍</div>
+          <div class="certifications__feature-icon"><i class="fas fa-globe-americas"></i></div>
           <span class="certifications__feature-text">Sostenible</span>
         </div>
       </div>
