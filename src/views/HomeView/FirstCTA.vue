@@ -44,7 +44,7 @@ onMounted(() => {
           
           <div class="first-cta__benefits">
             <div class="first-cta__benefit">
-              <div class="first-cta__benefit-icon">📖</div>
+              <div class="first-cta__benefit-icon"><i class="fas fa-book"></i></div>
               <div class="first-cta__benefit-content">
                 <h3 class="first-cta__benefit-title">Guía Gratuita</h3>
                 <p class="first-cta__benefit-text">Aprende todo sobre el cuidado dental natural</p>
@@ -52,7 +52,7 @@ onMounted(() => {
             </div>
             
             <div class="first-cta__benefit">
-              <div class="first-cta__benefit-icon">🎁</div>
+              <div class="first-cta__benefit-icon"><i class="fas fa-gift"></i></div>
               <div class="first-cta__benefit-content">
                 <h3 class="first-cta__benefit-title">Beneficios Exclusivos</h3>
                 <p class="first-cta__benefit-text">Ofertas especiales cada mes solo para ti</p>
@@ -60,7 +60,7 @@ onMounted(() => {
             </div>
             
             <div class="first-cta__benefit">
-              <div class="first-cta__benefit-icon">💰</div>
+              <div class="first-cta__benefit-icon"><i class="fas fa-dollar-sign"></i></div>
               <div class="first-cta__benefit-content">
                 <h3 class="first-cta__benefit-title">Descuento Especial</h3>
                 <p class="first-cta__benefit-text">Ahorra en tu primera compra de productos bambooSmile</p>
@@ -79,7 +79,7 @@ onMounted(() => {
             <div class="first-cta__card-content">
               <div class="first-cta__features">
                 <div class="first-cta__feature">
-                  <span class="first-cta__feature-icon">✓</span>
+                  <span class="first-cta__feature-icon"><i class="fas fa-check"></i></span>
                   <span class="first-cta__feature-text">Guía PDF descargable</span>
                 </div>
                 <div class="first-cta__feature">
@@ -101,7 +101,7 @@ onMounted(() => {
                 @click="contactWhatsApp"
               >
                 <span class="first-cta__button-text">Obtener Guía Gratuita</span>
-                <span class="first-cta__button-icon">📱</span>
+                <span class="first-cta__button-icon"><i class="fas fa-mobile-alt"></i></span>
               </button>
               
               <p class="first-cta__disclaimer">
