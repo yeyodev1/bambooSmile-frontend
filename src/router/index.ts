@@ -4,6 +4,17 @@ import ProductsView from '@/views/ProductsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    // Scroll al top para páginas de productos y detalle de producto
+    if (to.name === 'products' || to.name === 'product-detail') {
+      return { top: 0 }
+    }
+    // Para otras rutas, mantener comportamiento por defecto
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
