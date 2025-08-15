@@ -2,10 +2,13 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProductsStore } from '@/stores/products'
+import { useCartStore } from '@/stores/cart'
 
 const router = useRouter()
 const productsStore = useProductsStore()
+const cartStore = useCartStore()
 const selectedCategory = ref<string>('all')
+const addingToCart = ref<string | null>(null)
 
 // Computed para obtener productos filtrados
 const filteredProducts = computed(() => {
@@ -28,6 +31,20 @@ const formatPrice = (price: string) => {
 // Función para navegar al detalle del producto
 const goToProductDetail = (productName: string) => {
   router.push(`/producto/${encodeURIComponent(productName)}`)
+}
+
+// Función para agregar al carrito
+const addToCart = async (product: any, event: Event) => {
+  event.stopPropagation() // Evitar que se active el click del card
+  
+  addingToCart.value = product.name
+  
+  // Simular un pequeño delay para mostrar el estado de carga
+  await new Promise(resolve => setTimeout(resolve, 300))
+  
+  cartStore.addToCart(product, 1)
+  
+  addingToCart.value = null
 }
 </script>
 
@@ -65,7 +82,6 @@ const goToProductDetail = (productName: string) => {
         v-for="product in filteredProducts"
         :key="product.name"
         class="product-card"
-        @click="goToProductDetail(product.name)"
       >
         <!-- Product Image -->
         <div class="product-image">
@@ -89,9 +105,23 @@ const goToProductDetail = (productName: string) => {
           
           <div class="product-footer">
             <span class="product-price">{{ formatPrice(product.precio) }}</span>
-            <button class="add-to-cart-btn">
-              Agregar al carrito
-            </button>
+            <div class="product-actions">
+              <button 
+                class="view-product-btn"
+                @click="goToProductDetail(product.name)"
+              >
+                Ver producto
+              </button>
+              <button 
+                class="add-to-cart-btn"
+                :class="{ loading: addingToCart === product.name }"
+                :disabled="addingToCart === product.name"
+                @click="addToCart(product, $event)"
+              >
+                <span v-if="addingToCart === product.name" class="loading-spinner"></span>
+                <span v-else>Agregar</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -314,6 +344,45 @@ const goToProductDetail = (productName: string) => {
   }
 }
 
+.product-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.view-product-btn {
+  background: transparent;
+  color: #2d5016;
+  border: 2px solid #2d5016;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  &:hover {
+    background: #2d5016;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
 .product-price {
   font-size: 1.25rem;
   font-weight: 700;
@@ -328,25 +397,58 @@ const goToProductDetail = (productName: string) => {
   background: #84cc16;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
+  position: relative;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (max-width: 480px) {
     width: 100%;
-    padding: 0.875rem;
+    padding: 0.75rem;
+    min-width: auto;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #65a30d;
     transform: translateY(-1px);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    pointer-events: none;
+  }
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
