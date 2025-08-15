@@ -30,6 +30,13 @@ const contactInfo = {
   address: 'Simon Bolivar Palacios 512, Guayaquil 090313, Ecuador',
   mapUrl: 'https://maps.app.goo.gl/w9EDbiZ1s1aV4zWP9'
 }
+
+const distributorWhatsApp = () => {
+  const message = 'Hola, estoy interesado en ser distribuidor de bambooSmile. ¿Podrían proporcionarme información sobre los requisitos, beneficios y proceso para convertirme en distribuidor oficial?'
+  const encodedMessage = encodeURIComponent(message)
+  const whatsappUrl = `https://wa.me/593960800024?text=${encodedMessage}`
+  window.open(whatsappUrl, '_blank')
+}
 </script>
 
 <template>
@@ -78,6 +85,13 @@ const contactInfo = {
               <i class="fas fa-map-marker-alt"></i>
               {{ contactInfo.address }}
             </a>
+            <RouterLink 
+              to="/trabaja-con-nosotros" 
+              class="footer__contact-item footer__contact-item--work"
+            >
+              <i class="fas fa-briefcase"></i>
+              Trabaja con nosotros
+            </RouterLink>
           </div>
         </div>
 
@@ -97,6 +111,21 @@ const contactInfo = {
               <i :class="`fab fa-${social.icon}`" class="footer__social-icon"></i>
             </a>
           </div>
+        </div>
+
+        <!-- Distributor Section -->
+        <div class="footer__distributor">
+          <h4 class="footer__distributor-title">¿Quieres ser distribuidor?</h4>
+          <p class="footer__distributor-description">
+            Únete a nuestra red de distribuidores y forma parte del cambio hacia un cuidado dental más natural.
+          </p>
+          <button 
+            @click="distributorWhatsApp"
+            class="footer__distributor-button"
+          >
+            <i class="fab fa-whatsapp"></i>
+            Contactar por WhatsApp
+          </button>
         </div>
       </div>
 
@@ -145,10 +174,14 @@ const contactInfo = {
     text-align: center;
 
     @media (min-width: 768px) {
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
       text-align: left;
-      gap: 3rem;
+      gap: 2rem;
       padding: 4rem 0 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      gap: 3rem;
     }
 
   }
@@ -236,6 +269,22 @@ const contactInfo = {
         width: 16px;
         color: $BAMBOO-GREEN;
         flex-shrink: 0;
+      }
+
+      &--work {
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba($white, 0.1);
+        font-weight: 500;
+
+        &:hover {
+          color: $BAMBOO-GREEN;
+          transform: translateX(3px);
+        }
+
+        i {
+          color: $BAMBOO-GREEN;
+        }
       }
     }
   }
@@ -359,6 +408,66 @@ const contactInfo = {
     &:hover {
       color: $BAMBOO-GREEN;
       border-bottom-color: $BAMBOO-GREEN;
+    }
+  }
+
+  &__distributor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    &-title {
+      color: $BAMBOO-GREEN;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    &-description {
+      color: rgba($white, 0.85);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+      max-width: 250px;
+
+      @media (min-width: 768px) {
+        font-size: 0.95rem;
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: $BAMBOO-GREEN;
+      color: $white;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 2px solid $BAMBOO-GREEN;
+
+      &:hover {
+        background: transparent;
+        color: $BAMBOO-GREEN;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.3);
+      }
+
+      i {
+        font-size: 1.1rem;
+      }
     }
   }
 }
