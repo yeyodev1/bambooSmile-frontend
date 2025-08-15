@@ -1,4 +1,4 @@
-interface Cepillo {
+export interface Cepillo {
   name: string
   precio: string
   images: string[]
