@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useProductsStore } from '@/stores/products'
 
+const router = useRouter()
 const productsStore = useProductsStore()
 const selectedCategory = ref<string>('all')
 
@@ -21,6 +23,11 @@ const selectCategory = (categoryName: string) => {
 // Función para formatear precio
 const formatPrice = (price: string) => {
   return `$${price}`
+}
+
+// Función para navegar al detalle del producto
+const goToProductDetail = (productName: string) => {
+  router.push(`/producto/${encodeURIComponent(productName)}`)
 }
 </script>
 
@@ -58,6 +65,7 @@ const formatPrice = (price: string) => {
         v-for="product in filteredProducts"
         :key="product.name"
         class="product-card"
+        @click="goToProductDetail(product.name)"
       >
         <!-- Product Image -->
         <div class="product-image">
@@ -215,7 +223,8 @@ const formatPrice = (price: string) => {
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid #f3f4f6;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
