@@ -1,8 +1,32 @@
 export const higieneBucal = [
   {
+    name: 'Pasta Dental Natural Fresh 100 gr',
+    precio: '5.67',
+    images: [],
+    description: `Refresca tu sonrisa con nuestra Pasta Dental Natural Fresh de 100 gr. Formulada con ingredientes naturales y cuidadosamente seleccionados, esta pasta dental ofrece una limpieza efectiva y una sensación de frescura duradera, todo mientras cuidas tu salud bucal y el medio ambiente.`,
+    flavor: 'Menta',
+    flavorIcon: '🌿'
+  },
+  {
+    name: 'Pasta Dental Natural Kids 100 gr',
+    precio: '5.67',
+    images: [],
+    description: `Cuida la sonrisa de los más pequeños con nuestra Pasta Dental Natural Kids de 100 gr. Especialmente formulada para niños, esta pasta dental combina ingredientes naturales y suaves que proporcionan una limpieza efectiva mientras protegen los dientes en desarrollo.`,
+    flavor: 'Naranja dulce',
+    flavorIcon: '🍊'
+  },
+  {
+    name: 'Pasta Dental Natural Sangre de Drago 100 gr',
+    precio: '5.67',
+    images: [],
+    description: `Descubre el poder curativo de la naturaleza con nuestra Pasta Dental Natural Sangre de Drago de 100 gr. Enriquecida con extracto de Sangre de Drago, conocido por sus propiedades regenerativas y antiinflamatorias, esta pasta dental ofrece una experiencia de cuidado bucal única y efectiva.`,
+    flavor: 'Canela',
+    flavorIcon: '🌶️'
+  },
+  {
     name: 'Enjuague Bucal Natural Envase de Vidrio Reutilizable 250 ml',
     precio: '5.67',
-    image: '',
+    images: [],
     description: `Refresca tu aliento y cuida tu salud bucal con nuestro Enjuague Bucal Natural formulado con ingredientes naturales y respetuosos con el medio ambiente, este enjuague bucal proporciona una limpieza profunda y una protección duradera para tus dientes y encías.
 
 Limpieza Profunda: Nuestra fórmula natural ayuda a eliminar eficazmente las bacterias y los residuos de alimentos, dejando tu boca limpia y fresca después de cada enjuague. Disfruta de una sensación de limpieza duradera que te deja con un aliento fresco y una sonrisa radiante.
@@ -18,7 +42,7 @@ Agrega nuestro Enjuague Bucal Natural a tu rutina diaria de cuidado bucal y disf
   {
     name: 'Hilo Dental de Fibras de Bambú con Carbón Activado',
     precio: '5.67',
-    image: '',
+    images: [],
     description: `Mantén una higiene bucal impecable de manera natural y sostenible con nuestro Hilo Dental de Fibras de Bambú con Carbón Activado. Diseñado para proporcionar una limpieza profunda y efectiva entre los dientes, este hilo dental es una opción eco-friendly que promueve la salud oral mientras cuidas el medio ambiente.
 
 Material Sostenible: Fabricado con fibras de bambú, un recurso renovable y biodegradable, nuestro hilo dental es una alternativa ecológica a los hilos convencionales. Al elegir nuestro hilo dental de bambú, estás contribuyendo a la reducción del uso de plásticos y al cuidado de nuestros bosques.

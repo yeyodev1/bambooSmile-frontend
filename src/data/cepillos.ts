@@ -1,7 +1,7 @@
 interface Cepillo {
   name: string
   precio: string
-  image: string
+  images: string[]
   description: string
 }
 
@@ -9,7 +9,7 @@ export const cepillos: Cepillo[] = [
   {
     name: 'Cepillo bambooEco',
     precio: '3.09',
-    image: 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755199279/cepillo-2.jpg',
+    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755199279/cepillo-2.jpg'],
     description: `Cuida de tus dientes y del planeta con nuestro Cepillo de Bambú. Diseñado con materiales naturales y sostenibles, este cepillo no solo proporciona una limpieza eficaz, sino que también ayuda a reducir el impacto ambiental.
 
 Material Sostenible: El mango del cepillo está hecho de bambú, una de las plantas de crecimiento más rápido del mundo y una alternativa sostenible a los plásticos convencionales. El bambú es biodegradable y renovable, lo que lo convierte en una elección amigable con el medio ambiente.
@@ -27,7 +27,7 @@ Haz una elección consciente para tu cuidado bucal y para el planeta con nuestro
   {
     name: 'Cepillo bambooEco con Carbón Activado',
     precio: '3.09',
-    image: '',
+    images: [],
     description: `Nuestro Cepillo BambooEco con Carbón Activado es la opción perfecta para aquellos que buscan un cuidado bucal natural y respetuoso con el medio ambiente. Con cerdas suaves impregnadas de carbón activado, este cepillo ofrece una limpieza profunda y refrescante, mientras que su mango de bambú sostenible añade un toque de estilo eco-amigable a tu rutina diaria de cuidado bucal.
 
 Cerdas de Carbón Activado: Las cerdas suaves impregnadas de carbón activado ayudan a absorber las impurezas y a eliminar las manchas superficiales, dejando tus dientes limpios, frescos y brillantes después de cada cepillado. El carbón activado es conocido por sus propiedades purificantes, lo que lo convierte en un ingrediente natural ideal para el cuidado bucal.
@@ -45,7 +45,7 @@ Embellece tu sonrisa y cuida del medio ambiente con nuestro Cepillo BambooEco co
   {
     name: 'Cepillo de Bambú Premium Azul Adulto',
     precio: '5.15',
-    image: '',
+    images: [],
     description: `Experimenta la excelencia en el cuidado bucal con nuestro Cepillo de Dientes Premium Azul para Adulto. Diseñado con precisión y atención al detalle, este cepillo ofrece una limpieza profunda y efectiva con un enfoque en la comodidad y la durabilidad.
 
 Diseño Elegante y Antibacteriano: El cepillo presenta un diseño elegante en tono azul, complementado con una pintura antibacteriana que ayuda a prevenir la proliferación de bacterias entre los cepillados. Su mango ergonómico y antideslizante ofrece un agarre cómodo y seguro, garantizando un cepillado preciso y sin esfuerzo.
@@ -59,7 +59,7 @@ Eleva tu rutina de cuidado bucal con nuestro Cepillo de Dientes Premium Azul par
   {
     name: 'Cepillo de Bambú Premium Rosado Adulto',
     precio: '5.15',
-    image: '',
+    images: [],
     description: `Experimenta la excelencia en el cuidado bucal con nuestro Cepillo de Dientes Premium Rosado para Adulto. Diseñado con precisión y atención al detalle, este cepillo no solo ofrece una limpieza profunda y efectiva, sino que también incorpora características avanzadas para mejorar la higiene y la salud bucal.
 
 Diseño Elegante y Antibacteriano: El cepillo presenta un diseño elegante en tono rosado, complementado con una pintura antibacteriana que ayuda a prevenir la proliferación de bacterias entre los cepillados. Su mango ergonómico y antideslizante ofrece un agarre cómodo y seguro, garantizando un cepillado preciso y sin esfuerzo.
@@ -73,7 +73,7 @@ Eleva tu rutina de cuidado bucal con nuestro Cepillo de Dientes Premium Rosado p
   {
     name: 'Cepillo de Bambú Premium Verde Adulto',
     precio: '5.15',
-    image: '',
+    images: [],
     description: `Experimenta la excelencia en el cuidado bucal con nuestro Cepillo de Dientes Premium Verde para Adulto. Diseñado con precisión y atención al detalle, este cepillo no solo ofrece una limpieza profunda y efectiva, sino que también incorpora características avanzadas para mejorar la higiene y la salud bucal.
 
 Diseño Elegante y Antibacteriano: El cepillo presenta un diseño elegante en tono verde, complementado con una pintura antibacteriana que ayuda a prevenir la proliferación de bacterias entre los cepillados. Su mango ergonómico y antideslizante ofrece un agarre cómodo y seguro, garantizando un cepillado preciso y sin esfuerzo.
@@ -87,7 +87,7 @@ Eleva tu rutina de cuidado bucal con nuestro Cepillo de Dientes Premium Verde pa
   {
     name: 'Cepillo Premium 10.000 cerdas',
     precio: '6.44',
-    image: '',
+    images: [],
     description: `Experimenta un nivel de limpieza sin igual con nuestro Cepillo Premium, equipado con 10.000 cerdas suaves, diseñado para ofrecer una experiencia de cepillado de lujo y una limpieza excepcional para tus dientes y encías. Con una densidad excepcional de cerdas suaves y flexibles, este cepillo proporciona una limpieza profunda y efectiva, dejando tu boca con una sensación de frescura y salud incomparables.
 
 Diseño Avanzado: Cada cepillo está meticulosamente diseñado con 10.000 cerdas finas y suaves, distribuidas uniformemente para proporcionar una cobertura completa de todas las superficies dentales. Su mango ergonómico y antideslizante, hecho de bambú sostenible, garantiza un agarre cómodo y controlado durante el cepillado.
@@ -99,10 +99,10 @@ Durabilidad y Sostenibilidad: Hecho completamente de bambú sostenible, nuestro 
 Eleva tu experiencia de cepillado a nuevas alturas y disfruta de una limpieza excepcional que te dejará con una sonrisa radiante y una sensación de confianza renovada.`,
   },
   {
-    name: 'Cepillo Premium Amarillo Niños',
+    name: 'Cepillo Premium Rosado Niños',
     precio: '5.15',
-    image: '',
-    description: `Nuestro Cepillo Premium Amarillo para Niños está meticulosamente diseñado para brindar un cuidado dental delicado y lleno de diversión, ideal para las sonrisas jóvenes más radiantes. Con cerdas suaves y un vibrante diseño amarillo, este cepillo transforma el momento del cepillado en una experiencia agradable y altamente efectiva, alentando a los niños a adoptar hábitos de higiene bucal óptimos desde una edad temprana.
+    images: [],
+    description: `Nuestro Cepillo Premium Rosado para Niños está meticulosamente diseñado para brindar un cuidado dental delicado y lleno de diversión, ideal para las sonrisas jóvenes más radiantes. Con cerdas suaves y un vibrante diseño rosado, este cepillo transforma el momento del cepillado en una experiencia agradable y altamente efectiva, alentando a los niños a adoptar hábitos de higiene bucal óptimos desde una edad temprana.
 
 Cerdas Suaves: Las cerdas suaves y flexibles están especialmente diseñadas para las delicadas encías y dientes de los niños, ofreciendo una limpieza suave y eficaz sin causar molestias ni irritaciones. Cada pasada es gentil y reconfortante, asegurando un cepillado agradable y sin estrés.
 
@@ -115,7 +115,7 @@ Haz del cepillado una experiencia emocionante y altamente efectiva para tus hijo
   {
     name: 'Cepillo Premium Rosado Niños',
     precio: '5.15',
-    image: '',
+    images: [],
     description: `Nuestro Cepillo Premium Rosado para Niños está cuidadosamente diseñado para ofrecer un cuidado bucal suave y divertido, perfecto para las sonrisas más encantadoras. Con cerdas suaves y un vibrante diseño rosado, este cepillo transforma el momento del cepillado en una experiencia alegre y altamente efectiva, animando a los niños a adoptar hábitos de higiene bucal saludables desde una edad temprana.
 
 Cerdas Suaves: Las cerdas suaves y flexibles están especialmente diseñadas para las delicadas encías y dientes de los niños, proporcionando una limpieza suave y efectiva sin causar molestias ni irritaciones. Cada pasada es delicada y reconfortante, asegurando un cepillado placentero y sin estrés.
@@ -129,7 +129,7 @@ Haz del cepillado una experiencia emocionante y altamente efectiva para tus hijo
   {
     name: 'Cepillo Premium Verde Niños',
     precio: '5.15',
-    image: '',
+    images: [],
     description: `Nuestro Cepillo Premium Verde para Niños está diseñado para ofrecer un cuidado delicado y divertido para las sonrisas más jóvenes. Con cerdas suaves y un diseño vibrante, este cepillo hace que el cepillado sea una experiencia agradable y efectiva, alentando a los niños a adoptar buenos hábitos de higiene bucal desde una edad temprana.
 
 Cerdas Suaves: Las cerdas suaves y flexibles están diseñadas específicamente para las delicadas encías y dientes de los niños, proporcionando una limpieza suave y eficaz sin causar molestias ni irritación. Cada pasada es suave y reconfortante, asegurando una experiencia de cepillado agradable y sin estrés.

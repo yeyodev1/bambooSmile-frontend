@@ -1,15 +1,15 @@
-interface EatAndDrinkItem {
+interface EatAndDrink {
   name: string
   precio: string
-  image: string
+  images: string[]
   description: string
 }
 
-export const eatAndDrinkItems: EatAndDrinkItem[] = [
+export const eatAndDrinkData: EatAndDrink[] = [
   {
     name: 'Kit Eat and Drink',
     precio: '12.36',
-    image: '',
+    images: [],
     description: `Sumérgete en una experiencia culinaria consciente y sostenible con nuestro Kit Eat and Drink. Este completo conjunto está diseñado para acompañarte en tus aventuras gastronómicas, ofreciéndote cubiertos, palillos y sorbetes de bambú, una alternativa eco-amigable y elegante a los utensilios desechables.
 
 Cubiertos de Bambú: Nuestro kit incluye cubiertos fabricados con bambú, una opción sostenible y biodegradable. Estos cubiertos son duraderos y resistentes, perfectos para disfrutar de tus comidas favoritas en cualquier lugar. Además, su diseño elegante agrega un toque de estilo a tus momentos de comida.
@@ -27,13 +27,13 @@ Disfruta de tus comidas con conciencia y estilo con nuestro Kit Eat and Drink. C
   {
     name: 'Refill de cepillo lavaplatos',
     precio: '5.50',
-    image: '',
+    images: [],
     description: `Refill de cepillo para lavar los platos, de bambú y cerdas de sisal.`,
   },
   {
     name: 'Sorbete de Bambú',
     precio: '1.55',
-    image: '',
+    images: [],
     description: `Disfruta de tus bebidas favoritas de manera sostenible y elegante con nuestros Sorbetes de Bambú. Fabricados con bambú, una alternativa ecológica y biodegradable a los sorbetes de plástico desechables, estos sorbetes te permiten disfrutar de tus bebidas de forma consciente y respetuosa con el medio ambiente.
 
 Material Sostenible: Nuestros sorbetes están hechos de bambú, una planta de rápido crecimiento y altamente renovable. Al optar por sorbetes de bambú, estás contribuyendo a la reducción de residuos plásticos y al cuidado del medio ambiente.
