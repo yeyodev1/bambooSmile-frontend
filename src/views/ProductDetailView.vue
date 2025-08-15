@@ -2,14 +2,18 @@
 import { computed, ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useProductsStore } from '@/stores/products'
+import { useCartStore } from '@/stores/cart'
 import type { Product } from '@/stores/products'
 
 const route = useRoute()
 const router = useRouter()
 const productsStore = useProductsStore()
+const cartStore = useCartStore()
 
 const currentImageIndex = ref(0)
 const quantity = ref(1)
+const isAddingToCart = ref(false)
+const showAddedMessage = ref(false)
 
 // Obtener el producto actual
 const product = computed(() => {
@@ -46,9 +50,27 @@ const decrementQuantity = () => {
 }
 
 // Función para agregar al carrito
-const addToCart = () => {
-  // Aquí implementarías la lógica del carrito
-  console.log(`Agregando ${quantity.value} unidades de ${product.value?.name} al carrito`)
+const addToCart = async () => {
+  if (!product.value) return
+  
+  isAddingToCart.value = true
+  
+  try {
+    cartStore.addToCart(product.value, quantity.value)
+    
+    // Mostrar mensaje de confirmación
+    showAddedMessage.value = true
+    setTimeout(() => {
+      showAddedMessage.value = false
+    }, 2000)
+    
+    // Resetear cantidad
+    quantity.value = 1
+  } catch (error) {
+    console.error('Error al agregar al carrito:', error)
+  } finally {
+    isAddingToCart.value = false
+  }
 }
 
 // Función para navegar a producto relacionado
@@ -140,9 +162,22 @@ onMounted(() => {
         </div>
 
         <!-- Add to Cart -->
-        <button @click="addToCart" class="add-to-cart">
-          Agregar al carrito - {{ formatPrice((parseFloat(product.precio) * quantity).toFixed(2)) }}
+        <button 
+          @click="addToCart" 
+          :disabled="isAddingToCart"
+          class="add-to-cart"
+          :class="{ loading: isAddingToCart, success: showAddedMessage }"
+        >
+          <span v-if="isAddingToCart">Agregando...</span>
+          <span v-else-if="showAddedMessage">✓ Agregado al carrito</span>
+          <span v-else>Agregar al carrito - {{ formatPrice((parseFloat(product.precio) * quantity).toFixed(2)) }}</span>
         </button>
+        
+        <!-- Success Message -->
+        <div v-if="showAddedMessage" class="success-message">
+          <span class="success-icon">✓</span>
+          <span class="success-text">Producto agregado al carrito exitosamente</span>
+        </div>
 
         <!-- Product Features -->
         <div class="product-features">
@@ -445,13 +480,81 @@ onMounted(() => {
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: #65a30d;
     transform: translateY(-2px);
   }
 
-  &:active {
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  &.loading {
+    background: #a3a3a3;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 2px solid transparent;
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &.success {
+    background: #16a34a;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.75rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.success-icon {
+  color: #16a34a;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.success-text {
+  color: #166534;
+  font-weight: 600;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
