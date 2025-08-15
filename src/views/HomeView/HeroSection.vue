@@ -28,15 +28,15 @@ onMounted(() => {
           </p>
           <div class="hero__features">
             <div class="hero__feature">
-              <span class="hero__feature-icon">🌱</span>
+              <span class="hero__feature-icon"><i class="fas fa-leaf"></i></span>
               <span class="hero__feature-text">100% Natural</span>
             </div>
             <div class="hero__feature">
-              <span class="hero__feature-icon">🦷</span>
+              <span class="hero__feature-icon"><i class="fas fa-tooth"></i></span>
               <span class="hero__feature-text">Cuidado Completo</span>
             </div>
             <div class="hero__feature">
-              <span class="hero__feature-icon">🌍</span>
+              <span class="hero__feature-icon"><i class="fas fa-globe-americas"></i></span>
               <span class="hero__feature-text">Eco-Friendly</span>
             </div>
           </div>
