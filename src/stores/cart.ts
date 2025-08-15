@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import type { Product } from './products'
 
 export interface CartItem {
@@ -9,9 +9,37 @@ export interface CartItem {
 }
 
 export const useCartStore = defineStore('cart', () => {
-  // Estado reactivo
-  const items = ref<CartItem[]>([])
+  // Clave para localStorage
+  const CART_STORAGE_KEY = 'bamboo-smile-cart'
+
+  // Función para cargar carrito desde localStorage
+  const loadCartFromStorage = (): CartItem[] => {
+    try {
+      const stored = localStorage.getItem(CART_STORAGE_KEY)
+      return stored ? JSON.parse(stored) : []
+    } catch (error) {
+      console.warn('Error al cargar carrito desde localStorage:', error)
+      return []
+    }
+  }
+
+  // Función para guardar carrito en localStorage
+  const saveCartToStorage = (cartItems: CartItem[]) => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems))
+    } catch (error) {
+      console.warn('Error al guardar carrito en localStorage:', error)
+    }
+  }
+
+  // Estado reactivo - inicializar con datos del localStorage
+  const items = ref<CartItem[]>(loadCartFromStorage())
   const isOpen = ref(false)
+
+  // Watcher para guardar automáticamente cuando cambie el carrito
+  watch(items, (newItems) => {
+    saveCartToStorage(newItems)
+  }, { deep: true })
 
   // Computed properties
   const itemCount = computed(() => {
@@ -86,6 +114,13 @@ export const useCartStore = defineStore('cart', () => {
 
   const clearCart = () => {
     items.value = []
+    // También limpiar localStorage
+    localStorage.removeItem(CART_STORAGE_KEY)
+  }
+
+  // Función para limpiar cache del carrito
+  const clearCartCache = () => {
+    localStorage.removeItem(CART_STORAGE_KEY)
   }
 
   const toggleCart = () => {
@@ -152,6 +187,7 @@ export const useCartStore = defineStore('cart', () => {
     incrementQuantity,
     decrementQuantity,
     clearCart,
+    clearCartCache,
     toggleCart,
     openCart,
     closeCart,
