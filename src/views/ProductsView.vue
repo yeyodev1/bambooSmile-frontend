@@ -9,6 +9,8 @@ const productsStore = useProductsStore()
 const cartStore = useCartStore()
 const selectedCategory = ref<string>('all')
 const addingToCart = ref<string | null>(null)
+const showSuccessToast = ref(false)
+const toastTimeout = ref<number | null>(null)
 
 // Computed para obtener productos filtrados
 const filteredProducts = computed(() => {
@@ -45,6 +47,25 @@ const addToCart = async (product: any, event: Event) => {
   cartStore.addToCart(product, 1)
   
   addingToCart.value = null
+  
+  // Mostrar toast de éxito
+  showSuccessToast.value = true
+  
+  // Limpiar timeout anterior si existe
+  if (toastTimeout.value) {
+    clearTimeout(toastTimeout.value)
+  }
+  
+  // Ocultar toast después de 4 segundos
+  toastTimeout.value = setTimeout(() => {
+    showSuccessToast.value = false
+  }, 4000)
+}
+
+// Función para ir al carrito desde el toast
+const goToCart = () => {
+  router.push('/carrito')
+  showSuccessToast.value = false
 }
 </script>
 
@@ -131,6 +152,25 @@ const addToCart = async (product: any, event: Event) => {
     <div v-if="filteredProducts.length === 0" class="empty-state">
       <p>No se encontraron productos en esta categoría.</p>
     </div>
+
+    <!-- Success Toast -->
+    <Transition name="toast">
+      <div v-if="showSuccessToast" class="success-toast">
+        <div class="toast-content">
+          <div class="toast-icon">✅</div>
+          <div class="toast-text">
+            <p class="toast-title">¡Producto agregado!</p>
+            <p class="toast-subtitle">Ve a tu carrito en la esquina superior derecha</p>
+          </div>
+          <button class="toast-cart-btn" @click="goToCart">
+            🛒 Ir al carrito
+          </button>
+          <button class="toast-close" @click="showSuccessToast = false">
+            ×
+          </button>
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -450,6 +490,157 @@ const addToCart = async (product: any, event: Event) => {
   100% {
     transform: rotate(360deg);
   }
+}
+
+// Toast Styles
+.success-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 400px;
+  
+  @media (max-width: 768px) {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
+
+.toast-content {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 0.875rem;
+    gap: 0.625rem;
+  }
+}
+
+.toast-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.toast-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.toast-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+  font-size: 0.875rem;
+  
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
+}
+
+.toast-subtitle {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
+}
+
+.toast-cart-btn {
+  background: #84cc16;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
+  }
+  
+  &:hover {
+    background: #65a30d;
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.toast-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  
+  @media (max-width: 768px) {
+    top: 0.375rem;
+    right: 0.375rem;
+    font-size: 1.125rem;
+    width: 18px;
+    height: 18px;
+  }
+  
+  &:hover {
+    color: #6b7280;
+  }
+}
+
+// Toast Transitions
+.toast-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.toast-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.toast-enter-from {
+  opacity: 0;
+  transform: translateX(100%) scale(0.95);
+}
+
+.toast-leave-to {
+  opacity: 0;
+  transform: translateX(100%) scale(0.95);
+}
+
+.toast-enter-to,
+.toast-leave-from {
+  opacity: 1;
+  transform: translateX(0) scale(1);
 }
 
 .empty-state {
