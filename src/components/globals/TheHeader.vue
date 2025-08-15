@@ -20,9 +20,23 @@ const contactWhatsApp = () => {
 }
 
 const scrollToSection = (sectionId: string) => {
-  const section = document.getElementById(sectionId)
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' })
+  // Si no estamos en la página home, navegar primero
+  if (router.currentRoute.value.path !== '/') {
+    router.push('/').then(() => {
+      // Esperar un poco para que la página se cargue completamente
+      setTimeout(() => {
+        const section = document.getElementById(sectionId)
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 300)
+    })
+  } else {
+    // Si ya estamos en home, hacer scroll directamente
+    const section = document.getElementById(sectionId)
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 }
 
