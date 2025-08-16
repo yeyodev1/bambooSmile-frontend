@@ -139,9 +139,14 @@ const distributorWhatsApp = () => {
       <!-- Footer Bottom -->
       <div class="footer__bottom">
         <div class="footer__bottom-content">
-          <p class="footer__copyright">
-            © {{ currentYear }} bambooSmile. Todos los derechos reservados.
-          </p>
+          <div class="footer__copyright-section">
+            <p class="footer__copyright">
+              © {{ currentYear }} bambooSmile. Todos los derechos reservados.
+            </p>
+            <p class="footer__developer">
+              Desarrollado por <a href="https://yeyo.dev/" target="_blank" rel="noopener noreferrer" class="footer__developer-link">YeyoDev</a>
+            </p>
+          </div>
           <div class="footer__bottom-links">
             <a href="https://mkt.bamboosmile.org/politicas-y-condiciones" target="_blank" class="footer__policies-link">
               Términos y Condiciones
@@ -397,6 +402,17 @@ const distributorWhatsApp = () => {
     }
   }
 
+  &__copyright-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+    }
+  }
+
   &__copyright {
     color: rgba($white, 0.7);
     font-size: 0.85rem;
@@ -404,6 +420,29 @@ const distributorWhatsApp = () => {
 
     @media (min-width: 768px) {
       font-size: 0.9rem;
+    }
+  }
+
+  &__developer {
+    color: rgba($white, 0.6);
+    font-size: 0.8rem;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__developer-link {
+    color: $BAMBOO-GREEN;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: lighten($BAMBOO-GREEN, 10%);
+      border-bottom-color: $BAMBOO-GREEN;
     }
   }
 
