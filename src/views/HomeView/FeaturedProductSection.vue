@@ -325,7 +325,7 @@ onMounted(() => {
     position: relative;
     overflow: hidden;
     height: auto;
-    
+
     @media (max-width: 768px) {
       padding: 1.5rem;
     }
@@ -348,11 +348,11 @@ onMounted(() => {
     transition: all 0.5s ease;
     border-radius: 15px;
     display: block;
-    
+
     @media (max-width: 768px) {
       max-height: 350px;
     }
-    
+
     &:hover {
       transform: scale(1.03);
     }
@@ -387,24 +387,24 @@ onMounted(() => {
     padding: 4px;
     position: relative;
     z-index: 5;
-    
+
     @media (max-width: 640px) {
       width: 50px;
       height: 50px;
       border-width: 2px;
     }
-    
+
     &:hover {
       border-color: $BAMBOO-GREEN;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba($BAMBOO-GREEN, 0.2);
     }
-    
+
     &--active {
       border-color: $BAMBOO-GREEN;
       box-shadow: 0 8px 25px rgba($BAMBOO-GREEN, 0.3);
     }
-    
+
     img {
       width: 100%;
       height: 100%;
@@ -540,10 +540,6 @@ onMounted(() => {
 
   @media (max-width: 968px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
