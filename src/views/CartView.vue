@@ -15,6 +15,10 @@ const customerInfo = ref({
   address: ''
 })
 
+// Estado del modal de confirmación de eliminación
+const showDeleteConfirm = ref(false)
+const productToDelete = ref<string | null>(null)
+
 // Validación del formulario
 const isFormValid = computed(() => {
   return customerInfo.value.name.trim() !== '' &&
@@ -80,6 +84,27 @@ const processOrder = async () => {
 // Función para calcular subtotal de un item
 const getItemSubtotal = (price: string, quantity: number) => {
   return parseFloat(price) * quantity
+}
+
+// Función para mostrar confirmación de eliminación
+const confirmRemoveProduct = (productId: string) => {
+  productToDelete.value = productId
+  showDeleteConfirm.value = true
+}
+
+// Función para cancelar eliminación
+const cancelDelete = () => {
+  showDeleteConfirm.value = false
+  productToDelete.value = null
+}
+
+// Función para confirmar eliminación
+const confirmDelete = () => {
+  if (productToDelete.value) {
+    cartStore.removeFromCart(productToDelete.value)
+  }
+  showDeleteConfirm.value = false
+  productToDelete.value = null
 }
 </script>
 
@@ -148,7 +173,7 @@ const getItemSubtotal = (price: string, quantity: number) => {
 
           <!-- Remove Button -->
           <button 
-            @click="cartStore.removeFromCart(item.id)"
+            @click="confirmRemoveProduct(item.id)"
             class="remove-btn"
             title="Eliminar producto"
           >
@@ -281,6 +306,29 @@ const getItemSubtotal = (price: string, quantity: number) => {
               </button>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div v-if="showDeleteConfirm" class="delete-modal">
+      <div class="modal-overlay" @click="cancelDelete"></div>
+      <div class="delete-modal-content">
+        <div class="delete-modal-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <h3 class="delete-modal-title">¿Estás seguro?</h3>
+        <p class="delete-modal-message">
+          ¿Realmente quieres eliminar este producto de tu carrito?
+        </p>
+        <div class="delete-modal-actions">
+          <button @click="cancelDelete" class="delete-cancel-btn">
+            Cancelar
+          </button>
+          <button @click="confirmDelete" class="delete-confirm-btn">
+            <i class="fas fa-trash-alt"></i>
+            Sí, eliminar
+          </button>
         </div>
       </div>
     </div>
@@ -866,5 +914,158 @@ const getItemSubtotal = (price: string, quantity: number) => {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+// Delete Confirmation Modal Styles
+.delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.delete-modal-content {
+  position: relative;
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 3px solid #fef2f2;
+  animation: slideUp 0.3s ease;
+}
+
+.delete-modal-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fca5a5;
+  animation: bounce 0.6s ease;
+
+  i {
+    font-size: 2.5rem;
+    color: #dc2626;
+  }
+}
+
+.delete-modal-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.delete-modal-message {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.delete-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.delete-cancel-btn {
+  background: white;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+
+  &:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+  }
+}
+
+.delete-confirm-btn {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 140px;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+  }
+
+  i {
+    font-size: 0.875rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
 }
 </style>
