@@ -4,6 +4,7 @@ import ProductGallery from './ProductGallery.vue'
 import MarqueeSection from './MarqueeSection.vue'
 import FeaturedProductSection from './FeaturedProductSection.vue'
 import LifestyleSection from '../../components/globals/LifestyleSection.vue'
+import SustainableMarquee from '../../components/globals/SustainableMarquee.vue'
 import FirstCTA from './FirstCTA.vue'
 import TestimonialsSection from './TestimonialsSection.vue'
 import CEOVideoSection from './CEOVideoSection.vue'
@@ -24,6 +25,7 @@ const scrollToProducts = () => {
     <MarqueeSection />
     <FeaturedProductSection />
     <LifestyleSection />
+    <SustainableMarquee />
     <FirstCTA />
     <TestimonialsSection id="testimonios" />
     <CEOVideoSection />
