@@ -1,29 +1,106 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import persona1Image from '@/assets/testimonios/persona-1.png'
-import persona2Image from '@/assets/testimonios/persona-2.png'
+import { ref, onMounted, computed } from 'vue'
+
+// Interfaz para los testimonios
+interface Testimonial {
+  id: number
+  rating: number
+  text: string
+  author: string
+}
 
 // Datos de los testimonios
-const testimonials = ref([
+const testimonials = ref<Testimonial[]>([
   {
     id: 1,
-    name: 'Gustavo Chiriboga',
-    image: persona1Image,
-    quote: '"bambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios y mi sonrisa es más brillante que nunca."',
-    videoUrl: 'https://www.youtube.com/watch?v=LrvhRLCKbBc&list=PLggk7H-KGC_wfGoOgSpqC-4-xknXH0NH9'
+    rating: 5,
+    text: "La mejor inversión para mi salud dental. Mis encías sanas y mi aliento es fresco todo el día.",
+    author: "Carlos Rodríguez"
   },
   {
     id: 2,
-    name: 'María González',
-    image: persona2Image,
-    quote: '"Desde que uso bambooSmile, mi dentista nota la diferencia. Es increíble cómo un producto natural puede ser tan efectivo."',
-    videoUrl: 'https://www.youtube.com/watch?v=_Jk38-QH8_8&list=PLggk7H-KGC_zBvXXMDM1crF5g9sBJ1rIt&index=3'
+    rating: 5,
+    text: "bambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios que nunca.",
+    author: "María González"
+  },
+  {
+    id: 3,
+    rating: 4,
+    text: "Desde que uso bambooSmile, mi dentista nota la diferencia. Es increíble cómo un producto natural puede ser tan efectivo.",
+    author: "Ana Martínez"
+  },
+  {
+    id: 4,
+    rating: 5,
+    text: "Recomiendo 100% bambooSmile. La calidad es excepcional y los resultados son visibles desde la primera semana.",
+    author: "Luis Herrera"
   }
 ])
 
-// Función para abrir video en nueva pestaña
-const watchTestimonial = (videoUrl: string) => {
-  window.open(videoUrl, '_blank')
+// Estado del carrusel
+const currentIndex = ref(0)
+const isAnimating = ref(false)
+const animationDirection = ref<'next' | 'prev'>('next')
+
+// Computed para el testimonio actual
+const currentTestimonial = computed(() => testimonials.value[currentIndex.value])
+
+// Funciones de navegación
+const goToNext = () => {
+  if (isAnimating.value) return
+
+  isAnimating.value = true
+  animationDirection.value = 'next'
+
+  setTimeout(() => {
+    currentIndex.value = (currentIndex.value + 1) % testimonials.value.length
+    setTimeout(() => {
+      isAnimating.value = false
+    }, 400)
+  }, 400)
+}
+
+const goToPrev = () => {
+  if (isAnimating.value) return
+
+  isAnimating.value = true
+  animationDirection.value = 'prev'
+
+  setTimeout(() => {
+    currentIndex.value = currentIndex.value === 0 ? testimonials.value.length - 1 : currentIndex.value - 1
+    setTimeout(() => {
+      isAnimating.value = false
+    }, 400)
+  }, 400)
+}
+
+const goToSlide = (index: number) => {
+  if (isAnimating.value || index === currentIndex.value) return
+
+  isAnimating.value = true
+  animationDirection.value = index > currentIndex.value ? 'next' : 'prev'
+
+  setTimeout(() => {
+    currentIndex.value = index
+    setTimeout(() => {
+      isAnimating.value = false
+    }, 400)
+  }, 400)
+}
+
+// Generar estrellas para el rating
+const generateStars = (rating: number) => {
+  const stars = []
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push('full')
+    } else if (i - 0.5 <= rating) {
+      stars.push('half')
+    } else {
+      stars.push('empty')
+    }
+  }
+  return stars
 }
 
 // Intersection Observer para animaciones
@@ -51,82 +128,97 @@ onMounted(() => {
 <template>
   <section 
     ref="sectionRef" 
-    class="testimonials"
-    :class="{ 'testimonials--visible': isVisible }"
+    class="testimonials-carousel"
+    :class="{ 'testimonials-carousel--visible': isVisible }"
   >
-    <div class="testimonials__container">
+    <div class="testimonials-carousel__container">
       <!-- Título de la sección -->
-      <div class="testimonials__header">
-        <h2 class="testimonials__title">
+      <div class="testimonials-carousel__header">
+        <h2 class="testimonials-carousel__title">
           Lo que dicen nuestros
-          <span class="testimonials__title-highlight">clientes</span>
+          <span class="testimonials-carousel__title-highlight">clientes</span>
         </h2>
-        <p class="testimonials__subtitle">
-          Historias reales de personas que han transformado su sonrisa con bambooSmile
-        </p>
       </div>
 
-      <!-- Grid de testimonios -->
-      <div class="testimonials__grid">
-        <div 
-          v-for="(testimonial, index) in testimonials" 
-          :key="testimonial.id"
-          class="testimonial-card"
-          :class="`testimonial-card--${index + 1}`"
+      <!-- Carrusel principal -->
+      <div class="testimonials-carousel__wrapper">
+        <!-- Botón anterior -->
+        <button 
+          @click="goToPrev"
+          class="testimonials-carousel__nav testimonials-carousel__nav--prev"
+          :disabled="isAnimating"
         >
-          <!-- Imagen del cliente -->
-          <div class="testimonial-card__image-container">
-            <img 
-              :src="testimonial.image" 
-              :alt="`Testimonio de ${testimonial.name}`"
-              class="testimonial-card__image"
-            >
-            <div class="testimonial-card__play-overlay">
-              <svg 
-                class="testimonial-card__play-icon" 
-                viewBox="0 0 24 24" 
-                fill="currentColor"
-              >
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+
+        <!-- Contenedor del testimonio -->
+        <div class="testimonials-carousel__content">
+          <!-- Icono de comillas -->
+          <div class="testimonials-carousel__quote-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+            </svg>
           </div>
 
-          <!-- Contenido del testimonio -->
-          <div class="testimonial-card__content">
-            <blockquote class="testimonial-card__quote">
-              {{ testimonial.quote }}
-            </blockquote>
-            
-            <div class="testimonial-card__author">
-              <h4 class="testimonial-card__name">{{ testimonial.name }}</h4>
-              <p class="testimonial-card__role">Cliente bambooSmile</p>
+          <!-- Testimonio con animación de cubo -->
+          <div 
+            class="testimonials-carousel__testimonial"
+            :class="{
+              'testimonials-carousel__testimonial--animating-next': isAnimating && animationDirection === 'next',
+              'testimonials-carousel__testimonial--animating-prev': isAnimating && animationDirection === 'prev'
+            }"
+          >
+            <!-- Rating con estrellas -->
+            <div class="testimonials-carousel__rating">
+              <div 
+                v-for="(star, index) in generateStars(currentTestimonial.rating)"
+                :key="index"
+                class="testimonials-carousel__star"
+                :class="`testimonials-carousel__star--${star}`"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
             </div>
 
-            <!-- Botón para ver testimonio -->
-            <button 
-              @click="watchTestimonial(testimonial.videoUrl)"
-              class="testimonial-card__watch-btn"
-            >
-              <svg class="testimonial-card__watch-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              Ver testimonio completo
-            </button>
+            <!-- Texto del testimonio -->
+            <blockquote class="testimonials-carousel__text">
+              {{ currentTestimonial.text }}
+            </blockquote>
+
+            <!-- Autor -->
+            <cite class="testimonials-carousel__author">
+              {{ currentTestimonial.author }}
+            </cite>
           </div>
         </div>
+
+        <!-- Botón siguiente -->
+        <button 
+          @click="goToNext"
+          class="testimonials-carousel__nav testimonials-carousel__nav--next"
+          :disabled="isAnimating"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+          </svg>
+        </button>
       </div>
 
-      <!-- Call to action adicional -->
-      <div class="testimonials__cta">
-        <p class="testimonials__cta-text">
-          ¿Quieres ser parte de estas historias de éxito?
-        </p>
-        <button 
-          @click="watchTestimonial('https://wa.me/593960800024?text=Hola,%20quiero%20conocer%20más%20sobre%20bambooSmile')"
-          class="testimonials__cta-btn"
+      <!-- Indicadores (dots) -->
+      <div class="testimonials-carousel__indicators">
+        <button
+          v-for="(testimonial, index) in testimonials"
+          :key="testimonial.id"
+          @click="goToSlide(index)"
+          class="testimonials-carousel__dot"
+          :class="{ 'testimonials-carousel__dot--active': index === currentIndex }"
+          :disabled="isAnimating"
         >
-          Comienza tu transformación
+          <span class="sr-only">Ir al testimonio {{ index + 1 }}</span>
         </button>
       </div>
     </div>
@@ -134,348 +226,366 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@use 'sass:string';
-@use 'sass:color';
+@import '@/styles/colorVariables.module.scss';
 
-.testimonials {
+.testimonials-carousel {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+  background: #f2fcf9;
   position: relative;
-  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $BAMBOO-BLACK;
+    margin-bottom: 16px;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__title-highlight {
+    color: $BAMBOO-GREEN;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    min-height: 300px;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+      min-height: 250px;
+    }
+  }
+
+  &__nav {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+
+    &:hover:not(:disabled) {
+      background: $BAMBOO-GREEN;
+      border-color: $BAMBOO-GREEN;
+      transform: scale(1.1);
+
+      svg {
+        color: white;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: #6c757d;
+      transition: color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+    perspective: 1000px;
+  }
+
+  &__quote-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    opacity: 0.1;
+    z-index: 1;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      color: $BAMBOO-GREEN;
+    }
+
+    @media (max-width: 768px) {
+      width: 30px;
+      height: 30px;
+      top: -15px;
+    }
+  }
+
+  &__testimonial {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (max-width: 768px) {
+      padding: 30px 20px;
+      border-radius: 15px;
+    }
+
+    // Animación de cubo 3D hacia arriba (salida)
+    &--animating-next {
+      animation: cubeRotateUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    // Animación de cubo 3D hacia arriba (salida) para anterior
+    &--animating-prev {
+      animation: cubeRotateDown 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 20px;
+  }
+
+  &__star {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--full svg {
+      color: #ffc107;
+    }
+
+    &--half svg {
+      color: #ffc107;
+      opacity: 0.5;
+    }
+
+    &--empty svg {
+      color: #e9ecef;
+    }
+
+    @media (max-width: 768px) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: $BAMBOO-BLACK;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+  }
+
+  &__author {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #6c757d;
+    font-style: normal;
+    letter-spacing: 0.5px;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: #e9ecef;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: lighten($BAMBOO-GREEN, 20%);
+      transform: scale(1.2);
+    }
+
+    &--active {
+      background: $BAMBOO-GREEN;
+      transform: scale(1.3);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      width: 10px;
+      height: 10px;
+      gap: 8px;
+    }
+  }
 
   // Animación de entrada
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 
   &--visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  // Decoración de fondo
-  &::before {
-    content: '';
+  // Clase para ocultar texto durante scroll
+  .sr-only {
     position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba($BAMBOO-GREEN, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 1;
-  }
-
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-  }
-
-  &__header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  &__title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    color: $BAMBOO-BLACK;
-    margin-bottom: 16px;
-    line-height: 1.2;
-
-    &-highlight {
-      color: $BAMBOO-GREEN;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, $BAMBOO-GREEN, $BAMBOO-ORANGE);
-        border-radius: 2px;
-      }
-    }
-  }
-
-  &__subtitle {
-    font-size: 1.125rem;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 25%);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-weight: 500;
-    background: linear-gradient(135deg, color.adjust($BAMBOO-BLACK, $lightness: 25%) 0%, color.adjust($BAMBOO-GREEN, $lightness: -20%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-  }
-
-  &__cta {
-    text-align: center;
-    padding: 40px;
-    background: rgba($white, 0.8);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
-  }
-
-  &__cta-text {
-    font-size: 1.25rem;
-    color: $BAMBOO-BLACK;
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
-
-  &__cta-btn {
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
-    color: $white;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-size: 1.125rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba($BAMBOO-GREEN, 0.3);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba($BAMBOO-GREEN, 0.4);
-    }
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 }
 
-.testimonial-card {
-  background: $white;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba($BAMBOO-BLACK, 0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  position: relative;
-
-  // Animación escalonada
-  &--1 {
-    animation-delay: 0.2s;
+// Animaciones de cubo 3D
+@keyframes cubeRotateUp {
+  0% {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
   }
 
-  &--2 {
-    animation-delay: 0.4s;
+  50% {
+    transform: rotateX(-90deg) translateZ(150px);
+    opacity: 0.5;
   }
 
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba($BAMBOO-BLACK, 0.12);
-
-    .testimonial-card__play-overlay {
-      opacity: 1;
-    }
-
-    .testimonial-card__image {
-      transform: scale(1.05);
-    }
-  }
-
-  &__image-container {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  &__play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba($BAMBOO-BLACK, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  100% {
+    transform: rotateX(-180deg) translateZ(0);
     opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &__play-icon {
-    width: 60px;
-    height: 60px;
-    color: $white;
-    background: rgba($BAMBOO-GREEN, 0.9);
-    border-radius: 50%;
-    padding: 16px;
-    box-shadow: 0 4px 20px rgba($BAMBOO-GREEN, 0.4);
-  }
-
-  &__content {
-    padding: 32px;
-  }
-
-  &__quote {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: $BAMBOO-BLACK;
-    margin-bottom: 24px;
-    font-style: italic;
-    position: relative;
-
-    &::before {
-      content: '"';
-      font-size: 4rem;
-      color: $BAMBOO-GREEN;
-      position: absolute;
-      top: -20px;
-      left: -16px;
-      font-family: serif;
-      opacity: 0.3;
-    }
-  }
-
-  &__author {
-    margin-bottom: 24px;
-  }
-
-  &__name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: $BAMBOO-BLACK;
-    margin-bottom: 4px;
-  }
-
-  &__role {
-    display: inline-block;
-    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1) 0%, rgba($BAMBOO-GREEN, 0.05) 100%);
-    color: $BAMBOO-GREEN;
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba($BAMBOO-GREEN, 0.2);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba($white, 0.4), transparent);
-      transition: left 0.6s ease;
-    }
-
-    &:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba($BAMBOO-GREEN, 0.2);
-      background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.15) 0%, rgba($BAMBOO-GREEN, 0.08) 100%);
-      border-color: rgba($BAMBOO-GREEN, 0.3);
-
-      &::before {
-        left: 100%;
-      }
-    }
-  }
-
-  &__watch-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
-    color: $white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    justify-content: center;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.3);
-    }
-  }
-
-  &__watch-icon {
-    width: 16px;
-    height: 16px;
   }
 }
 
-// Responsive
-@media (max-width: 768px) {
-  .testimonials {
-    padding: 60px 0;
-
-    &__container {
-      padding: 0 16px;
-    }
-
-    &__grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    &__cta {
-      padding: 32px 24px;
-    }
+@keyframes cubeRotateDown {
+  0% {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
   }
 
-  .testimonial-card {
-    &__content {
-      padding: 24px;
-    }
+  50% {
+    transform: rotateX(90deg) translateZ(150px);
+    opacity: 0.5;
+  }
 
-    &__quote {
-      font-size: 1rem;
-    }
+  100% {
+    transform: rotateX(180deg) translateZ(0);
+    opacity: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .testimonials {
-    &__grid {
-      grid-template-columns: 1fr;
-    }
+// Animación de entrada para el nuevo testimonio
+@keyframes cubeEnterFromBottom {
+  0% {
+    transform: rotateX(180deg) translateZ(0);
+    opacity: 0;
   }
 
-  .testimonial-card {
-    &__image-container {
-      height: 160px;
-    }
+  50% {
+    transform: rotateX(90deg) translateZ(150px);
+    opacity: 0.5;
+  }
 
-    &__content {
-      padding: 20px;
-    }
+  100% {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cubeEnterFromTop {
+  0% {
+    transform: rotateX(-180deg) translateZ(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: rotateX(-90deg) translateZ(150px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: rotateX(0deg) translateZ(0);
+    opacity: 1;
   }
 }
 </style>
