@@ -86,6 +86,13 @@ const distributorWhatsApp = () => {
               {{ contactInfo.address }}
             </a>
             <RouterLink 
+              to="/sobre-nosotros" 
+              class="footer__contact-item footer__contact-item--about"
+            >
+              <i class="fas fa-info-circle"></i>
+              Sobre nosotros
+            </RouterLink>
+            <RouterLink 
               to="/trabaja-con-nosotros" 
               class="footer__contact-item footer__contact-item--work"
             >
@@ -271,21 +278,28 @@ const distributorWhatsApp = () => {
         flex-shrink: 0;
       }
 
-      &--work {
-        margin-top: 0.5rem;
-        padding-top: 0.75rem;
-        border-top: 1px solid rgba($white, 0.1);
-        font-weight: 500;
+      &--about,
+       &--work {
+         margin-top: 0.5rem;
+         padding-top: 0.75rem;
+         border-top: 1px solid rgba($white, 0.1);
+         font-weight: 500;
 
-        &:hover {
-          color: $BAMBOO-GREEN;
-          transform: translateX(3px);
-        }
+         &:hover {
+           color: $BAMBOO-GREEN;
+           transform: translateX(3px);
+         }
 
-        i {
-          color: $BAMBOO-GREEN;
-        }
-      }
+         i {
+           color: $BAMBOO-GREEN;
+         }
+       }
+
+       &--about {
+         border-top: none;
+         margin-top: 0.5rem;
+         padding-top: 0.5rem;
+       }
     }
   }
 
