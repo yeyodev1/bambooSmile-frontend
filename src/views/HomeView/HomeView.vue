@@ -27,7 +27,7 @@ const scrollToProducts = () => {
     <SustainableMarquee />
     <TestimonialsSection id="testimonios" />
     <CEOVideoSection />
-    <CertificationsSection id="certificaciones" />
+    <!-- <CertificationsSection id="certificaciones" /> -->
     <!-- <CEOVideoSection /> -->
     <!-- <ThirdCTA /> -->
     <!-- <CertificationsSection /> -->
