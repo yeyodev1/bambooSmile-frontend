@@ -58,7 +58,7 @@ const generateStars = (rating: number) => {
   const fullStars = Math.floor(rating)
   const hasHalfStar = rating % 1 >= 0.5
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0)
-  
+
   return {
     full: fullStars,
     half: hasHalfStar,
@@ -83,14 +83,14 @@ const startImageRotation = () => {
 const shopNow = () => {
   // Solo añadir al carrito
   cartStore.addToCart(featuredProduct.value as any, 1)
-  
+
   // Mostrar feedback visual en el botón
   const ctaButton = document.querySelector('.featured-product__cta') as HTMLButtonElement
   if (ctaButton) {
     const originalText = ctaButton.textContent
     ctaButton.textContent = '¡Añadido al Carrito! ✓'
     ctaButton.style.background = '#28a745'
-    
+
     setTimeout(() => {
       ctaButton.textContent = originalText
       ctaButton.style.background = ''
@@ -100,14 +100,14 @@ const shopNow = () => {
 
 const addToCart = (product: ProductWithRating, event?: Event) => {
   cartStore.addToCart(product as any, 1)
-  
+
   // Mostrar feedback visual temporal
   const button = event?.target as HTMLButtonElement
   if (button) {
     const originalText = button.textContent
     button.textContent = '¡Añadido! ✓'
     button.style.background = '#28a745'
-    
+
     setTimeout(() => {
       button.textContent = originalText
       button.style.background = ''
@@ -118,10 +118,10 @@ const addToCart = (product: ProductWithRating, event?: Event) => {
 onMounted(() => {
   // Inicializar array de visibilidad para las tarjetas
   cardsVisible.value = new Array(recommendedProducts.value.length).fill(false)
-  
+
   // Iniciar rotación automática de imágenes
   startImageRotation()
-  
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -129,7 +129,7 @@ onMounted(() => {
           if (entry.target.classList.contains('featured-product')) {
             isVisible.value = true
           }
-          
+
           if (entry.target.classList.contains('recommendations-grid')) {
             // Animar tarjetas con delay escalonado
             recommendedProducts.value.forEach((_, index) => {
@@ -146,7 +146,7 @@ onMounted(() => {
 
   const featuredElement = document.querySelector('.featured-product')
   const gridElement = document.querySelector('.recommendations-grid')
-  
+
   if (featuredElement) observer.observe(featuredElement)
   if (gridElement) observer.observe(gridElement)
 })
@@ -286,13 +286,13 @@ onMounted(() => {
 // Producto Destacado
 .featured-product {
   margin-bottom: 8rem;
-  
+
   &__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
   }
-  
+
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -301,63 +301,80 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(40px);
     transition: all 1s ease;
-    
+
     @media (max-width: 968px) {
       grid-template-columns: 1fr;
       gap: 4rem;
       text-align: center;
     }
   }
-  
+
   &--visible &__content {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   &__image-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: 2rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 30px;
     box-shadow: 0 20px 60px rgba($BAMBOO-BLACK, 0.08);
     position: relative;
     overflow: hidden;
+    height: auto;
+    
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
   }
-  
+
   &__gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
-  
-  &__image {
     max-width: 100%;
-    max-height: 400px;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 450px;
     object-fit: contain;
     transition: all 0.5s ease;
     border-radius: 15px;
+    display: block;
+    
+    @media (max-width: 768px) {
+      max-height: 350px;
+    }
     
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
     }
   }
-  
+
   &__indicators {
     display: flex;
     gap: 0.8rem;
     margin-top: 2rem;
     justify-content: center;
     flex-wrap: wrap;
-    
-    @media (max-width: 640px) {
-      gap: 0.5rem;
-      margin-top: 1.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    @media (max-width: 968px) {
+      display: none;
     }
   }
-  
+
   &__indicator {
     width: 60px;
     height: 60px;
@@ -368,6 +385,8 @@ onMounted(() => {
     transition: all 0.3s ease;
     background: $white;
     padding: 4px;
+    position: relative;
+    z-index: 5;
     
     @media (max-width: 640px) {
       width: 50px;
@@ -393,13 +412,13 @@ onMounted(() => {
       border-radius: 8px;
     }
   }
-  
+
   &__info {
     @media (max-width: 968px) {
       order: -1;
     }
   }
-  
+
   &__title {
     font-size: 1.2rem;
     font-weight: 500;
@@ -408,7 +427,7 @@ onMounted(() => {
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  
+
   &__name {
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700;
@@ -416,52 +435,52 @@ onMounted(() => {
     margin: 0 0 2rem 0;
     line-height: 1.2;
   }
-  
+
   &__rating {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    
+
     @media (max-width: 968px) {
       justify-content: center;
     }
   }
-  
+
   &__stars {
     display: flex;
     gap: 0.2rem;
   }
-  
+
   &__star {
     font-size: 1.2rem;
-    
+
     &--full {
       color: #ffc107;
     }
-    
+
     &--half {
       color: #ffc107;
       opacity: 0.5;
     }
-    
+
     &--empty {
       color: #e9ecef;
     }
   }
-  
+
   &__reviews {
     font-size: 0.9rem;
     color: #6c757d;
   }
-  
+
   &__price {
     font-size: 2rem;
     font-weight: 700;
     color: $BAMBOO-GREEN;
     margin: 0 0 2rem 0;
   }
-  
+
   &__cta {
     background: $BAMBOO-GREEN;
     color: $white;
@@ -475,17 +494,17 @@ onMounted(() => {
     box-shadow: 0 8px 25px rgba($BAMBOO-GREEN, 0.3);
     position: relative;
     overflow: hidden;
-    
+
     &:hover {
       background: darken($BAMBOO-GREEN, 10%);
       transform: translateY(-3px);
       box-shadow: 0 12px 35px rgba($BAMBOO-GREEN, 0.4);
     }
-    
+
     &:active {
       transform: translateY(-1px);
     }
-    
+
     @media (max-width: 640px) {
       padding: 1rem 2.5rem;
       font-size: 1rem;
@@ -500,7 +519,7 @@ onMounted(() => {
     margin: 0 auto;
     padding: 0 2rem;
   }
-  
+
   &__title {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
@@ -514,15 +533,15 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  
+
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   @media (max-width: 968px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  
+
   @media (max-width: 640px) {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
@@ -537,17 +556,17 @@ onMounted(() => {
   opacity: 0;
   transform: translateY(20px);
   border: 1px solid #f1f3f4;
-  
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 50px rgba($BAMBOO-BLACK, 0.15);
   }
-  
+
   &--visible {
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   &__image-wrapper {
     display: flex;
     justify-content: center;
@@ -558,22 +577,22 @@ onMounted(() => {
     border-radius: 15px;
     overflow: hidden;
   }
-  
+
   &__image {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     transition: transform 0.3s ease;
-    
+
     &:hover {
       transform: scale(1.1);
     }
   }
-  
+
   &__content {
     text-align: center;
   }
-  
+
   &__name {
     font-size: 1.1rem;
     font-weight: 600;
@@ -586,7 +605,7 @@ onMounted(() => {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   &__rating {
     display: flex;
     align-items: center;
@@ -594,41 +613,41 @@ onMounted(() => {
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
-  
+
   &__stars {
     display: flex;
     gap: 0.1rem;
   }
-  
+
   &__star {
     font-size: 1rem;
-    
+
     &--full {
       color: #ffc107;
     }
-    
+
     &--half {
       color: #ffc107;
       opacity: 0.5;
     }
-    
+
     &--empty {
       color: #e9ecef;
     }
   }
-  
+
   &__reviews {
     font-size: 0.8rem;
     color: #6c757d;
   }
-  
+
   &__price {
     font-size: 1.4rem;
     font-weight: 700;
     color: $BAMBOO-GREEN;
     margin: 0 0 1.5rem 0;
   }
-  
+
   &__add-to-cart {
     width: 100%;
     background: transparent;
@@ -640,7 +659,7 @@ onMounted(() => {
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    
+
     &:hover {
       background: $BAMBOO-GREEN;
       color: $white;
