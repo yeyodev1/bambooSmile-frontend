@@ -155,22 +155,22 @@ Uso Fácil: Simplemente pasa el cepillo por tu barba en la dirección del crecim
 
 Añade nuestro Cepillo para Barba Pequeño a tu arsenal de cuidado personal y disfruta de una barba bien peinada y con estilo en todo momento. La combinación perfecta de funcionalidad y elegancia para el hombre moderno.`,
   },
-  {
-    name: 'Difusor de Aceites Esenciales',
-    precio: '20.09',
-    images: [],
-    description: `Transforma cualquier espacio en un oasis de tranquilidad y bienestar con nuestro Difusor de Aceites Esenciales. Diseñado para dispersar suavemente fragancias aromáticas, este difusor crea una atmósfera relajante que ayuda a aliviar el estrés y promover la calma interior.
+  //   {
+  //     name: 'Difusor de Aceites Esenciales',
+  //     precio: '20.09',
+  //     images: [],
+  //     description: `Transforma cualquier espacio en un oasis de tranquilidad y bienestar con nuestro Difusor de Aceites Esenciales. Diseñado para dispersar suavemente fragancias aromáticas, este difusor crea una atmósfera relajante que ayuda a aliviar el estrés y promover la calma interior.
 
-Aromaterapia Relajante: Nuestro difusor vaporizar agua y aceites esenciales, liberando delicadas partículas de aroma en el aire. Disfruta de una experiencia de aromaterapia relajante que ayuda a despejar la mente y revitalizar el espíritu.
+  // Aromaterapia Relajante: Nuestro difusor vaporizar agua y aceites esenciales, liberando delicadas partículas de aroma en el aire. Disfruta de una experiencia de aromaterapia relajante que ayuda a despejar la mente y revitalizar el espíritu.
 
-Ambiente Personalizado: Con su diseño elegante y moderno, este difusor complementa cualquier decoración y se adapta a cualquier espacio. Ya sea en el hogar, la oficina o el spa, crea un ambiente personalizado eligiendo entre una variedad de aceites esenciales para satisfacer tus necesidades y preferencias.
+  // Ambiente Personalizado: Con su diseño elegante y moderno, este difusor complementa cualquier decoración y se adapta a cualquier espacio. Ya sea en el hogar, la oficina o el spa, crea un ambiente personalizado eligiendo entre una variedad de aceites esenciales para satisfacer tus necesidades y preferencias.
 
-Terapia de Humedad: Además de difundir fragancias encantadoras, nuestro difusor también actúa como humidificador, añadiendo humedad al aire para combatir la sequedad y mejorar la calidad del ambiente interior. Ideal para aliviar la congestión nasal y mejorar la respiración, especialmente durante los meses más secos.
+  // Terapia de Humedad: Además de difundir fragancias encantadoras, nuestro difusor también actúa como humidificador, añadiendo humedad al aire para combatir la sequedad y mejorar la calidad del ambiente interior. Ideal para aliviar la congestión nasal y mejorar la respiración, especialmente durante los meses más secos.
 
-Fácil de Usar: Simplemente llena el tanque de agua, añade unas gotas de tu aceite esencial favorito, y antes de encender el difusor asegúrate de humedecer la mecha.
+  // Fácil de Usar: Simplemente llena el tanque de agua, añade unas gotas de tu aceite esencial favorito, y antes de encender el difusor asegúrate de humedecer la mecha.
 
-Integra nuestro Difusor de Aceites Esenciales en tu rutina diaria y descubre los beneficios transformadores de la aromaterapia. Crea un ambiente de serenidad y armonía en cualquier lugar, en cualquier momento, y sumérgete en una experiencia sensorial que rejuvenece cuerpo, mente y espíritu.`,
-  },
+  // Integra nuestro Difusor de Aceites Esenciales en tu rutina diaria y descubre los beneficios transformadores de la aromaterapia. Crea un ambiente de serenidad y armonía en cualquier lugar, en cualquier momento, y sumérgete en una experiencia sensorial que rejuvenece cuerpo, mente y espíritu.`,
+  //   },
   {
     name: 'Exfoliador de Sisal',
     precio: '3.09',
@@ -229,24 +229,24 @@ Compromiso con la Salud Bucal: En nuestro compromiso con la salud bucal, este li
 
 Eleva tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero. Con su diseño ergonómico, durabilidad y eficacia en la eliminación de bacterias, es la herramienta ideal para mantener tu lengua limpia, fresca y saludable todos los días.`,
   },
-  {
-    name: 'Pads Desmaquillantes de Tela',
-    precio: '5.41',
-    images: [],
-    description: `Nuestros Pads de Tela para Desmaquillar son la elección perfecta para una limpieza facial suave, efectiva y respetuosa con el medio ambiente. Hechos con tela suave y absorbente, estos pads ofrecen una alternativa reutilizable y sostenible a los productos desechables, ayudándote a cuidar tu piel y el planeta al mismo tiempo.
+  //   {
+  //     name: 'Pads Desmaquillantes de Tela',
+  //     precio: '5.41',
+  //     images: [],
+  //     description: `Nuestros Pads de Tela para Desmaquillar son la elección perfecta para una limpieza facial suave, efectiva y respetuosa con el medio ambiente. Hechos con tela suave y absorbente, estos pads ofrecen una alternativa reutilizable y sostenible a los productos desechables, ayudándote a cuidar tu piel y el planeta al mismo tiempo.
 
-Suavidad y Eficacia: Nuestros pads están hechos de tela suave y delicada que elimina el maquillaje, el aceite y las impurezas de la piel sin causar irritación ni rojeces. Su textura suave y absorbente garantiza una limpieza efectiva sin sacrificar la comodidad de tu piel.
+  // Suavidad y Eficacia: Nuestros pads están hechos de tela suave y delicada que elimina el maquillaje, el aceite y las impurezas de la piel sin causar irritación ni rojeces. Su textura suave y absorbente garantiza una limpieza efectiva sin sacrificar la comodidad de tu piel.
 
-Reutilizables y Eco-Amigables: Al ser reutilizables, nuestros pads de tela ayudan a reducir el desperdicio generado por los productos desechables, lo que los convierte en una opción eco-amigable para tu rutina de belleza. Simplemente lávalos después de cada uso y estarán listos para usarlos nuevamente, una y otra vez.
+  // Reutilizables y Eco-Amigables: Al ser reutilizables, nuestros pads de tela ayudan a reducir el desperdicio generado por los productos desechables, lo que los convierte en una opción eco-amigable para tu rutina de belleza. Simplemente lávalos después de cada uso y estarán listos para usarlos nuevamente, una y otra vez.
 
-Adecuados para Todo Tipo de Piel: Los pads de tela son adecuados para todo tipo de piel, incluyendo la piel sensible. Su suavidad y gentileza los hacen ideales para usar en cualquier momento del día, ya sea para quitar el maquillaje antes de acostarte o para refrescar tu piel por la mañana.
+  // Adecuados para Todo Tipo de Piel: Los pads de tela son adecuados para todo tipo de piel, incluyendo la piel sensible. Su suavidad y gentileza los hacen ideales para usar en cualquier momento del día, ya sea para quitar el maquillaje antes de acostarte o para refrescar tu piel por la mañana.
 
-Prácticos y Portátiles: Con un tamaño compacto y ligero, nuestros pads de tela son fáciles de llevar contigo mientras viajas o te desplazas. Simplemente guárdalos en tu bolsa de viaje o neceser y tendrás una solución de limpieza conveniente siempre a mano.
+  // Prácticos y Portátiles: Con un tamaño compacto y ligero, nuestros pads de tela son fáciles de llevar contigo mientras viajas o te desplazas. Simplemente guárdalos en tu bolsa de viaje o neceser y tendrás una solución de limpieza conveniente siempre a mano.
 
-Cuida tu Piel y el Planeta: Al elegir nuestros Pads de Tela para Desmaquillar, estás dando un paso hacia una rutina de belleza más sostenible y consciente. Disfruta de una piel limpia y fresca mientras contribuyes a la preservación del medio ambiente.
+  // Cuida tu Piel y el Planeta: Al elegir nuestros Pads de Tela para Desmaquillar, estás dando un paso hacia una rutina de belleza más sostenible y consciente. Disfruta de una piel limpia y fresca mientras contribuyes a la preservación del medio ambiente.
 
-Transforma tu rutina de belleza con nuestros Pads de Tela para Desmaquillar. Suavidad, eficacia y sostenibilidad se unen para ofrecerte una experiencia de limpieza facial excepcional.`,
-  },
+  // Transforma tu rutina de belleza con nuestros Pads de Tela para Desmaquillar. Suavidad, eficacia y sostenibilidad se unen para ofrecerte una experiencia de limpieza facial excepcional.`,
+  //   },
   {
     name: 'Peineta de bambú',
     precio: '4.74',
