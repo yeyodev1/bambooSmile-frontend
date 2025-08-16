@@ -15,7 +15,7 @@ const impactData = ref([
     icon: 'fas fa-recycle',
     number: '2.5 Kg',
     label: 'Plástico ahorrado mensualmente',
-    description: 'Por cada familia que usa BambooSmile'
+    description: 'Por cada familia que usa bambooSmile'
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const impactData = ref([
 
 // Función para contactar por WhatsApp
 const contactWhatsApp = () => {
-  const message = encodeURIComponent('Hola Henry, me inspira tu mensaje sobre BambooSmile. Quiero ser parte del cambio hacia una sonrisa más natural y sostenible.')
+  const message = encodeURIComponent('Hola Henry, me inspira tu mensaje sobre bambooSmile. Quiero ser parte del cambio hacia una sonrisa más natural y sostenible.')
   window.open(`https://wa.me/593960800024?text=${message}`, '_blank')
 }
 
