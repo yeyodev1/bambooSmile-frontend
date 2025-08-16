@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeroSection from './HeroSection.vue'
 import ProductGallery from './ProductGallery.vue'
+import MarqueeSection from './MarqueeSection.vue'
 import FirstCTA from './FirstCTA.vue'
 import TestimonialsSection from './TestimonialsSection.vue'
 import CEOVideoSection from './CEOVideoSection.vue'
@@ -18,6 +19,7 @@ const scrollToProducts = () => {
   <div class="home-view">
     <HeroSection @scroll-to-products="scrollToProducts" />
     <ProductGallery id="productos" />
+    <MarqueeSection />
     <FirstCTA />
     <TestimonialsSection id="testimonios" />
     <CEOVideoSection />
