@@ -12,83 +12,51 @@ const brandAttributes = [
     id: 1,
     title: 'Ingredientes Naturales',
     description: 'Derivados de fuentes naturales y sostenibles',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
-      <path d="M8 21L9.09 14.74L16 14L9.09 13.26L8 7L6.91 13.26L0 14L6.91 14.74L8 21Z"/>
-    </svg>`
+    icon: 'fas fa-leaf'
   },
   {
     id: 2,
     title: 'EWG Verified',
     description: 'Certificación de seguridad reconocida',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M9 12L11 14L15 10"/>
-      <circle cx="12" cy="12" r="9"/>
-    </svg>`,
+    icon: 'fas fa-shield-alt',
     certificate: certificado1
   },
   {
     id: 3,
     title: 'Empaque Reciclable',
     description: 'Tubo de metal 100% reciclable',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M3 6L5 6L21 6"/>
-      <path d="M19 6V20A2 2 0 0 1 17 20H7A2 2 0 0 1 5 20V6M8 6V4A2 2 0 0 1 10 4H14A2 2 0 0 1 16 4V6"/>
-      <path d="M10 11V17"/>
-      <path d="M14 11V17"/>
-    </svg>`
+    icon: 'fas fa-recycle'
   },
   {
     id: 4,
     title: 'Hecho en Ecuador',
     description: 'Orgullosamente fabricado en Ecuador',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M21 10C21 17 12 23 12 23S3 17 3 10A9 9 0 0 1 12 1A9 9 0 0 1 21 10Z"/>
-      <circle cx="12" cy="10" r="3"/>
-    </svg>`
+    icon: 'fas fa-map-marker-alt'
   },
   {
     id: 5,
     title: 'Sin Artificiales',
     description: 'Libre de sabores, colores o preservantes artificiales',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <circle cx="12" cy="12" r="10"/>
-      <path d="M4.93 4.93L19.07 19.07"/>
-    </svg>`
+    icon: 'fas fa-ban'
   },
   {
     id: 6,
     title: 'Empaque Sostenible',
     description: 'Certificación FSC para empaque sostenible',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-      <path d="M2 17L12 22L22 17"/>
-      <path d="M2 12L12 17L22 12"/>
-    </svg>`,
+    icon: 'fas fa-tree',
     certificate: certificado2
   },
   {
     id: 7,
     title: 'Sin Sodio Lauril Sulfato',
     description: 'Fórmula libre de SLS para mayor suavidad',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
-      <path d="M21 9V7L15 1L13 3L15 5V7H9V5L11 3L9 1L3 7V9H21Z"/>
-      <path d="M3 11V13H21V11H3Z"/>
-      <path d="M5 15V17H19V15H5Z"/>
-      <path d="M7 19V21H17V19H7Z"/>
-    </svg>`
+    icon: 'fas fa-flask'
   },
   {
     id: 8,
     title: 'Apto para Veganos',
     description: 'Fórmula 100% vegana y libre de crueldad',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M2 3H6L8 17H19L21 9H9"/>
-      <circle cx="9" cy="20" r="1"/>
-      <circle cx="20" cy="20" r="1"/>
-      <path d="M6 6H17L15 13H8L6 6Z"/>
-    </svg>`
+    icon: 'fas fa-seedling'
   }
 ]
 
@@ -130,7 +98,9 @@ onMounted(() => {
           class="brand-attributes__card"
           :style="{ animationDelay: `${index * 0.1}s` }"
         >
-          <div class="brand-attributes__icon" v-html="attribute.icon"></div>
+          <div class="brand-attributes__icon">
+            <i :class="attribute.icon"></i>
+          </div>
           <h3 class="brand-attributes__title-card">{{ attribute.title }}</h3>
           <p class="brand-attributes__description">{{ attribute.description }}</p>
           
@@ -250,9 +220,8 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
 
-    svg {
-      width: 100%;
-      height: 100%;
+    i {
+      font-size: 2rem;
     }
   }
 
