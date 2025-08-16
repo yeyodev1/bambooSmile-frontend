@@ -49,6 +49,11 @@ const goToProducts = () => {
   router.push('/productos')
   closeMenu()
 }
+
+const goToAboutUs = () => {
+  router.push('/sobre-nosotros')
+  closeMenu()
+}
 </script>
 
 <template>
@@ -67,6 +72,7 @@ const goToProducts = () => {
         <!-- Navigation Menu -->
         <div class="nav__menu">
           <button class="nav__link" @click="goToProducts">Productos</button>
+          <button class="nav__link" @click="goToAboutUs">Nosotros</button>
           <button class="nav__link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
           <button class="nav__link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
         </div>
@@ -112,6 +118,7 @@ const goToProducts = () => {
           <!-- Mobile Menu Links -->
           <div class="nav__mobile-links">
             <button class="nav__mobile-link" @click="goToProducts">Productos</button>
+            <button class="nav__mobile-link" @click="goToAboutUs">Nosotros</button>
             <button class="nav__mobile-link" @click="goToCart">
               Carrito
               <span v-if="cartStore.itemCount > 0" class="nav__mobile-cart-badge">({{ cartStore.itemCount }})</span>
