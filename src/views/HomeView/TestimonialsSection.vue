@@ -10,14 +10,14 @@ const testimonials = ref([
     name: 'Gustavo Chiriboga',
     image: persona1Image,
     quote: '"bambooSmile cambió completamente mi rutina de higiene dental. Mis dientes se sienten más limpios y mi sonrisa es más brillante que nunca."',
-    videoUrl: 'https://www.youtube.com/watch?v=_Jk38-QH8_8&list=PLggk7H-KGC_zBvXXMDM1crF5g9sBJ1rIt&index=3'
+    videoUrl: 'https://www.youtube.com/watch?v=LrvhRLCKbBc&list=PLggk7H-KGC_wfGoOgSpqC-4-xknXH0NH9'
   },
   {
     id: 2,
     name: 'María González',
     image: persona2Image,
     quote: '"Desde que uso bambooSmile, mi dentista nota la diferencia. Es increíble cómo un producto natural puede ser tan efectivo."',
-    videoUrl: 'https://www.youtube.com/watch?v=LrvhRLCKbBc&list=PLggk7H-KGC_wfGoOgSpqC-4-xknXH0NH9'
+    videoUrl: 'https://www.youtube.com/watch?v=_Jk38-QH8_8&list=PLggk7H-KGC_zBvXXMDM1crF5g9sBJ1rIt&index=3'
   }
 ])
 
