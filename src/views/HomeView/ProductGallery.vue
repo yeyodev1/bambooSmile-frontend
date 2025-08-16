@@ -1,64 +1,96 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// Imports de imágenes
-import pasta1Image from '@/assets/products/pastas/pasta-1.jpeg'
-import pasta2Image from '@/assets/products/pastas/pasta-2.jpeg'
-import pasta3Image from '@/assets/products/pastas/pasta-3.jpeg'
-import pasta4Image from '@/assets/products/pastas/pasta-4.jpeg'
+// Imports de certificados
+import certificado1 from '@/assets/certificates/certificado-1.png'
+import certificado2 from '@/assets/certificates/certificado-2.png'
 
 const isVisible = ref(false)
-const whatsappNumber = '+593960800024'
 
-const products = [
+const brandAttributes = [
   {
     id: 1,
-    name: 'Pasta Dental Natural Kids 125ml',
-    description: 'Sin alcohol para los más pequeñitos',
-    flavor: 'Naranja dulce',
-    flavorIcon: '🍊',
-    image: pasta1Image,
-    benefits: ['Sin químicos', 'Antibacterial natural', 'Protege el esmalte'],
-    price: 7.73
-  },
-  {
-    id: 3,
-    name: 'Pasta Dental Natural Fresh 125ml',
-    description: 'Fórmula natural con acción refrescante',
-    flavor: 'Menta',
-    flavorIcon: '🌿',
-    image: pasta3Image,
-    benefits: ['Acción refrescante', 'Fórmula natural', 'Limpieza profunda'],
-    price: 7.73
-  },
-  {
-    id: 4,
-    name: 'Pasta Dental Natural Sangre de Drago 125ml',
-    description: 'Fórmula especial para dientes sensibles',
-    flavor: 'Canela',
-    flavorIcon: '🌰',
-    image: pasta4Image,
-    benefits: ['Para dientes sensibles', 'Con sangre de drago', 'Fórmula natural'],
-    price: 7.73
+    title: 'Ingredientes Naturales',
+    description: 'Derivados de fuentes naturales y sostenibles',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+      <path d="M8 21L9.09 14.74L16 14L9.09 13.26L8 7L6.91 13.26L0 14L6.91 14.74L8 21Z"/>
+    </svg>`
   },
   {
     id: 2,
-    name: 'Pasta Dental Natural Carbón Activado 125ml',
-    description: 'Blanqueamiento natural con carbón activado',
-    flavor: 'Clavo de olor',
-    flavorIcon: '🌸',
-    image: pasta2Image,
-    benefits: ['Blanqueamiento natural', 'Carbón activado', 'Fórmula natural'],
-    price: 7.73
+    title: 'EWG Verified',
+    description: 'Certificación de seguridad reconocida',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 12L11 14L15 10"/>
+      <circle cx="12" cy="12" r="9"/>
+    </svg>`,
+    certificate: certificado1
   },
+  {
+    id: 3,
+    title: 'Empaque Reciclable',
+    description: 'Tubo de metal 100% reciclable',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M3 6L5 6L21 6"/>
+      <path d="M19 6V20A2 2 0 0 1 17 20H7A2 2 0 0 1 5 20V6M8 6V4A2 2 0 0 1 10 4H14A2 2 0 0 1 16 4V6"/>
+      <path d="M10 11V17"/>
+      <path d="M14 11V17"/>
+    </svg>`
+  },
+  {
+    id: 4,
+    title: 'Hecho en Ecuador',
+    description: 'Orgullosamente fabricado en Ecuador',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M21 10C21 17 12 23 12 23S3 17 3 10A9 9 0 0 1 12 1A9 9 0 0 1 21 10Z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>`
+  },
+  {
+    id: 5,
+    title: 'Sin Artificiales',
+    description: 'Libre de sabores, colores o preservantes artificiales',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M4.93 4.93L19.07 19.07"/>
+    </svg>`
+  },
+  {
+    id: 6,
+    title: 'Empaque Sostenible',
+    description: 'Certificación FSC para empaque sostenible',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+      <path d="M2 17L12 22L22 17"/>
+      <path d="M2 12L12 17L22 12"/>
+    </svg>`,
+    certificate: certificado2
+  },
+  {
+    id: 7,
+    title: 'Sin Sodio Lauril Sulfato',
+    description: 'Fórmula libre de SLS para mayor suavidad',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+      <path d="M21 9V7L15 1L13 3L15 5V7H9V5L11 3L9 1L3 7V9H21Z"/>
+      <path d="M3 11V13H21V11H3Z"/>
+      <path d="M5 15V17H19V15H5Z"/>
+      <path d="M7 19V21H17V19H7Z"/>
+    </svg>`
+  },
+  {
+    id: 8,
+    title: 'Apto para Veganos',
+    description: 'Fórmula 100% vegana y libre de crueldad',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M2 3H6L8 17H19L21 9H9"/>
+      <circle cx="9" cy="20" r="1"/>
+      <circle cx="20" cy="20" r="1"/>
+      <path d="M6 6H17L15 13H8L6 6Z"/>
+    </svg>`
+  }
 ]
-
-const contactWhatsApp = (productName: string) => {
-  const message = `Hola, estoy interesado en ${productName} de bambooSmile. ¿Podrían darme más información?`
-  const encodedMessage = encodeURIComponent(message)
-  const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`
-  window.open(whatsappUrl, '_blank')
-}
 
 onMounted(() => {
   const observer = new IntersectionObserver(
@@ -80,79 +112,36 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="products" class="products" :class="{ 'products--visible': isVisible }">
-    <div class="products__container">
-      <div class="products__header">
-        <h2 class="products__title">
-          Nuestros <span class="products__title-highlight">Productos</span>
+  <section id="brand-attributes" class="brand-attributes" :class="{ 'brand-attributes--visible': isVisible }">
+    <div class="brand-attributes__container">
+      <div class="brand-attributes__header">
+        <h2 class="brand-attributes__title">
+          Calidad y <span class="brand-attributes__title-highlight">Confianza</span>
         </h2>
-        <p class="products__subtitle">
-          Descubre nuestra línea completa de pastas dentales naturales con aceites esenciales puros. <br/>
-          Todas las pastas: cuidan el esmalte, refrescan y tienen buen sabor. 
+        <p class="brand-attributes__subtitle">
+          Comprometidos con la excelencia en cada producto que creamos
         </p>
       </div>
       
-      <div class="products__grid">
+      <div class="brand-attributes__grid">
         <div 
-          v-for="(product, index) in products" 
-          :key="product.id"
-          class="products__card"
+          v-for="(attribute, index) in brandAttributes" 
+          :key="attribute.id"
+          class="brand-attributes__card"
           :style="{ animationDelay: `${index * 0.1}s` }"
-          @click="contactWhatsApp(product.name)"
         >
-          <div class="products__card-image">
-            <img 
-              :src="product.image" 
-              :alt="product.name"
-              class="products__image"
-            >
-            <div class="products__card-overlay">
-              <span class="products__cta-text">Consultar por WhatsApp</span>
-              <div class="products__whatsapp-icon">📱</div>
-            </div>
-          </div>
+          <div class="brand-attributes__icon" v-html="attribute.icon"></div>
+          <h3 class="brand-attributes__title-card">{{ attribute.title }}</h3>
+          <p class="brand-attributes__description">{{ attribute.description }}</p>
           
-          <div class="products__card-content">
-            <div class="products__card-header">
-              <h3 class="products__card-title">{{ product.name }}</h3>
-              <div class="products__flavor-badge">
-                <span class="products__flavor-icon">{{ product.flavorIcon }}</span>
-                <span class="products__flavor-text">{{ product.flavor }}</span>
-              </div>
-            </div>
-            <p class="products__card-description">{{ product.description }}</p>
-            
-            <div class="products__benefits">
-              <div 
-                v-for="benefit in product.benefits" 
-                :key="benefit"
-                class="products__benefit"
-              >
-                <span class="products__benefit-icon">✓</span>
-                <span class="products__benefit-text">{{ benefit }}</span>
-              </div>
-            </div>
-            
-            <button 
-              class="products__contact-btn"
-              @click.stop="contactWhatsApp(product.name)"
+          <div v-if="attribute.certificate" class="brand-attributes__certificate">
+            <img 
+              :src="attribute.certificate" 
+              :alt="`Certificado ${attribute.title}`"
+              class="brand-attributes__certificate-image"
             >
-              Consultar Precio
-            </button>
           </div>
         </div>
-      </div>
-      
-      <div class="products__footer">
-        <p class="products__footer-text">
-          ¿Tienes dudas sobre cuál producto es mejor para ti?
-        </p>
-        <button 
-          class="products__consultation-btn"
-          @click="contactWhatsApp('consulta personalizada')"
-        >
-          Solicita una Consulta Gratuita
-        </button>
       </div>
     </div>
   </section>
@@ -160,39 +149,24 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
-@use 'sass:string';
 
-.products {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, $white 0%, color.adjust($BAMBOO-GREEN, $lightness: 48%) 100%);
+.brand-attributes {
+  padding: 4rem 0;
+  background: #f8f9fa;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="0.5" fill="%23#{string.slice(#{$BAMBOO-GREEN}, 2)}" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>') repeat;
-    z-index: 1;
-  }
 
   &__container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    position: relative;
-    z-index: 2;
   }
 
   &__header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
   }
 
   &--visible &__header {
@@ -201,58 +175,64 @@ onMounted(() => {
   }
 
   &__title {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
-    font-weight: 700;
-    color: $BAMBOO-BLACK;
-    margin: 0 0 1rem 0;
-    line-height: 1.2;
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 300;
+    color: #2c3e50;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
     &-highlight {
       color: $BAMBOO-GREEN;
+      font-weight: 400;
     }
   }
 
   &__subtitle {
-    font-size: 1.2rem;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 20%);
-    max-width: 600px;
+    font-size: 1rem;
+    color: #6c757d;
+    font-weight: 300;
+    max-width: 500px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    margin-bottom: 4rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
 
     @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 1rem;
     }
   }
 
   &__card {
     background: $white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba($BAMBOO-GREEN, 0.1);
-    transition: all 0.4s ease;
-    cursor: pointer;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
     opacity: 0;
-    transform: translateY(50px);
-    animation: slideInUp 0.8s ease forwards;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
 
     &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba($BAMBOO-GREEN, 0.2);
-    }
-
-    &-header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     }
   }
 
@@ -261,216 +241,65 @@ onMounted(() => {
     transform: translateY(0);
   }
 
-  &__card-image {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
+  &__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.25rem;
+    color: $BAMBOO-GREEN;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    &:hover .products__card-overlay {
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title-card {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    color: #6c757d;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+  }
+
+  &__certificate {
+    margin-top: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+
+    &:hover {
       opacity: 1;
     }
   }
 
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-
-    .products__card:hover & {
-      transform: scale(1.1);
-    }
-  }
-
-  &__card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.9) 0%, rgba($BAMBOO-BLACK, 0.8) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease;
-    color: $white;
-  }
-
-  &__cta-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  &__whatsapp-icon {
-    font-size: 2rem;
-    animation: bounce 2s infinite;
-  }
-
-  &__card-content {
-    padding: 1.5rem;
-  }
-
-  &__card-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: $BAMBOO-BLACK;
-    margin: 0;
-    line-height: 1.3;
-  }
-
-  &__flavor-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1) 0%, rgba($BAMBOO-GREEN, 0.05) 100%);
-    border: 1px solid rgba($BAMBOO-GREEN, 0.2);
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    align-self: flex-start;
-  }
-
-  &__flavor-icon {
-    font-size: 1.2rem;
-    line-height: 1;
-  }
-
-  &__flavor-text {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: $BAMBOO-GREEN;
-    text-transform: capitalize;
-  }
-
-  &__card-description {
-    font-size: 0.95rem;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 30%);
-    line-height: 1.5;
-    margin: 0 0 1.5rem 0;
-  }
-
-  &__benefits {
-    margin-bottom: 1.5rem;
-  }
-
-  &__benefit {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-
-    &-icon {
-      width: 20px;
-      height: 20px;
-      background: $BAMBOO-GREEN;
-      color: $white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    &-text {
-      font-size: 0.9rem;
-      color: $BAMBOO-BLACK;
-    }
-  }
-
-  &__contact-btn {
-    width: 100%;
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
-    color: $white;
-    border: none;
-    padding: 0.875rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.3);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.4);
-      background: linear-gradient(135deg, color.adjust($BAMBOO-GREEN, $lightness: -5%) 0%, color.adjust($BAMBOO-GREEN, $lightness: -15%) 100%);
-    }
-  }
-
-  &__footer {
-    text-align: center;
-    padding: 2rem;
-    background: rgba($white, 0.8);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease 0.4s;
-  }
-
-  &--visible &__footer {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &__footer-text {
-    font-size: 1.1rem;
-    color: $BAMBOO-BLACK;
-    margin: 0 0 1.5rem 0;
-    font-weight: 500;
-  }
-
-  &__consultation-btn {
-    background: linear-gradient(135deg, $BAMBOO-BLACK 0%, color.adjust($BAMBOO-BLACK, $lightness: -10%) 100%);
-    color: $white;
-    border: none;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba($BAMBOO-BLACK, 0.3);
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba($BAMBOO-BLACK, 0.4);
-    }
+  &__certificate-image {
+    width: 60px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
-@keyframes slideInUp {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(20px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
   }
 }
 </style>
