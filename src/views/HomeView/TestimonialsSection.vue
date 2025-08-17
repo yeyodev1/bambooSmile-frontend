@@ -230,7 +230,7 @@ onMounted(() => {
 
 .testimonials-carousel {
   padding: 80px 0;
-  background: #f2fcf9;
+  background: #e9f5f1;
   position: relative;
 
   @media (max-width: 768px) {
