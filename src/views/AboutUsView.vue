@@ -374,7 +374,8 @@
     position: relative;
     width: 100%;
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio */
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba($BAMBOO-GREEN, 0.2);
