@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import HeroSection from './HeroSection.vue'
-import ProductGallery from './ProductGallery.vue'
-import MarqueeSection from './MarqueeSection.vue'
-import FeaturedProductSection from './FeaturedProductSection.vue'
-import LifestyleSection from '../../components/globals/LifestyleSection.vue'
-import SustainableMarquee from '../../components/globals/SustainableMarquee.vue'
+import ProductCarouselHero from './ProductCarouselHero.vue'
+import BrandAttributesSection from './BrandAttributesSection.vue'
+import ProductMarqueeSection from './ProductMarqueeSection.vue'
+import ProductShowcaseSection from './ProductShowcaseSection.vue'
+import BenefitsSection from '../../components/globals/BenefitsSection.vue'
+import SustainabilityMarquee from '../../components/globals/SustainabilityMarquee.vue'
 import TestimonialsSection from './TestimonialsSection.vue'
-import CEOVideoSection from './CEOVideoSection.vue'
+import FounderMessageSection from './FounderMessageSection.vue'
 import CertificationsSection from './CertificationsSection.vue'
 
 const scrollToProducts = () => {
@@ -19,19 +19,19 @@ const scrollToProducts = () => {
 
 <template>
   <div class="home-view">
-    <HeroSection @scroll-to-products="scrollToProducts" />
-    <ProductGallery id="productos" />
-    <MarqueeSection />
-    <FeaturedProductSection />
-    <LifestyleSection />
-    <SustainableMarquee />
+    <ProductCarouselHero @scroll-to-products="scrollToProducts" />
+    <BrandAttributesSection id="productos" />
+    <ProductMarqueeSection />
+    <ProductShowcaseSection />
+    <BenefitsSection />
+    <SustainabilityMarquee />
+    <FounderMessageSection />
     <TestimonialsSection id="testimonios" />
-    <CEOVideoSection />
-    <!-- <CertificationsSection id="certificaciones" /> -->
-    <!-- <CEOVideoSection /> -->
-    <!-- <ThirdCTA /> -->
-    <!-- <CertificationsSection /> -->
-  </div>
+     <!-- <CertificationsSection id="certificaciones" /> -->
+     <!-- <CEOVideoSection /> -->
+     <!-- <ThirdCTA /> -->
+     <!-- <CertificationsSection /> -->
+   </div>
 </template>
 
 <style lang="scss" scoped>
