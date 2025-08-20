@@ -244,7 +244,7 @@ onMounted(() => {
 
   &__description {
     font-size: 0.8rem;
-    color: $neutral-500;
+    color: grey;
     font-weight: 300;
     line-height: 1.4;
     margin: 0;
