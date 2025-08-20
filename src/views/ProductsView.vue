@@ -197,7 +197,7 @@ const goToCart = () => {
 .products-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2d5016;
+  color: #1f2937;
   margin-bottom: 1rem;
 
   @media (max-width: 768px) {
@@ -211,7 +211,7 @@ const goToCart = () => {
 
 .products-subtitle {
   font-size: 1.125rem;
-  color: #666;
+  color: #6b7280;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -257,14 +257,14 @@ const goToCart = () => {
   }
 
   &:hover {
-    border-color: #84cc16;
-    background: #f7fee7;
+    border-color: #374151;
+    background: #f9fafb;
     transform: translateY(-2px);
   }
 
   &.active {
-    background: #84cc16;
-    border-color: #84cc16;
+    background: #374151;
+    border-color: #374151;
     color: white;
     transform: translateY(-2px);
   }
@@ -398,8 +398,8 @@ const goToCart = () => {
 
 .view-product-btn {
   background: transparent;
-  color: #2d5016;
-  border: 2px solid #2d5016;
+  color: #374151;
+  border: 2px solid #374151;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -413,7 +413,7 @@ const goToCart = () => {
   }
 
   &:hover {
-    background: #2d5016;
+    background: #374151;
     color: white;
     transform: translateY(-1px);
   }
@@ -426,7 +426,7 @@ const goToCart = () => {
 .product-price {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #2d5016;
+  color: #1f2937;
 
   @media (max-width: 768px) {
     font-size: 1.125rem;
@@ -434,7 +434,7 @@ const goToCart = () => {
 }
 
 .add-to-cart-btn {
-  background: #84cc16;
+  background: #1f2937;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -456,7 +456,7 @@ const goToCart = () => {
   }
 
   &:hover:not(:disabled) {
-    background: #65a30d;
+    background: #111827;
     transform: translateY(-1px);
   }
 
@@ -562,7 +562,7 @@ const goToCart = () => {
 }
 
 .toast-cart-btn {
-  background: #84cc16;
+  background: #1f2937;
   color: white;
   border: none;
   padding: 0.5rem 0.75rem;
@@ -579,7 +579,7 @@ const goToCart = () => {
   }
   
   &:hover {
-    background: #65a30d;
+    background: #111827;
     transform: translateY(-1px);
   }
   
