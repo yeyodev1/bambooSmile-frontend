@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { useCartStore } from '@/stores/cart'
-import { useProductsStore } from '@/stores/products'
-import { higieneBucal, type HigieneBucal } from '@/data/higiene-bucal'
-import { cepillos, type Cepillo } from '@/data/cepillos'
+import { higieneBucal } from '@/data/higiene-bucal'
+import { cepillos } from '@/data/cepillos'
 
 interface ProductWithRating {
   name: string
@@ -16,12 +14,9 @@ interface ProductWithRating {
 }
 
 const router = useRouter()
-const cartStore = useCartStore()
-const productsStore = useProductsStore()
 
 const cardsVisible = ref<boolean[]>([])
 
-// Productos recomendados - mix de cepillos e higiene bucal
 const recommendedProducts = computed((): ProductWithRating[] => [
   {
     ...cepillos[0], // Cepillo bambooEco
@@ -57,25 +52,10 @@ const generateStars = (rating: number) => {
   }
 }
 
-// Función para añadir productos al carrito (opcional - se puede remover si no se usa)
-
-const addToCart = (product: ProductWithRating, event?: Event) => {
-  cartStore.addToCart(product as any, 1)
-
-  // Mostrar feedback visual temporal
-  const button = event?.target as HTMLButtonElement
-  if (button) {
-    const originalText = button.textContent
-    button.textContent = '¡Añadido! ✓'
-    button.style.background = 'var(--neutral-700)'
-    button.style.color = 'var(--neutral-50)'
-
-    setTimeout(() => {
-      button.textContent = originalText
-      button.style.background = ''
-      button.style.color = ''
-    }, 2000)
-  }
+// Navegar al detalle del producto
+const goToProduct = (product: ProductWithRating) => {
+  // Usar el nombre exacto del producto codificado para la URL
+  router.push(`/producto/${encodeURIComponent(product.name)}`)
 }
 
 onMounted(() => {
@@ -114,6 +94,7 @@ onMounted(() => {
           :key="product.name"
           class="product-item"
           :class="{ 'product-item--visible': cardsVisible[index] }"
+          @click="goToProduct(product)"
         >
           <div class="product-item__image">
             <img 
@@ -170,15 +151,15 @@ onMounted(() => {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
-    
+
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
     @media (min-width: 1200px) {
       grid-template-columns: repeat(5, 1fr);
     }
@@ -193,10 +174,19 @@ onMounted(() => {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.6s ease;
-  
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
   &--visible {
     opacity: 1;
     transform: translateY(0);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 
   &__image {
@@ -206,13 +196,13 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    
+
     img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
       transition: transform 0.3s ease;
-      
+
       &:hover {
         transform: scale(1.05);
       }
@@ -253,12 +243,12 @@ onMounted(() => {
   &__star {
     font-size: 0.8rem;
     color: $neutral-400;
-    
+
     &--full,
     &--half {
       color: $neutral-400;
     }
-    
+
     &--empty {
       color: $neutral-300;
     }
