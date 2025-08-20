@@ -124,7 +124,7 @@ onMounted(() => {
 
 .brand-attributes {
   padding: 4rem 0;
-  background: $neutral-100;
+  background: #dae6df;
   position: relative;
 
   &__container {
