@@ -122,7 +122,7 @@ onMounted(() => {
 
 .brand-attributes {
   padding: 4rem 0;
-  background: #f8f9fa;
+  background: $neutral-100;
   position: relative;
 
   &__container {
@@ -147,20 +147,20 @@ onMounted(() => {
   &__title {
     font-size: clamp(2rem, 3vw, 2.5rem);
     font-weight: 300;
-    color: #2c3e50;
+    color: $neutral-900;
     margin: 0 0 0.75rem 0;
     line-height: 1.3;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
     &-highlight {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       font-weight: 400;
     }
   }
 
   &__subtitle {
     font-size: 1rem;
-    color: #6c757d;
+    color: $neutral-600;
     font-weight: 300;
     max-width: 500px;
     margin: 0 auto;
@@ -189,12 +189,12 @@ onMounted(() => {
   }
 
   &__card {
-    background: $white;
+    background: $neutral-50;
     border-radius: 12px;
     padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 8px rgba($neutral-900, 0.04);
+    border: 1px solid rgba($neutral-300, 0.3);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
@@ -202,7 +202,7 @@ onMounted(() => {
 
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 25px rgba($neutral-900, 0.08);
     }
   }
 
@@ -215,7 +215,7 @@ onMounted(() => {
     width: 48px;
     height: 48px;
     margin: 0 auto 1.25rem;
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,7 +228,7 @@ onMounted(() => {
   &__title-card {
     font-size: 1rem;
     font-weight: 500;
-    color: #2c3e50;
+    color: $neutral-900;
     margin: 0 0 0.75rem 0;
     line-height: 1.3;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -236,7 +236,7 @@ onMounted(() => {
 
   &__description {
     font-size: 0.875rem;
-    color: #6c757d;
+    color: $neutral-600;
     font-weight: 300;
     line-height: 1.4;
     margin: 0 0 1rem 0;
@@ -256,7 +256,7 @@ onMounted(() => {
     width: 60px;
     height: auto;
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba($neutral-900, 0.1) 0px 4px 12px;
   }
 }
 
