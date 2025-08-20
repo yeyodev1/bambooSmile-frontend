@@ -151,20 +151,7 @@ onMounted(() => {
           </template>
         </div>
         
-        <!-- Tercer conjunto de contenido (para loop más suave) -->
-        <div class="marquee-content">
-          <template v-for="(item, index) in marqueeContent" :key="`third-${index}`">
-            <span v-if="item.type === 'text'" class="marquee-text">{{ item.content }}</span>
-            <div v-else-if="item.type === 'product'" class="marquee-product">
-              <img 
-                :src="item.image" 
-                :alt="item.name"
-                class="marquee-product-image"
-              >
-              <span class="marquee-product-name">{{ item.name }}</span>
-            </div>
-          </template>
-        </div>
+
       </div>
     </div>
   </section>
@@ -192,7 +179,7 @@ onMounted(() => {
 
 .marquee-track {
   display: flex;
-  animation: marqueeScroll 3s linear infinite;
+  animation: marqueeScroll 10s linear infinite;
   will-change: transform;
 }
 
@@ -202,7 +189,7 @@ onMounted(() => {
   flex-shrink: 0;
   gap: 3rem;
   padding-right: 3rem;
-  min-width: 100vw;
+  width: max-content;
 
   @media (max-width: 768px) {
     gap: 2rem;
@@ -271,7 +258,7 @@ onMounted(() => {
   }
 
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(-100%);
   }
 }
 
