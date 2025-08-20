@@ -155,35 +155,13 @@ onMounted(() => {
 
         <!-- Contenedor del testimonio -->
         <div class="testimonials-carousel__content">
-          <!-- Icono de comillas -->
-          <div class="testimonials-carousel__quote-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-            </svg>
-          </div>
-
-          <!-- Testimonio con animación de cubo -->
+          <!-- Testimonio con transición suave -->
           <div 
             class="testimonials-carousel__testimonial"
             :class="{
-              'testimonials-carousel__testimonial--animating-next': isAnimating && animationDirection === 'next',
-              'testimonials-carousel__testimonial--animating-prev': isAnimating && animationDirection === 'prev'
+              'testimonials-carousel__testimonial--animating': isAnimating
             }"
           >
-            <!-- Rating con estrellas -->
-            <div class="testimonials-carousel__rating">
-              <div 
-                v-for="(star, index) in generateStars(currentTestimonial.rating)"
-                :key="index"
-                class="testimonials-carousel__star"
-                :class="`testimonials-carousel__star--${star}`"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-              </div>
-            </div>
-
             <!-- Texto del testimonio -->
             <blockquote class="testimonials-carousel__text">
               {{ currentTestimonial.text }}
@@ -207,30 +185,17 @@ onMounted(() => {
           </svg>
         </button>
       </div>
-
-      <!-- Indicadores (dots) -->
-      <div class="testimonials-carousel__indicators">
-        <button
-          v-for="(testimonial, index) in testimonials"
-          :key="testimonial.id"
-          @click="goToSlide(index)"
-          class="testimonials-carousel__dot"
-          :class="{ 'testimonials-carousel__dot--active': index === currentIndex }"
-          :disabled="isAnimating"
-        >
-          <span class="sr-only">Ir al testimonio {{ index + 1 }}</span>
-        </button>
-      </div>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
 @use 'sass:color';
+@import '@/styles/colorVariables.module.scss';
 
 .testimonials-carousel {
   padding: 80px 0;
-  background: $neutral-100;
+  background: transparent;
   position: relative;
 
   @media (max-width: 768px) {
@@ -238,7 +203,7 @@ onMounted(() => {
   }
 
   &__container {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -278,59 +243,52 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    margin-bottom: 40px;
     position: relative;
-    min-height: 300px;
+    min-height: 200px;
 
     @media (max-width: 768px) {
       gap: 20px;
-      min-height: 250px;
+      min-height: 180px;
     }
   }
 
   &__nav {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: $neutral-50;
-    border: 2px solid $neutral-300;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba($neutral-900, 0.1);
     z-index: 2;
+    opacity: 0.6;
 
     &:hover:not(:disabled) {
-      background: $accent-600;
-      border-color: $accent-600;
+      opacity: 1;
       transform: scale(1.1);
-
-      svg {
-        color: $neutral-50;
-      }
     }
 
     &:disabled {
-      opacity: 0.5;
+      opacity: 0.3;
       cursor: not-allowed;
     }
 
     svg {
-      width: 20px;
-      height: 20px;
-      color: $neutral-600;
-      transition: color 0.3s ease;
+      width: 24px;
+      height: 24px;
+      color: $neutral-700;
+      transition: all 0.3s ease;
     }
 
     @media (max-width: 768px) {
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
 
       svg {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
@@ -339,159 +297,48 @@ onMounted(() => {
     flex: 1;
     max-width: 600px;
     position: relative;
-    perspective: 1000px;
-  }
-
-  &__quote-icon {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 40px;
-    opacity: 0.1;
-    z-index: 1;
-
-    svg {
-      width: 100%;
-      height: 100%;
-      color: $accent-600;
-    }
-
-    @media (max-width: 768px) {
-      width: 30px;
-      height: 30px;
-      top: -15px;
-    }
   }
 
   &__testimonial {
-    background: $neutral-50;
-    border-radius: 20px;
-    padding: 40px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba($neutral-900, 0.1);
     position: relative;
-    z-index: 2;
-    transform-style: preserve-3d;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 
-    @media (max-width: 768px) {
-      padding: 30px 20px;
-      border-radius: 15px;
-    }
-
-    // Animación de cubo 3D hacia arriba (salida)
-    &--animating-next {
-      animation: cubeRotateUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    // Animación de cubo 3D hacia arriba (salida) para anterior
-    &--animating-prev {
-      animation: cubeRotateDown 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-  }
-
-  &__rating {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: 20px;
-  }
-
-  &__star {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-
-    svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    &--full svg {
-      color: #ffc107;
-    }
-
-    &--half svg {
-      color: #ffc107;
-      opacity: 0.5;
-    }
-
-    &--empty svg {
-      color: #e9ecef;
-    }
-
-    @media (max-width: 768px) {
-      width: 18px;
-      height: 18px;
+    &--animating {
+      opacity: 0.3;
+      transform: translateY(10px);
     }
   }
 
   &__text {
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.6;
-    color: $neutral-900;
-    margin-bottom: 20px;
-    font-style: normal;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $neutral-800;
+    margin-bottom: 24px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', serif;
 
     @media (max-width: 768px) {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
       font-size: 1.1rem;
-      line-height: 1.5;
     }
   }
 
   &__author {
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 500;
     color: $neutral-600;
     font-style: normal;
     letter-spacing: 0.5px;
 
     @media (max-width: 768px) {
       font-size: 0.9rem;
-    }
-  }
-
-  &__indicators {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  &__dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background: $neutral-300;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover:not(:disabled) {
-      background: color.adjust($accent-600, $lightness: 20%);
-      transform: scale(1.2);
-    }
-
-    &--active {
-      background: $accent-600;
-      transform: scale(1.3);
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-
-    @media (max-width: 768px) {
-      width: 10px;
-      height: 10px;
-      gap: 8px;
     }
   }
 
@@ -503,89 +350,6 @@ onMounted(() => {
   &--visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  // Clase para ocultar texto durante scroll
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-}
-
-// Animaciones de cubo 3D
-@keyframes cubeRotateUp {
-  0% {
-    transform: rotateX(0deg) translateZ(0);
-    opacity: 1;
-  }
-
-  50% {
-    transform: rotateX(-90deg) translateZ(150px);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: rotateX(-180deg) translateZ(0);
-    opacity: 0;
-  }
-}
-
-@keyframes cubeRotateDown {
-  0% {
-    transform: rotateX(0deg) translateZ(0);
-    opacity: 1;
-  }
-
-  50% {
-    transform: rotateX(90deg) translateZ(150px);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: rotateX(180deg) translateZ(0);
-    opacity: 0;
-  }
-}
-
-// Animación de entrada para el nuevo testimonio
-@keyframes cubeEnterFromBottom {
-  0% {
-    transform: rotateX(180deg) translateZ(0);
-    opacity: 0;
-  }
-
-  50% {
-    transform: rotateX(90deg) translateZ(150px);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: rotateX(0deg) translateZ(0);
-    opacity: 1;
-  }
-}
-
-@keyframes cubeEnterFromTop {
-  0% {
-    transform: rotateX(-180deg) translateZ(0);
-    opacity: 0;
-  }
-
-  50% {
-    transform: rotateX(-90deg) translateZ(150px);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: rotateX(0deg) translateZ(0);
-    opacity: 1;
   }
 }
 </style>
