@@ -98,19 +98,20 @@ onMounted(() => {
           class="brand-attributes__card"
           :style="{ animationDelay: `${index * 0.1}s` }"
         >
-          <div class="brand-attributes__icon">
+          <div class="brand-attributes__icon" v-if="!attribute.certificate">
             <i :class="attribute.icon"></i>
           </div>
-          <h3 class="brand-attributes__title-card">{{ attribute.title }}</h3>
-          <p class="brand-attributes__description">{{ attribute.description }}</p>
           
-          <div v-if="attribute.certificate" class="brand-attributes__certificate">
+          <div v-if="attribute.certificate" class="brand-attributes__certificate-main">
             <img 
               :src="attribute.certificate" 
               :alt="`Certificado ${attribute.title}`"
-              class="brand-attributes__certificate-image"
+              class="brand-attributes__certificate-main-image"
             >
           </div>
+          
+          <h3 class="brand-attributes__title-card">{{ attribute.title }}</h3>
+          <p class="brand-attributes__description">{{ attribute.description }}</p>
         </div>
       </div>
     </div>
@@ -119,6 +120,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
+@import '@/styles/colorVariables.module.scss';
 
 .brand-attributes {
   padding: 4rem 0;
@@ -242,21 +244,26 @@ onMounted(() => {
     margin: 0 0 1rem 0;
   }
 
-  &__certificate {
-    margin-top: 1rem;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+  &__certificate-main {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 
     &:hover {
-      opacity: 1;
+      transform: scale(1.1);
     }
   }
 
-  &__certificate-image {
-    width: 60px;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: rgba($neutral-900, 0.1) 0px 4px 12px;
+  &__certificate-main-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba($neutral-900, 0.1);
   }
 }
 
