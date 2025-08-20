@@ -162,10 +162,11 @@ const distributorWhatsApp = () => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
 
 .footer {
-  background: $BAMBOO-BLACK;
-  color: $white;
+  background: $neutral-900;
+  color: $neutral-50;
   margin-top: auto;
 
   &__container {
@@ -251,7 +252,7 @@ const distributorWhatsApp = () => {
     }
 
     &-title {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       font-size: 1.1rem;
       font-weight: 600;
       margin: 0;
@@ -268,43 +269,43 @@ const distributorWhatsApp = () => {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      color: rgba($white, 0.8);
+      color: rgba($neutral-50, 0.8);
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s ease;
 
       &:hover {
-        color: $BAMBOO-GREEN;
+        color: $accent-600;
       }
 
       i {
         width: 16px;
-        color: $BAMBOO-GREEN;
+        color: $accent-600;
         flex-shrink: 0;
       }
 
       &--about,
-       &--work {
-         margin-top: 0.5rem;
-         padding-top: 0.75rem;
-         border-top: 1px solid rgba($white, 0.1);
-         font-weight: 500;
+      &--work {
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba($neutral-50, 0.1);
+        font-weight: 500;
 
-         &:hover {
-           color: $BAMBOO-GREEN;
-           transform: translateX(3px);
-         }
+        &:hover {
+          color: $accent-600;
+          transform: translateX(3px);
+        }
 
-         i {
-           color: $BAMBOO-GREEN;
-         }
-       }
+        i {
+          color: $accent-600;
+        }
+      }
 
-       &--about {
-         border-top: none;
-         margin-top: 0.5rem;
-         padding-top: 0.5rem;
-       }
+      &--about {
+        border-top: none;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+      }
     }
   }
 
@@ -319,7 +320,7 @@ const distributorWhatsApp = () => {
     }
 
     &-title {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       font-size: 1.1rem;
       font-weight: 600;
       margin: 0;
@@ -341,10 +342,10 @@ const distributorWhatsApp = () => {
       justify-content: center;
       width: 44px;
       height: 44px;
-      background: rgba($BAMBOO-GREEN, 0.1);
-      border: 1px solid rgba($BAMBOO-GREEN, 0.2);
+      background: rgba($accent-600, 0.1);
+      border: 1px solid rgba($accent-600, 0.2);
       border-radius: 50%;
-      color: $white;
+      color: $neutral-50;
       text-decoration: none;
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
@@ -355,10 +356,10 @@ const distributorWhatsApp = () => {
       }
 
       &:hover {
-        background: $BAMBOO-GREEN;
-        border-color: $BAMBOO-GREEN;
+        background: $accent-600;
+        border-color: $accent-600;
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.4);
+        box-shadow: 0 6px 20px rgba($accent-600, 0.4);
       }
     }
 
@@ -372,7 +373,7 @@ const distributorWhatsApp = () => {
   }
 
   &__bottom {
-    border-top: 1px solid rgba($white, 0.1);
+    border-top: 1px solid rgba($neutral-50, 0.1);
     padding: 1.5rem 0;
 
     &-content {
@@ -414,7 +415,7 @@ const distributorWhatsApp = () => {
   }
 
   &__copyright {
-    color: rgba($white, 0.7);
+    color: rgba($neutral-50, 0.7);
     font-size: 0.85rem;
     margin: 0;
 
@@ -424,7 +425,7 @@ const distributorWhatsApp = () => {
   }
 
   &__developer {
-    color: rgba($white, 0.6);
+    color: rgba($neutral-50, 0.6);
     font-size: 0.8rem;
     margin: 0;
 
@@ -434,20 +435,20 @@ const distributorWhatsApp = () => {
   }
 
   &__developer-link {
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
 
     &:hover {
-      color: lighten($BAMBOO-GREEN, 10%);
-      border-bottom-color: $BAMBOO-GREEN;
+      color: color.adjust($accent-600, $lightness: 10%);
+      border-bottom-color: $accent-600;
     }
   }
 
   &__policies-link {
-    color: rgba($white, 0.8);
+    color: rgba($neutral-50, 0.8);
     text-decoration: none;
     font-size: 0.85rem;
     transition: all 0.3s ease;
@@ -459,8 +460,8 @@ const distributorWhatsApp = () => {
     }
 
     &:hover {
-      color: $BAMBOO-GREEN;
-      border-bottom-color: $BAMBOO-GREEN;
+      color: $accent-600;
+      border-bottom-color: $accent-600;
     }
   }
 
@@ -477,14 +478,14 @@ const distributorWhatsApp = () => {
     }
 
     &-title {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       font-size: 1.1rem;
       font-weight: 600;
       margin: 0;
     }
 
     &-description {
-      color: rgba($white, 0.85);
+      color: rgba($neutral-50, 0.85);
       font-size: 0.9rem;
       line-height: 1.5;
       margin: 0;
@@ -499,8 +500,8 @@ const distributorWhatsApp = () => {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: $BAMBOO-GREEN;
-      color: $white;
+      background: $accent-600;
+      color: $neutral-50;
       border: none;
       padding: 0.75rem 1.25rem;
       border-radius: 25px;
@@ -509,13 +510,13 @@ const distributorWhatsApp = () => {
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
-      border: 2px solid $BAMBOO-GREEN;
+      border: 2px solid $accent-600;
 
       &:hover {
         background: transparent;
-        color: $BAMBOO-GREEN;
+        color: $accent-600;
         transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.3);
+        box-shadow: 0 4px 15px rgba($accent-600, 0.3);
       }
 
       i {
