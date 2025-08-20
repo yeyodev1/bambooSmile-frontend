@@ -138,7 +138,7 @@ onMounted(() => {
 @import '@/styles/colorVariables.module.scss';
 
 .product-showcase {
-  background: $neutral-50;
+  background: #f8f9fa;
   padding: 4rem 0;
 
   &__container {
