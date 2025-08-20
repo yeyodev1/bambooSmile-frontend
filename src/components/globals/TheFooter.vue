@@ -181,22 +181,21 @@ const distributorWhatsApp = () => {
 
   &__content {
     padding: 3rem 0 2rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
     text-align: center;
+    justify-content: center;
 
     @media (min-width: 768px) {
-      grid-template-columns: 2fr 1fr 1fr 1fr;
       text-align: left;
-      gap: 2rem;
+      justify-content: space-between;
       padding: 4rem 0 2.5rem;
     }
 
     @media (min-width: 1024px) {
-      gap: 3rem;
+      gap: 2.5rem;
     }
-
   }
 
   &__brand {
@@ -204,9 +203,13 @@ const distributorWhatsApp = () => {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    flex: 1 1 100%;
+    min-width: 280px;
 
     @media (min-width: 768px) {
       align-items: flex-start;
+      flex: 1 1 35%;
+      min-width: 300px;
     }
   }
 
@@ -246,9 +249,13 @@ const distributorWhatsApp = () => {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    flex: 1 1 100%;
+    min-width: 250px;
 
     @media (min-width: 768px) {
       align-items: flex-start;
+      flex: 1 1 35%;
+      min-width: 280px;
     }
 
     &-title {
@@ -314,9 +321,13 @@ const distributorWhatsApp = () => {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    flex: 1 1 100%;
+    min-width: 200px;
 
     @media (min-width: 768px) {
       align-items: flex-start;
+      flex: 1 1 35%;
+      min-width: 220px;
     }
 
     &-title {
@@ -471,10 +482,14 @@ const distributorWhatsApp = () => {
     align-items: center;
     gap: 1rem;
     text-align: center;
+    flex: 1 1 100%;
+    min-width: 250px;
 
     @media (min-width: 768px) {
       align-items: flex-start;
       text-align: left;
+      flex: 1 1 35%;
+      min-width: 280px;
     }
 
     &-title {
