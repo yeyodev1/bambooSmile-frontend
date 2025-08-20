@@ -613,8 +613,8 @@ const confirmDelete = () => {
 
 .continue-btn {
   background: white;
-  color: #84cc16;
-  border: 2px solid #84cc16;
+  color: #2c5aa0;
+  border: 2px solid #2c5aa0;
   padding: 1rem 2rem;
   border-radius: 0.75rem;
   font-size: 1.125rem;
@@ -623,13 +623,13 @@ const confirmDelete = () => {
   transition: all 0.3s ease;
 
   &:hover {
-    background: #84cc16;
+    background: #2c5aa0;
     color: white;
   }
 }
 
 .checkout-btn {
-  background: #84cc16;
+  background: #2c5aa0;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -640,7 +640,7 @@ const confirmDelete = () => {
   transition: all 0.3s ease;
 
   &:hover {
-    background: #65a30d;
+    background: #1e40af;
     transform: translateY(-2px);
   }
 }
@@ -672,7 +672,7 @@ const confirmDelete = () => {
 }
 
 .shop-btn {
-  background: #84cc16;
+  background: #2c5aa0;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -683,7 +683,7 @@ const confirmDelete = () => {
   transition: all 0.3s ease;
 
   &:hover {
-    background: #65a30d;
+    background: #1e40af;
     transform: translateY(-2px);
   }
 }
@@ -875,7 +875,7 @@ const confirmDelete = () => {
 }
 
 .submit-btn {
-  background: #84cc16;
+  background: #2c5aa0;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -886,7 +886,7 @@ const confirmDelete = () => {
   position: relative;
 
   &:hover:not(:disabled) {
-    background: #65a30d;
+    background: #1e40af;
   }
 
   &:disabled {
