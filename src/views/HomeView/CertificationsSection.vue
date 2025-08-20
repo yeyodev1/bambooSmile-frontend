@@ -115,7 +115,7 @@ onMounted(() => {
 
 .certifications {
   padding: 80px 0;
-  background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+  background: linear-gradient(135deg, $neutral-100 0%, $neutral-200 100%);
   position: relative;
   overflow: hidden;
 
@@ -127,8 +127,8 @@ onMounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.03) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 20% 50%, rgba($accent-600, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba($accent-600, 0.03) 0%, transparent 50%);
     pointer-events: none;
   }
 
@@ -159,7 +159,7 @@ onMounted(() => {
   &__title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 16px;
     line-height: 1.2;
 
@@ -172,7 +172,7 @@ onMounted(() => {
     }
 
     &-highlight {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       position: relative;
 
       &::after {
@@ -182,7 +182,7 @@ onMounted(() => {
         left: 0;
         width: 100%;
         height: 3px;
-        background: linear-gradient(90deg, $BAMBOO-GREEN, $BAMBOO-ORANGE);
+        background: linear-gradient(90deg, $accent-600, color.adjust($accent-600, $lightness: 10%));
         border-radius: 2px;
       }
     }
@@ -190,7 +190,7 @@ onMounted(() => {
 
   &__subtitle {
     font-size: 1.125rem;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 20%);
+    color: $neutral-600;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -220,11 +220,11 @@ onMounted(() => {
     transition-delay: var(--delay);
 
     &-inner {
-      background: $white;
+      background: $neutral-50;
       border-radius: 16px;
       padding: 30px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(76, 175, 80, 0.1);
+      box-shadow: 0 8px 32px rgba($neutral-900, 0.08);
+      border: 1px solid rgba($accent-600, 0.1);
       transition: all 0.3s ease;
       height: 100%;
       display: flex;
@@ -234,8 +234,8 @@ onMounted(() => {
 
       &:hover {
         transform: translateY(-8px);
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
-        border-color: rgba(76, 175, 80, 0.2);
+        box-shadow: 0 16px 48px rgba($neutral-900, 0.12);
+        border-color: rgba($accent-600, 0.2);
       }
 
       @media (max-width: 768px) {
@@ -250,11 +250,11 @@ onMounted(() => {
     margin-bottom: 24px;
     border-radius: 12px;
     overflow: hidden;
-    background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+    background: linear-gradient(135deg, $neutral-100 0%, $neutral-200 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(76, 175, 80, 0.1);
+    border: 2px solid rgba($accent-600, 0.1);
 
     @media (max-width: 768px) {
       width: 100px;
@@ -281,7 +281,7 @@ onMounted(() => {
   &__card-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 8px;
     line-height: 1.3;
 
@@ -292,7 +292,7 @@ onMounted(() => {
 
   &__card-description {
     font-size: 0.95rem;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 30%);
+    color: $neutral-600;
     line-height: 1.5;
   }
 
@@ -322,16 +322,16 @@ onMounted(() => {
     justify-content: center;
     gap: 12px;
     padding: 16px 20px;
-    background: $white;
+    background: $neutral-50;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(76, 175, 80, 0.1);
+    box-shadow: 0 4px 16px rgba($neutral-900, 0.06);
+    border: 1px solid rgba($accent-600, 0.1);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-      border-color: rgba(76, 175, 80, 0.2);
+      box-shadow: 0 8px 24px rgba($neutral-900, 0.1);
+      border-color: rgba($accent-600, 0.2);
     }
 
     @media (max-width: 768px) {
@@ -347,9 +347,9 @@ onMounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, $BAMBOO-GREEN, color.adjust($BAMBOO-GREEN, $lightness: 10%));
+    background: linear-gradient(135deg, $accent-600, color.adjust($accent-600, $lightness: 10%));
     border-radius: 50%;
-    color: $white;
+    color: $neutral-50;
     font-weight: 600;
 
     @media (max-width: 768px) {
@@ -362,7 +362,7 @@ onMounted(() => {
   &__feature-text {
     font-size: 0.95rem;
     font-weight: 600;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
 
     @media (max-width: 768px) {
       font-size: 0.875rem;
