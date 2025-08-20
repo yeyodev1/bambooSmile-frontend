@@ -170,41 +170,41 @@ onMounted(() => {
   }
 
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-
-    @media (max-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
 
     @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
+      gap: 2rem 3rem;
     }
 
     @media (max-width: 480px) {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+      gap: 2rem 1rem;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
   &__card {
-    background: $neutral-50;
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
     text-align: center;
-    box-shadow: 0 2px 8px rgba($neutral-900, 0.04);
-    border: 1px solid rgba($neutral-300, 0.3);
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease forwards;
+    flex: 0 0 auto;
+    min-width: 180px;
+    max-width: 220px;
 
     &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 25px rgba($neutral-900, 0.08);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+      min-width: 160px;
+      max-width: 200px;
     }
   }
 
@@ -214,56 +214,68 @@ onMounted(() => {
   }
 
   &__icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 1.25rem;
-    color: $accent-600;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 1rem;
+    color: $neutral-700;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.3s ease;
 
     i {
-      font-size: 2rem;
+      font-size: 1.75rem;
+    }
+
+    .brand-attributes__card:hover & {
+      color: $accent-600;
     }
   }
 
   &__title-card {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: $neutral-900;
-    margin: 0 0 0.75rem 0;
+    margin: 0 0 0.5rem 0;
     line-height: 1.3;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.01em;
   }
 
   &__description {
-    font-size: 0.875rem;
-    color: $neutral-600;
+    font-size: 0.8rem;
+    color: $neutral-500;
     font-weight: 300;
     line-height: 1.4;
-    margin: 0 0 1rem 0;
+    margin: 0;
+    opacity: 0.9;
   }
 
   &__certificate-main {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 1.25rem;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 
   &__certificate-main-image {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba($neutral-900, 0.1);
+    border-radius: 6px;
+    filter: grayscale(0.2);
+    transition: filter 0.3s ease;
+
+    .brand-attributes__card:hover & {
+      filter: grayscale(0);
+    }
   }
 }
 
