@@ -226,11 +226,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@import '@/styles/colorVariables.module.scss';
+@use 'sass:color';
 
 .testimonials-carousel {
   padding: 80px 0;
-  background: #e9f5f1;
+  background: $neutral-100;
   position: relative;
 
   @media (max-width: 768px) {
@@ -256,7 +256,7 @@ onMounted(() => {
   &__title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 16px;
     line-height: 1.2;
 
@@ -270,7 +270,7 @@ onMounted(() => {
   }
 
   &__title-highlight {
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
   }
 
   &__wrapper {
@@ -292,23 +292,23 @@ onMounted(() => {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: white;
-    border: 2px solid #e9ecef;
+    background: $neutral-50;
+    border: 2px solid $neutral-300;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba($neutral-900, 0.1);
     z-index: 2;
 
     &:hover:not(:disabled) {
-      background: $BAMBOO-GREEN;
-      border-color: $BAMBOO-GREEN;
+      background: $accent-600;
+      border-color: $accent-600;
       transform: scale(1.1);
 
       svg {
-        color: white;
+        color: $neutral-50;
       }
     }
 
@@ -320,7 +320,7 @@ onMounted(() => {
     svg {
       width: 20px;
       height: 20px;
-      color: #6c757d;
+      color: $neutral-600;
       transition: color 0.3s ease;
     }
 
@@ -355,7 +355,7 @@ onMounted(() => {
     svg {
       width: 100%;
       height: 100%;
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
     }
 
     @media (max-width: 768px) {
@@ -366,11 +366,11 @@ onMounted(() => {
   }
 
   &__testimonial {
-    background: white;
+    background: $neutral-50;
     border-radius: 20px;
     padding: 40px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba($neutral-900, 0.1);
     position: relative;
     z-index: 2;
     transform-style: preserve-3d;
@@ -436,7 +436,7 @@ onMounted(() => {
     font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.6;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 20px;
     font-style: normal;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -450,7 +450,7 @@ onMounted(() => {
   &__author {
     font-size: 1rem;
     font-weight: 300;
-    color: #6c757d;
+    color: $neutral-600;
     font-style: normal;
     letter-spacing: 0.5px;
 
@@ -470,17 +470,17 @@ onMounted(() => {
     height: 12px;
     border-radius: 50%;
     border: none;
-    background: #e9ecef;
+    background: $neutral-300;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover:not(:disabled) {
-      background: lighten($BAMBOO-GREEN, 20%);
+      background: color.adjust($accent-600, $lightness: 20%);
       transform: scale(1.2);
     }
 
     &--active {
-      background: $BAMBOO-GREEN;
+      background: $accent-600;
       transform: scale(1.3);
     }
 
