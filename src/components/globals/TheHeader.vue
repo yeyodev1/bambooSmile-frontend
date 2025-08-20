@@ -100,7 +100,6 @@ const goToAboutUs = () => {
           <button class="nav__link" @click="goToProducts">Productos</button>
           <button class="nav__link" @click="goToAboutUs">Nosotros</button>
           <button class="nav__link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
-          <button class="nav__link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
         </div>
 
         <!-- Desktop Actions (Right side) -->
@@ -143,7 +142,6 @@ const goToAboutUs = () => {
             <button class="nav__mobile-link" @click="goToProducts">Productos</button>
             <button class="nav__mobile-link" @click="goToAboutUs">Nosotros</button>
             <button class="nav__mobile-link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
-            <button class="nav__mobile-link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
             
             <!-- WhatsApp Contact Button -->
             <button class="nav__mobile-link nav__mobile-link--contact" @click="contactWhatsApp">
@@ -168,16 +166,18 @@ const goToAboutUs = () => {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1rem 0;
 
   &--scrolled {
     padding: 0.75rem 0;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
 
