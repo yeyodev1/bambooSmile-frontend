@@ -142,12 +142,14 @@ const sendWhatsApp = () => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+
 .work-with-us {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%);
+  background: linear-gradient(135deg, $neutral-100 0%, $neutral-200 100%);
 
   &__hero {
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, darken($BAMBOO-GREEN, 10%) 100%);
+    background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
     color: $white;
     padding: 6rem 0 4rem;
     text-align: center;
@@ -216,7 +218,7 @@ const sendWhatsApp = () => {
 
     &-title {
       font-size: 2rem;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
       text-align: center;
       margin-bottom: 3rem;
       display: flex;
@@ -229,7 +231,7 @@ const sendWhatsApp = () => {
       }
 
       i {
-        color: $BAMBOO-GREEN;
+        color: $accent-600;
         font-size: 0.8em;
       }
     }
@@ -251,19 +253,19 @@ const sendWhatsApp = () => {
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba($BAMBOO-GREEN, 0.1);
+    box-shadow: 0 4px 20px rgba($accent-600, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
+    border: 1px solid rgba($accent-600, 0.1);
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba($BAMBOO-GREEN, 0.2);
+      box-shadow: 0 8px 30px rgba($accent-600, 0.2);
     }
 
     &-icon {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, $BAMBOO-GREEN, lighten($BAMBOO-GREEN, 10%));
+      background: linear-gradient(135deg, $accent-600, color.adjust($accent-600, $lightness: 10%));
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -278,13 +280,13 @@ const sendWhatsApp = () => {
 
     &-title {
       font-size: 1.3rem;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
       margin-bottom: 1rem;
       font-weight: 600;
     }
 
     &-description {
-      color: rgba($BAMBOO-BLACK, 0.7);
+      color: rgba($neutral-900, 0.7);
       line-height: 1.6;
       margin: 0;
     }
@@ -305,40 +307,40 @@ const sendWhatsApp = () => {
     background: $white;
     padding: 2rem;
     border-radius: 12px;
-    border-left: 4px solid $BAMBOO-GREEN;
-    box-shadow: 0 2px 15px rgba($BAMBOO-GREEN, 0.08);
+    border-left: 4px solid $accent-600;
+    box-shadow: 0 2px 15px rgba($accent-600, 0.08);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateX(5px);
-      box-shadow: 0 4px 25px rgba($BAMBOO-GREEN, 0.15);
+      box-shadow: 0 4px 25px rgba($accent-600, 0.15);
     }
 
     &-title {
       font-size: 1.2rem;
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       margin-bottom: 1rem;
       font-weight: 600;
     }
 
     &-description {
-      color: rgba($BAMBOO-BLACK, 0.7);
+      color: rgba($neutral-900, 0.7);
       line-height: 1.6;
       margin: 0;
     }
   }
 
   &__contact {
-    background: linear-gradient(135deg, $white 0%, #f8fffe 100%);
+    background: linear-gradient(135deg, $neutral-50 0%, $neutral-100 100%);
     padding: 3rem;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 6px 30px rgba($BAMBOO-GREEN, 0.1);
-    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
+    box-shadow: 0 6px 30px rgba($accent-600, 0.1);
+    border: 1px solid rgba($accent-600, 0.1);
 
     &-title {
       font-size: 2rem;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
@@ -346,13 +348,13 @@ const sendWhatsApp = () => {
       gap: 0.75rem;
 
       i {
-        color: $BAMBOO-GREEN;
+        color: $accent-600;
       }
     }
 
     &-description {
       font-size: 1.1rem;
-      color: rgba($BAMBOO-BLACK, 0.7);
+      color: rgba($neutral-900, 0.7);
       line-height: 1.6;
       margin-bottom: 2.5rem;
       max-width: 600px;
@@ -389,15 +391,15 @@ const sendWhatsApp = () => {
       justify-content: center;
 
       &--email {
-        background: $BAMBOO-GREEN;
+        background: $accent-600;
         color: $white;
-        border-color: $BAMBOO-GREEN;
+        border-color: $accent-600;
 
         &:hover {
           background: transparent;
-          color: $BAMBOO-GREEN;
+          color: $accent-600;
           transform: translateY(-2px);
-          box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.3);
+          box-shadow: 0 4px 15px rgba($accent-600, 0.3);
         }
       }
 
