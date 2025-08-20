@@ -126,7 +126,7 @@ onMounted(() => {
               <span class="product-item__reviews">{{ product.reviews }} Reviews</span>
             </div>
             
-            <p class="product-item__price">From $ {{ product.precio }}</p>
+            <p class="product-item__price">$ {{ product.precio }}</p>
           </div>
         </div>
       </div>
