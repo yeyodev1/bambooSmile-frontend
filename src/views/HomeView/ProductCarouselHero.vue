@@ -20,7 +20,8 @@ const slides = [
     description: '¡Más de 10,000 familias brillan con bambooSmile! Únete a la revolución del cuidado dental eco-friendly.',
     cta: '¡Descubre la Magia!',
     image: pasta1Image,
-    background: 'linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%)'
+    background: 'linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%)',
+    whatsappMessage: 'Hola! Me interesa conocer más sobre bambooSmile y sus productos de cuidado dental eco-friendly. ¿Podrían darme más información? 😊'
   },
   {
     id: 2,
@@ -30,7 +31,8 @@ const slides = [
     cta: '¡Quiero Mi Descuento!',
     image: pasta2Image,
     background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
-    isPromo: true
+    isPromo: true,
+    whatsappMessage: 'Hola! Me interesa la suscripción mensual con 20% de descuento en pasta Fresh. ¿Podrían darme más detalles sobre esta promoción? 🌟'
   },
   {
     id: 3,
@@ -40,7 +42,8 @@ const slides = [
     cta: '¡Descúbrelo Ya!',
     image: pasta3Image,
     background: 'linear-gradient(135deg, #f1f3f4 0%, #dee2e6 100%)',
-    isNew: true
+    isNew: true,
+    whatsappMessage: 'Hola! Me interesa mucho la nueva pasta dental con Sangre de Dragón. ¿Podrían contarme más sobre sus beneficios y cómo conseguirla? 🌿'
   },
   {
     id: 4,
@@ -49,7 +52,8 @@ const slides = [
     description: '¡WOW! Pasta dental con sabor explosivo a naranja. 100% natural, 200% divertida. ¡Tus peques la amarán!',
     cta: '¡Ver Colección Kids!',
     image: pasta4Image,
-    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)'
+    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
+    whatsappMessage: 'Hola! Me interesa la línea Kids de pasta dental con sabor a naranja para mis pequeños. ¿Podrían darme más información sobre esta colección? 🌈'
   }
 ]
 const nextSlide = () => {
@@ -79,6 +83,13 @@ const pauseAutoplay = () => {
 
 const resumeAutoplay = () => {
   isPaused.value = false
+}
+
+const openWhatsApp = (slide: typeof slides[0]) => {
+  const phoneNumber = '593960800024'
+  const message = encodeURIComponent(slide.whatsappMessage)
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+  window.open(whatsappUrl, '_blank')
 }
 
 onMounted(() => {
@@ -125,7 +136,7 @@ onUnmounted(() => {
               <h2 class="hero-carousel__subtitle">{{ slide.subtitle }}</h2>
               <p class="hero-carousel__description">{{ slide.description }}</p>
               
-              <button class="hero-carousel__cta" @click="$emit('scrollToProducts')">
+              <button class="hero-carousel__cta" @click="openWhatsApp(slide)">
                 {{ slide.cta }}
                 <span class="hero-carousel__cta-arrow">→</span>
               </button>
