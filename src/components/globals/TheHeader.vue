@@ -151,10 +151,10 @@ const goToAboutUs = () => {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba($white, 0.98);
+  background: rgba($neutral-50, 0.98);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
-  box-shadow: 0 2px 20px rgba($BAMBOO-GREEN, 0.08);
+  border-bottom: 1px solid rgba($neutral-200, 0.3);
+  box-shadow: 0 2px 20px rgba($neutral-900, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -218,8 +218,8 @@ const goToAboutUs = () => {
       align-items: center;
       justify-content: center;
       background: none;
-      border: 2px solid $BAMBOO-GREEN;
-      color: $BAMBOO-GREEN;
+      border: 2px solid $accent-600;
+      color: $accent-600;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -227,7 +227,7 @@ const goToAboutUs = () => {
       transition: all 0.3s ease;
 
       &:hover {
-        background: $BAMBOO-GREEN;
+        background: $accent-600;
         color: white;
         transform: scale(1.05);
       }
@@ -244,8 +244,8 @@ const goToAboutUs = () => {
       position: absolute;
       top: -8px;
       right: -8px;
-      background: #ef4444;
-      color: white;
+      background: $accent-600;
+      color: $neutral-50;
       font-size: 0.75rem;
       font-weight: 700;
       min-width: 18px;
@@ -270,7 +270,7 @@ const goToAboutUs = () => {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
+      background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
       color: white;
       border: none;
       font-weight: 600;
@@ -279,12 +279,12 @@ const goToAboutUs = () => {
       border-radius: 25px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.2);
+      box-shadow: 0 4px 15px rgba($accent-600, 0.2);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.3);
-        background: linear-gradient(135deg, color.adjust($BAMBOO-GREEN, $lightness: -5%) 0%, color.adjust($BAMBOO-GREEN, $lightness: -15%) 100%);
+        box-shadow: 0 6px 20px rgba($accent-600, 0.3);
+        background: linear-gradient(135deg, color.adjust($accent-600, $lightness: -5%) 0%, color.adjust($accent-600, $lightness: -15%) 100%);
       }
 
       svg {
@@ -307,14 +307,14 @@ const goToAboutUs = () => {
     padding: 0.5rem;
     border-radius: 8px;
     transition: all 0.2s ease;
-    color: $BAMBOO-BLACK;
+    color: $neutral-700;
 
     &:hover {
-      background: rgba($BAMBOO-GREEN, 0.1);
+      background: rgba($accent-100, 0.8);
     }
 
     &--active {
-      background: rgba($BAMBOO-GREEN, 0.1);
+      background: rgba($accent-100, 0.8);
     }
   }
 
@@ -322,7 +322,7 @@ const goToAboutUs = () => {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
+    background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
     color: white;
     display: flex;
     align-items: center;
@@ -342,7 +342,7 @@ const goToAboutUs = () => {
 
   &__user-chevron {
     transition: transform 0.2s ease;
-    color: $BAMBOO-BLACK;
+    color: $neutral-600;
 
     &--open {
       transform: rotate(180deg);
@@ -355,7 +355,7 @@ const goToAboutUs = () => {
     right: 0;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba($neutral-900, 0.15);
     padding: 1rem;
     min-width: 200px;
     opacity: 0;
@@ -363,7 +363,7 @@ const goToAboutUs = () => {
     transform: translateY(-10px);
     transition: all 0.2s ease;
     z-index: 1000;
-    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
+    border: 1px solid rgba($neutral-200, 0.3);
 
     &--open {
       opacity: 1;
@@ -378,15 +378,15 @@ const goToAboutUs = () => {
 
   &__user-email {
     font-size: 0.875rem;
-    color: $BAMBOO-BLACK;
+    color: $neutral-700;
     margin: 0 0 0.25rem 0;
     font-weight: 500;
   }
 
   &__user-status {
     font-size: 0.75rem;
-    color: #f59e0b;
-    background: rgba(#f59e0b, 0.1);
+    color: $accent-600;
+    background: rgba($accent-600, 0.1);
     padding: 0.125rem 0.5rem;
     border-radius: 12px;
     font-weight: 500;
@@ -395,7 +395,7 @@ const goToAboutUs = () => {
   &__user-divider {
     border: none;
     height: 1px;
-    background: rgba($BAMBOO-GREEN, 0.1);
+    background: rgba($neutral-200, 0.3);
     margin: 0.75rem 0;
   }
 
@@ -406,7 +406,7 @@ const goToAboutUs = () => {
     width: 100%;
     background: none;
     border: none;
-    color: #dc2626;
+    color: $accent-600;
     font-size: 0.875rem;
     font-weight: 500;
     padding: 0.5rem;
@@ -415,12 +415,12 @@ const goToAboutUs = () => {
     transition: all 0.2s ease;
 
     &:hover {
-      background: rgba(#dc2626, 0.1);
+      background: rgba($accent-600, 0.1);
     }
   }
 
   &__link {
-    color: $BAMBOO-BLACK;
+    color: $neutral-700;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
@@ -434,8 +434,8 @@ const goToAboutUs = () => {
     font-family: inherit;
 
     &:hover {
-      color: $BAMBOO-GREEN;
-      background: rgba($BAMBOO-GREEN, 0.1);
+      color: $accent-600;
+      background: rgba($accent-100, 0.8);
     }
   }
 
@@ -463,7 +463,7 @@ const goToAboutUs = () => {
     &-line {
       width: 20px;
       height: 2px;
-      background: $BAMBOO-BLACK;
+      background: $neutral-700;
       margin: 2px 0;
       transition: all 0.3s ease;
       border-radius: 1px;
@@ -491,13 +491,13 @@ const goToAboutUs = () => {
     top: 100%;
     left: 0;
     right: 0;
-    background: $white;
-    border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
+    background: $neutral-50;
+    border-bottom: 1px solid rgba($neutral-200, 0.3);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba($BAMBOO-GREEN, 0.15);
+    box-shadow: 0 4px 20px rgba($neutral-900, 0.15);
 
     @media (min-width: 768px) {
       display: none;
@@ -523,14 +523,14 @@ const goToAboutUs = () => {
     }
 
     &-link {
-      color: $BAMBOO-BLACK;
+      color: $neutral-700;
       text-decoration: none;
       font-weight: 500;
       font-size: 1.1rem;
       padding: 1rem;
       border-radius: 8px;
       transition: all 0.3s ease;
-      border-bottom: 1px solid rgba($BAMBOO-GREEN, 0.1);
+      border-bottom: 1px solid rgba($neutral-200, 0.3);
       background: none;
       border-top: none;
       border-left: none;
@@ -544,14 +544,14 @@ const goToAboutUs = () => {
       justify-content: space-between;
 
       &:hover {
-        background: rgba($BAMBOO-GREEN, 0.1);
-        color: $BAMBOO-GREEN;
+        background: rgba($accent-100, 0.8);
+        color: $accent-600;
         padding-left: 1.5rem;
       }
     }
 
     &-cart-badge {
-      background: #ef4444;
+      background: $accent-600;
       color: white;
       font-size: 0.75rem;
       font-weight: 700;
@@ -563,14 +563,14 @@ const goToAboutUs = () => {
     &-contact {
       margin-top: 1.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba($BAMBOO-GREEN, 0.1);
+      border-top: 1px solid rgba($neutral-200, 0.3);
 
       &-button {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
-        background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
+        background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
         color: white;
         border: none;
         font-weight: 600;
@@ -580,11 +580,11 @@ const goToAboutUs = () => {
         cursor: pointer;
         width: 100%;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba($BAMBOO-GREEN, 0.2);
+        box-shadow: 0 4px 15px rgba($accent-600, 0.2);
 
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba($BAMBOO-GREEN, 0.3);
+          box-shadow: 0 6px 20px rgba($accent-600, 0.3);
         }
 
         svg {
@@ -601,9 +601,11 @@ const goToAboutUs = () => {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
