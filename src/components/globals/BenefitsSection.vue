@@ -121,9 +121,9 @@ const learnMore = () => {
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, .5) 50%,
-      rgba(255, 255, 255, 0) 100%);
+      rgba($neutral-50, 1) 0%,
+      rgba($neutral-50, .5) 50%,
+      rgba($neutral-50, 0) 100%);
   z-index: 1;
 }
 
@@ -158,7 +158,7 @@ const learnMore = () => {
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #2c3e50;
+  color: $neutral-900;
   margin-bottom: 24px;
   font-family: 'Inter', sans-serif;
 
@@ -179,7 +179,7 @@ const learnMore = () => {
 .subtitle {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #666;
+  color: $neutral-600;
   margin-bottom: 32px;
   max-width: 500px;
 
@@ -196,9 +196,9 @@ const learnMore = () => {
 
 .cta-button {
   padding: 14px 32px;
-  border: 2px solid #27ae60;
+  border: 2px solid $accent-600;
   background: transparent;
-  color: #27ae60;
+  color: $accent-600;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 8px;
@@ -208,10 +208,10 @@ const learnMore = () => {
   letter-spacing: 0.5px;
 
   &:hover {
-    background: #27ae60;
+    background: $accent-600;
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 8px 25px rgba($accent-600, 0.3);
   }
 
   &:active {
@@ -238,8 +238,8 @@ const learnMore = () => {
 .hotspot-button {
   width: 50px;
   height: 50px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 3px solid #27ae60;
+  background: rgba($neutral-50, 0.95);
+  border: 3px solid $accent-600;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -247,12 +247,12 @@ const learnMore = () => {
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 25px rgba($neutral-900, 0.15);
 
   &:hover {
-    background: #27ae60;
+    background: $accent-600;
     transform: scale(1.1);
-    box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4);
+    box-shadow: 0 12px 35px rgba($accent-600, 0.4);
 
     .plus-icon {
       color: white;
@@ -268,7 +268,7 @@ const learnMore = () => {
 .plus-icon {
   font-size: 24px;
   font-weight: 300;
-  color: #27ae60;
+  color: $accent-600;
   transition: color 0.3s ease;
 
   @media (max-width: 768px) {
@@ -280,11 +280,11 @@ const learnMore = () => {
   position: absolute;
   top: -20px;
   right: 60px;
-  background: white;
+  background: $neutral-50;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e0e0e0;
+  box-shadow: 0 20px 60px rgba($neutral-900, 0.15);
+  border: 1px solid $neutral-200;
   width: 320px;
   z-index: 20;
 
@@ -313,7 +313,7 @@ const learnMore = () => {
   background: none;
   border: none;
   font-size: 24px;
-  color: #999;
+  color: $neutral-500;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -324,15 +324,15 @@ const learnMore = () => {
   transition: all 0.2s ease;
 
   &:hover {
-    background: #f5f5f5;
-    color: #666;
+    background: $neutral-100;
+    color: $neutral-600;
   }
 }
 
 .tooltip-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: $neutral-900;
   margin-bottom: 12px;
   margin-right: 30px;
   line-height: 1.3;
@@ -341,7 +341,7 @@ const learnMore = () => {
 .tooltip-description {
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #666;
+  color: $neutral-600;
   margin: 0;
 }
 
