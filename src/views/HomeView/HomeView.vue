@@ -7,6 +7,7 @@ import BenefitsSection from '../../components/globals/BenefitsSection.vue'
 import SustainabilityMarquee from '../../components/globals/SustainabilityMarquee.vue'
 import TestimonialsSection from './TestimonialsSection.vue'
 import FounderMessageSection from './FounderMessageSection.vue'
+import EnvironmentalImpactSection from './EnvironmentalImpactSection.vue'
 import CertificationsSection from './CertificationsSection.vue'
 
 const scrollToProducts = () => {
@@ -26,6 +27,7 @@ const scrollToProducts = () => {
     <BenefitsSection />
     <SustainabilityMarquee />
     <FounderMessageSection />
+    <EnvironmentalImpactSection />
     <TestimonialsSection id="testimonios" />
      <!-- <CertificationsSection id="certificaciones" /> -->
      <!-- <CEOVideoSection /> -->
