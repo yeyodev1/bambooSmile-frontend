@@ -1,9 +1,203 @@
 @use './colorVariables.module.scss' as *;
 @use './fonts.modules.scss' as *;
 
-html,
+// Reset y estilos base
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  background-color: $white;
+  background-color: $bg-primary;
+  color: $text-primary;
   margin: 0;
+  padding: 0;
   font-family: $font-principal;
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+// Tipografía global neutral
+h1, h2, h3, h4, h5, h6 {
+  color: $text-primary;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+}
+
+p {
+  color: $text-secondary;
+  margin: 0 0 1rem 0;
+  line-height: 1.7;
+}
+
+a {
+  color: $accent-primary;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $accent-secondary;
+  }
+  
+  &:focus-visible {
+    outline: 2px solid $accent-primary;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+// Botones base neutrales
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  &:focus-visible {
+    outline: 2px solid $accent-primary;
+    outline-offset: 2px;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  
+  &--primary {
+    background: $accent-primary;
+    color: $text-light;
+    
+    &:hover {
+      background: darken($accent-primary, 8%);
+      transform: translateY(-1px);
+      box-shadow: $shadow-md;
+    }
+  }
+  
+  &--secondary {
+    background: $bg-secondary;
+    color: $text-primary;
+    border: 1px solid $border-medium;
+    
+    &:hover {
+      background: $bg-tertiary;
+      border-color: $border-dark;
+    }
+  }
+  
+  &--outline {
+    background: transparent;
+    color: $text-primary;
+    border: 1px solid $border-medium;
+    
+    &:hover {
+      background: $bg-secondary;
+      border-color: $accent-primary;
+      color: $accent-primary;
+    }
+  }
+}
+
+// Utilidades de espaciado
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  @media (min-width: 768px) {
+    padding: 0 40px;
+  }
+}
+
+.section {
+  padding: 60px 0;
+  
+  @media (min-width: 768px) {
+    padding: 80px 0;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 100px 0;
+  }
+}
+
+// Utilidades de texto
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: $text-primary; }
+.text-secondary { color: $text-secondary; }
+.text-muted { color: $text-muted; }
+
+// Utilidades de fondo
+.bg-primary { background-color: $bg-primary; }
+.bg-secondary { background-color: $bg-secondary; }
+.bg-tertiary { background-color: $bg-tertiary; }
+.bg-dark { background-color: $bg-dark; }
+
+// Animaciones suaves
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Scrollbar personalizada
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $neutral-400;
+  border-radius: 4px;
+  
+  &:hover {
+    background: $neutral-500;
+  }
 }
