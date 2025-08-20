@@ -175,7 +175,7 @@ onMounted(() => {
 
 .marquee-section {
   padding: 4rem 0;
-  background: #f8f9fa;
+  background: $neutral-100;
   overflow: hidden;
   position: relative;
 
@@ -214,7 +214,7 @@ onMounted(() => {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: #2c3e50;
+  color: $neutral-700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   line-height: 1;
@@ -240,9 +240,9 @@ onMounted(() => {
   height: 80px;
   object-fit: contain;
   border-radius: 8px;
-  background: white;
+  background: $neutral-50;
   padding: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba($neutral-900, 0.1);
 
   @media (max-width: 768px) {
     width: 60px;
@@ -254,7 +254,7 @@ onMounted(() => {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: $BAMBOO-GREEN;
+  color: $accent-600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   line-height: 1;
