@@ -30,8 +30,10 @@ const benefits = [
 
 // Función para navegar a productos
 const learnMore = () => {
-  // Aquí puedes agregar la navegación que desees
-  console.log('Navegando a más información...')
+  const phoneNumber = '593960800024'
+  const message = encodeURIComponent('Hola! Me interesa conocer más sobre los beneficios de las pastas dentales bambooSmile, especialmente sobre cómo ayudan con la sensibilidad dental y el fortalecimiento del esmalte. ¿Podrían darme más información? 🦷✨')
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+  window.open(whatsappUrl, '_blank')
 }
 </script>
 
