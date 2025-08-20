@@ -123,19 +123,36 @@ const goToAboutUs = () => {
         </div>
       </div>
 
-      <!-- Mobile Menu -->
-      <div class="nav__mobile" :class="{ 'nav__mobile--open': isMenuOpen }">
+      <!-- Mobile Menu Sidebar -->
+      <div class="nav__mobile" :class="{ 'nav__mobile--open': isMenuOpen }" @click.self="closeMenu">
         <div class="nav__mobile-content">
-          <button class="nav__mobile-link" @click="goToProducts">Productos</button>
-          <button class="nav__mobile-link" @click="goToAboutUs">Nosotros</button>
-          <button class="nav__mobile-link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
-          <button class="nav__mobile-link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
-          <button class="nav__mobile-link nav__mobile-link--contact" @click="contactWhatsApp">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516" fill="currentColor"/>
+          <!-- Sidebar Header -->
+          <div class="nav__mobile-header">
+            <h3>Menú</h3>
+          </div>
+          
+          <!-- Close Button -->
+          <button class="nav__mobile-close" @click="closeMenu" aria-label="Cerrar menú">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            Contactar
           </button>
+          
+          <!-- Navigation Links -->
+          <nav class="nav__mobile-nav">
+            <button class="nav__mobile-link" @click="goToProducts">Productos</button>
+            <button class="nav__mobile-link" @click="goToAboutUs">Nosotros</button>
+            <button class="nav__mobile-link" @click="scrollToSection('testimonios'); closeMenu()">Testimonios</button>
+            <button class="nav__mobile-link" @click="scrollToSection('certificaciones'); closeMenu()">Certificaciones</button>
+            
+            <!-- WhatsApp Contact Button -->
+            <button class="nav__mobile-link nav__mobile-link--contact" @click="contactWhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516" fill="currentColor"/>
+              </svg>
+              Contactar por WhatsApp
+            </button>
+          </nav>
         </div>
       </div>
     </nav>
@@ -173,7 +190,7 @@ const goToAboutUs = () => {
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    
+
     @media (max-width: 768px) {
       padding: 0 1rem;
       height: 70px;
@@ -197,7 +214,7 @@ const goToAboutUs = () => {
 
     &:hover {
       transform: translateX(-50%) scale(1.05);
-      
+
       @media (min-width: 1024px) {
         transform: scale(1.05);
       }
@@ -217,7 +234,7 @@ const goToAboutUs = () => {
     display: none;
     align-items: center;
     gap: 2rem;
-    
+
     @media (min-width: 1024px) {
       display: flex;
     }
@@ -248,7 +265,7 @@ const goToAboutUs = () => {
     align-items: center;
     gap: 1rem;
     margin-left: auto;
-    
+
     @media (max-width: 1023px) {
       .nav__contact-button {
         display: none;
@@ -333,7 +350,7 @@ const goToAboutUs = () => {
     padding: 0;
     transition: transform 0.2s ease;
     border-radius: 8px;
-    
+
     @media (min-width: 1024px) {
       display: none;
     }
@@ -370,53 +387,119 @@ const goToAboutUs = () => {
   }
 
   &__mobile {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    background: #f9fafb;
-    border-bottom: 1px solid rgba(229, 231, 235, 0.3);
-    transform: translateY(-100%);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    transform: translateX(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(17, 24, 39, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
 
     &--open {
-      transform: translateY(0);
+      transform: translateX(0);
       opacity: 1;
       visibility: visible;
     }
 
     &-content {
-      padding: 2rem 1.5rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 320px;
+      height: 100vh;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      padding: 2rem 0;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @media (max-width: 375px) {
+        width: 280px;
+      }
+    }
+
+    &--open &-content {
+      transform: translateX(0);
+    }
+
+    &-header {
+      padding: 2rem 2rem 1rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #111827;
+        margin: 0;
+      }
+    }
+
+    &-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        color: #6b7280;
+      }
+    }
+
+    &-nav {
+      flex: 1;
+      padding: 0 1rem;
     }
 
     &-link {
-      display: block;
+      display: flex;
+      align-items: center;
       width: 100%;
       padding: 1rem 1.5rem;
       background: none;
       border: none;
       color: #374151;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 500;
       text-align: left;
       cursor: pointer;
       transition: all 0.3s ease;
-      border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+      border-radius: 12px;
+      margin: 0.25rem 0;
+      position: relative;
 
       &:hover {
         background: rgba(16, 185, 129, 0.1);
         color: #059669;
-        padding-left: 2rem;
+        transform: translateX(8px);
       }
 
-      &:last-child {
-        border-bottom: none;
+      &:active {
+        transform: translateX(4px) scale(0.98);
       }
 
       &--contact {
@@ -425,17 +508,20 @@ const goToAboutUs = () => {
         gap: 0.75rem;
         background: linear-gradient(135deg, #059669 0%, #047857 100%);
         color: white;
-        margin: 1rem 0;
-        border-radius: 12px;
+        margin: 0;
+        border-radius: 16px;
         font-weight: 600;
-        border-bottom: none;
-        
+        box-shadow: 0 4px 20px rgba(5, 150, 105, 0.25);
+
         &:hover {
           background: linear-gradient(135deg, #10b981 0%, #065f46 100%);
           color: white;
-          padding-left: 1rem;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+          transform: translateX(0) translateY(-2px);
+          box-shadow: 0 8px 25px rgba(5, 150, 105, 0.35);
+        }
+
+        &:active {
+          transform: translateX(0) translateY(0) scale(0.98);
         }
 
         svg {
