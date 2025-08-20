@@ -278,8 +278,10 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+
 .featured-product-section {
-  background: #f8f9fa;
+  background: $neutral-100;
   padding: 8rem 0;
 }
 
@@ -319,9 +321,9 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, $neutral-100 0%, $neutral-200 100%);
     border-radius: 30px;
-    box-shadow: 0 20px 60px rgba($BAMBOO-BLACK, 0.08);
+    box-shadow: 0 20px 60px rgba($neutral-900, 0.08);
     position: relative;
     overflow: hidden;
     height: auto;
@@ -383,7 +385,7 @@ onMounted(() => {
     overflow: hidden;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: $white;
+    background: $neutral-50;
     padding: 4px;
     position: relative;
     z-index: 5;
@@ -395,14 +397,14 @@ onMounted(() => {
     }
 
     &:hover {
-      border-color: $BAMBOO-GREEN;
+      border-color: $accent-600;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba($BAMBOO-GREEN, 0.2);
+      box-shadow: 0 8px 20px rgba($accent-600, 0.2);
     }
 
     &--active {
-      border-color: $BAMBOO-GREEN;
-      box-shadow: 0 8px 25px rgba($BAMBOO-GREEN, 0.3);
+      border-color: $accent-600;
+      box-shadow: 0 8px 25px rgba($accent-600, 0.3);
     }
 
     img {
@@ -422,7 +424,7 @@ onMounted(() => {
   &__title {
     font-size: 1.2rem;
     font-weight: 500;
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     margin: 0 0 1rem 0;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -431,7 +433,7 @@ onMounted(() => {
   &__name {
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin: 0 0 2rem 0;
     line-height: 1.2;
   }
@@ -471,19 +473,19 @@ onMounted(() => {
 
   &__reviews {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: $neutral-600;
   }
 
   &__price {
     font-size: 2rem;
     font-weight: 700;
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     margin: 0 0 2rem 0;
   }
 
   &__cta {
-    background: $BAMBOO-GREEN;
-    color: $white;
+    background: $accent-600;
+    color: $neutral-50;
     border: none;
     padding: 1.2rem 3rem;
     border-radius: 50px;
@@ -491,14 +493,14 @@ onMounted(() => {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba($BAMBOO-GREEN, 0.3);
+    box-shadow: 0 8px 25px rgba($accent-600, 0.3);
     position: relative;
     overflow: hidden;
 
     &:hover {
-      background: darken($BAMBOO-GREEN, 10%);
+      background: color.adjust($accent-600, $lightness: -10%);
       transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba($BAMBOO-GREEN, 0.4);
+      box-shadow: 0 12px 35px rgba($accent-600, 0.4);
     }
 
     &:active {
@@ -523,7 +525,7 @@ onMounted(() => {
   &__title {
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     text-align: center;
     margin: 0 0 4rem 0;
   }
@@ -544,18 +546,18 @@ onMounted(() => {
 }
 
 .product-card {
-  background: $white;
+  background: $neutral-50;
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 8px 30px rgba($BAMBOO-BLACK, 0.08);
+  box-shadow: 0 8px 30px rgba($neutral-900, 0.08);
   transition: all 0.8s ease;
   opacity: 0;
   transform: translateY(20px);
-  border: 1px solid #f1f3f4;
+  border: 1px solid rgba($neutral-300, 0.3);
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba($BAMBOO-BLACK, 0.15);
+    box-shadow: 0 20px 50px rgba($neutral-900, 0.15);
   }
 
   &--visible {
@@ -569,7 +571,7 @@ onMounted(() => {
     align-items: center;
     height: 200px;
     margin-bottom: 1.5rem;
-    background: #f8f9fa;
+    background: $neutral-100;
     border-radius: 15px;
     overflow: hidden;
   }
@@ -592,7 +594,7 @@ onMounted(() => {
   &__name {
     font-size: 1.1rem;
     font-weight: 600;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin: 0 0 1rem 0;
     line-height: 1.4;
     min-height: 2.8rem;
@@ -634,21 +636,21 @@ onMounted(() => {
 
   &__reviews {
     font-size: 0.8rem;
-    color: #6c757d;
+    color: $neutral-600;
   }
 
   &__price {
     font-size: 1.4rem;
     font-weight: 700;
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     margin: 0 0 1.5rem 0;
   }
 
   &__add-to-cart {
     width: 100%;
     background: transparent;
-    color: $BAMBOO-GREEN;
-    border: 2px solid $BAMBOO-GREEN;
+    color: $accent-600;
+    border: 2px solid $accent-600;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
@@ -657,8 +659,8 @@ onMounted(() => {
     transition: all 0.3s ease;
 
     &:hover {
-      background: $BAMBOO-GREEN;
-      color: $white;
+      background: $accent-600;
+      color: $neutral-50;
       transform: translateY(-2px);
     }
   }
