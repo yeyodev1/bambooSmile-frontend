@@ -198,7 +198,7 @@ const goToAboutUs = () => {
     align-items: center;
     gap: 2.5rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: flex;
     }
   }
@@ -208,7 +208,7 @@ const goToAboutUs = () => {
     align-items: center;
     margin-right: 1rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: flex;
     }
 
@@ -262,7 +262,7 @@ const goToAboutUs = () => {
     display: none;
     align-items: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: flex;
     }
 
@@ -452,7 +452,7 @@ const goToAboutUs = () => {
     padding: 0;
     transition: transform 0.2s ease;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: none;
     }
 
@@ -499,7 +499,7 @@ const goToAboutUs = () => {
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba($neutral-900, 0.15);
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: none;
     }
 
