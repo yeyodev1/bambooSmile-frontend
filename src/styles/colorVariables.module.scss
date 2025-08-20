@@ -1,6 +1,69 @@
-$BAMBOO-GREEN: #7bbb3d;
-$BAMBOO-BLACK: #1e2020;
-$BAMBOO-ORANGE: #cf9562;
-
+// Paleta de colores neutrales inspirada en Davids-USA
+// Colores primarios neutrales
 $white: #ffffff;
-$text-light: #f5f5f5;
+$neutral-50: #fefefe;
+$neutral-100: #f8f9fa;
+$neutral-200: #f1f3f4;
+$neutral-300: #e9ecef;
+$neutral-400: #dee2e6;
+$neutral-500: #ced4da;
+$neutral-600: #adb5bd;
+$neutral-700: #6c757d;
+$neutral-800: #495057;
+$neutral-900: #343a40;
+$neutral-950: #212529;
+$black: #000000;
+
+// Colores de texto neutrales
+$text-primary: #212529;
+$text-secondary: #6c757d;
+$text-muted: #adb5bd;
+$text-light: #ffffff;
+$text-inverse: #ffffff;
+
+// Colores de fondo neutrales
+$bg-primary: #ffffff;
+$bg-secondary: #f8f9fa;
+$bg-tertiary: #e9ecef;
+$bg-dark: #212529;
+$bg-overlay: rgba(0, 0, 0, 0.5);
+
+// Colores de acento sutiles (inspirados en Davids)
+$accent-50: #f0f9ff;
+$accent-100: #e0f2fe;
+$accent-200: #bae6fd;
+$accent-300: #7dd3fc;
+$accent-400: #38bdf8;
+$accent-500: #0ea5e9;
+$accent-600: #2c5aa0;     // Azul sofisticado principal
+$accent-700: #1e40af;
+$accent-800: #1e3a8a;
+$accent-900: #1e293b;
+
+// Variables de compatibilidad
+$accent-primary: $accent-600;
+$accent-secondary: #4a90a4;   // Azul-verde suave
+$accent-tertiary: #8b9dc3;    // Azul grisáceo
+$accent-warm: #d4a574;        // Dorado suave
+
+// Estados y feedback
+$success: #28a745;
+$warning: #ffc107;
+$error: #dc3545;
+$info: #17a2b8;
+
+// Bordes y divisores
+$border-light: #e9ecef;
+$border-medium: #dee2e6;
+$border-dark: #ced4da;
+
+// Sombras neutrales
+$shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Variables de estado
+$status-success: #28a745;
+$status-warning: #ffc107;
+$status-error: #dc3545;
+$status-info: #17a2b8;
