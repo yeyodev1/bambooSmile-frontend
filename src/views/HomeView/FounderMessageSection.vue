@@ -193,7 +193,7 @@ onMounted(() => {
 
 .ceo-video {
   padding: 100px 0;
-  background: linear-gradient(135deg, #f8fffe 0%, #e8f5f0 100%);
+  background: linear-gradient(135deg, $neutral-50 0%, $neutral-100 100%);
   position: relative;
   overflow: hidden;
 
@@ -215,7 +215,7 @@ onMounted(() => {
     left: -20%;
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba($BAMBOO-GREEN, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba($accent-600, 0.03) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 1;
   }
@@ -236,12 +236,12 @@ onMounted(() => {
   &__title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 16px;
     line-height: 1.1;
 
     &-highlight {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       position: relative;
 
       &::after {
@@ -251,7 +251,7 @@ onMounted(() => {
         left: 0;
         width: 100%;
         height: 4px;
-        background: linear-gradient(90deg, $BAMBOO-GREEN, $BAMBOO-ORANGE);
+        background: linear-gradient(90deg, $accent-600, $accent-warm);
         border-radius: 2px;
       }
     }
@@ -259,7 +259,7 @@ onMounted(() => {
 
   &__subtitle {
     font-size: 1.25rem;
-    color: black;
+    color: $neutral-700;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -282,8 +282,8 @@ onMounted(() => {
     position: relative;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba($BAMBOO-BLACK, 0.15);
-    background: $BAMBOO-BLACK;
+    box-shadow: 0 20px 60px rgba($neutral-900, 0.15);
+    background: $neutral-900;
   }
 
   &__video {
@@ -305,7 +305,7 @@ onMounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba($BAMBOO-BLACK, 0.7) 0%, rgba($BAMBOO-BLACK, 0.4) 100%);
+    background: linear-gradient(135deg, rgba($neutral-900, 0.7) 0%, rgba($neutral-900, 0.4) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -322,18 +322,18 @@ onMounted(() => {
   &__play-button {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
+    background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    box-shadow: 0 8px 30px rgba($BAMBOO-GREEN, 0.4);
+    box-shadow: 0 8px 30px rgba($accent-600, 0.4);
     transition: all 0.3s ease;
 
     &:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 40px rgba($BAMBOO-GREEN, 0.5);
+      box-shadow: 0 12px 40px rgba($accent-600, 0.5);
     }
 
     i {
@@ -363,13 +363,13 @@ onMounted(() => {
     background: $white;
     padding: 40px;
     border-radius: 24px;
-    box-shadow: 0 10px 40px rgba($BAMBOO-BLACK, 0.08);
+    box-shadow: 0 10px 40px rgba($neutral-900, 0.08);
   }
 
   &__metrics-title {
     font-size: 1.75rem;
     font-weight: 600;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 32px;
     text-align: center;
   }
@@ -380,7 +380,7 @@ onMounted(() => {
   }
 
   &__cta {
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -5%) 100%);
+    background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -5%) 100%);
     border-radius: 24px;
     padding: 60px 40px;
     text-align: center;
@@ -424,7 +424,7 @@ onMounted(() => {
 
   &__cta-button {
     background: $white;
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     border: none;
     padding: 16px 32px;
     border-radius: 50px;
@@ -454,8 +454,8 @@ onMounted(() => {
   gap: 16px;
   padding: 20px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
-  border: 1px solid rgba($BAMBOO-GREEN, 0.1);
+  background: linear-gradient(135deg, $neutral-50 0%, $neutral-100 100%);
+  border: 1px solid rgba($accent-600, 0.1);
   transition: all 0.3s ease;
 
   // Animación escalonada
@@ -477,14 +477,14 @@ onMounted(() => {
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba($BAMBOO-GREEN, 0.15);
-    border-color: rgba($BAMBOO-GREEN, 0.2);
+    box-shadow: 0 8px 25px rgba($accent-600, 0.15);
+    border-color: rgba($accent-600, 0.2);
   }
 
   &__icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, color.adjust($BAMBOO-GREEN, $lightness: -10%) 100%);
+    background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -504,20 +504,20 @@ onMounted(() => {
   &__number {
     font-size: 1.5rem;
     font-weight: 700;
-    color: $BAMBOO-GREEN;
+    color: $accent-600;
     margin-bottom: 4px;
   }
 
   &__label {
     font-size: 1rem;
     font-weight: 600;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     margin-bottom: 4px;
   }
 
   &__description {
     font-size: 0.875rem;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 15%);
+    color: $neutral-700;
     font-weight: 500;
     line-height: 1.4;
   }
