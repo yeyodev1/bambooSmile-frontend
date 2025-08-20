@@ -179,7 +179,7 @@ const learnMore = () => {
 .subtitle {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: $neutral-600;
+  color: black;
   margin-bottom: 32px;
   max-width: 500px;
 
