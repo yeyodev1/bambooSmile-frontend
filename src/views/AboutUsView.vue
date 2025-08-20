@@ -164,13 +164,15 @@
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+
 .about-us {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%);
+  background: linear-gradient(135deg, $neutral-50 0%, $neutral-100 100%);
 
   &__hero {
-    background: linear-gradient(135deg, $BAMBOO-GREEN 0%, darken($BAMBOO-GREEN, 10%) 100%);
-    color: $white;
+    background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: -10%) 100%);
+    color: $neutral-50;
     padding: 6rem 0 4rem;
     text-align: center;
 
@@ -235,7 +237,7 @@
 
   &__section-title {
     font-size: 2rem;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     text-align: center;
     margin-bottom: 3rem;
     display: flex;
@@ -248,7 +250,7 @@
     }
 
     i {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       font-size: 0.8em;
     }
   }
@@ -296,20 +298,20 @@
   &__paragraph {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: rgba($BAMBOO-BLACK, 0.8);
+    color: $neutral-700;
     margin: 0;
 
     &--highlight {
-      background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1), rgba($BAMBOO-GREEN, 0.05));
+      background: linear-gradient(135deg, rgba($accent-100, 0.8), rgba($accent-50, 0.5));
       padding: 1.5rem;
       border-radius: 12px;
-      border-left: 4px solid $BAMBOO-GREEN;
+      border-left: 4px solid $accent-600;
       font-weight: 500;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
     }
 
     strong {
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
       font-weight: 600;
     }
   }
@@ -326,10 +328,10 @@
       padding: 0.75rem 0;
       font-size: 1.1rem;
       line-height: 1.6;
-      color: rgba($BAMBOO-BLACK, 0.8);
+      color: $neutral-700;
 
       i {
-        color: #e74c3c;
+        color: $status-error;
         margin-top: 0.2rem;
         flex-shrink: 0;
       }
@@ -343,26 +345,26 @@
     justify-content: center;
     width: 250px;
     height: 300px;
-    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1), rgba($BAMBOO-GREEN, 0.05));
+    background: linear-gradient(135deg, rgba($accent-100, 0.8), rgba($accent-50, 0.5));
     border-radius: 20px;
-    border: 2px solid rgba($BAMBOO-GREEN, 0.2);
+    border: 2px solid rgba($accent-200, 0.5);
     text-align: center;
     gap: 1rem;
 
     i {
       font-size: 4rem;
-      color: $BAMBOO-GREEN;
+      color: $accent-600;
     }
 
     span {
       font-size: 1.2rem;
       font-weight: 600;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
     }
 
     small {
       font-size: 0.9rem;
-      color: rgba($BAMBOO-BLACK, 0.6);
+      color: $neutral-600;
     }
   }
 
@@ -378,7 +380,7 @@
     /* 16:9 aspect ratio */
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba($BAMBOO-GREEN, 0.2);
+    box-shadow: 0 8px 30px rgba($accent-600, 0.2);
   }
 
   &__video {
@@ -402,16 +404,16 @@
   }
 
   &__card {
-    background: $white;
+    background: $neutral-50;
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 6px 25px rgba($BAMBOO-GREEN, 0.1);
-    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
+    box-shadow: 0 6px 25px rgba($neutral-900, 0.1);
+    border: 1px solid rgba($neutral-200, 0.3);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba($BAMBOO-GREEN, 0.2);
+      box-shadow: 0 12px 35px rgba($neutral-900, 0.2);
     }
 
     &-header {
@@ -424,7 +426,7 @@
     &-icon {
       width: 60px;
       height: 60px;
-      background: linear-gradient(135deg, $BAMBOO-GREEN, lighten($BAMBOO-GREEN, 10%));
+      background: linear-gradient(135deg, $accent-600, color.adjust($accent-600, $lightness: 10%));
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -438,7 +440,7 @@
 
     &-title {
       font-size: 1.5rem;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
       margin: 0;
       font-weight: 600;
     }
@@ -446,7 +448,7 @@
     &-content {
       font-size: 1.1rem;
       line-height: 1.7;
-      color: rgba($BAMBOO-BLACK, 0.8);
+      color: rgba($neutral-900, 0.8);
       margin: 0;
     }
   }
@@ -473,35 +475,35 @@
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba($BAMBOO-GREEN, 0.08);
-    border: 1px solid rgba($BAMBOO-GREEN, 0.1);
+    box-shadow: 0 4px 20px rgba($accent-600, 0.08);
+    border: 1px solid rgba($accent-600, 0.1);
     transition: all 0.3s ease;
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba($BAMBOO-GREEN, 0.15);
+      box-shadow: 0 8px 25px rgba($accent-600, 0.15);
     }
 
     &-icon {
       width: 70px;
       height: 70px;
-      background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1), rgba($BAMBOO-GREEN, 0.05));
+      background: linear-gradient(135deg, rgba($accent-600, 0.1), rgba($accent-600, 0.05));
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.5rem;
-      border: 2px solid rgba($BAMBOO-GREEN, 0.2);
+      border: 2px solid rgba($accent-600, 0.2);
 
       i {
         font-size: 1.8rem;
-        color: $BAMBOO-GREEN;
+        color: $accent-600;
       }
     }
 
     &-title {
       font-size: 1.2rem;
-      color: $BAMBOO-BLACK;
+      color: $neutral-900;
       margin-bottom: 1rem;
       font-weight: 600;
     }
@@ -509,7 +511,7 @@
     &-description {
       font-size: 0.95rem;
       line-height: 1.6;
-      color: rgba($BAMBOO-BLACK, 0.7);
+      color: rgba($neutral-900, 0.7);
       margin: 0;
     }
   }
