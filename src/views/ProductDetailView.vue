@@ -52,18 +52,18 @@ const decrementQuantity = () => {
 // Función para agregar al carrito
 const addToCart = async () => {
   if (!product.value) return
-  
+
   isAddingToCart.value = true
-  
+
   try {
     cartStore.addToCart(product.value, quantity.value)
-    
+
     // Mostrar mensaje de confirmación
     showAddedMessage.value = true
     setTimeout(() => {
       showAddedMessage.value = false
     }, 2000)
-    
+
     // Resetear cantidad
     quantity.value = 1
   } catch (error) {
@@ -191,7 +191,7 @@ onMounted(() => {
           </div>
           <div class="feature">
             <span class="feature-icon">🚚</span>
-            <span class="feature-text">Envío gratis</span>
+            <span class="feature-text">Envíos nacionales</span>
           </div>
         </div>
       </div>
@@ -264,14 +264,14 @@ onMounted(() => {
 .breadcrumb-link {
   background: none;
   border: none;
-  color: #84cc16;
+  color: #6b7280;
   font-size: 0.875rem;
   cursor: pointer;
   padding: 0.5rem 0;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #65a30d;
+    color: #374151;
   }
 }
 
@@ -340,11 +340,11 @@ onMounted(() => {
   }
 
   &.active {
-    border-color: #84cc16;
+    border-color: #495057;
   }
 
   &:hover {
-    border-color: #84cc16;
+    border-color: #495057;
     transform: scale(1.05);
   }
 
@@ -377,9 +377,9 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem;
-  background: #f0fdf4;
+  background: #f8f9fa;
   border-radius: 0.75rem;
-  border: 1px solid #bbf7d0;
+  border: 1px solid #e9ecef;
 }
 
 .flavor-icon {
@@ -387,7 +387,7 @@ onMounted(() => {
 }
 
 .flavor-text {
-  color: #166534;
+  color: #495057;
   font-weight: 600;
 }
 
@@ -400,7 +400,7 @@ onMounted(() => {
 .price {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #2d5016;
+  color: #212529;
 
   @media (max-width: 768px) {
     font-size: 1.875rem;
@@ -449,7 +449,7 @@ onMounted(() => {
   transition: all 0.3s ease;
 
   &:hover:not(:disabled) {
-    background: #84cc16;
+    background: #495057;
     color: white;
   }
 
@@ -470,7 +470,7 @@ onMounted(() => {
 }
 
 .add-to-cart {
-  background: #84cc16;
+  background: #495057;
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -484,7 +484,7 @@ onMounted(() => {
   overflow: hidden;
 
   &:hover:not(:disabled) {
-    background: #65a30d;
+    background: #343a40;
     transform: translateY(-2px);
   }
 
@@ -500,7 +500,7 @@ onMounted(() => {
 
   &.loading {
     background: #a3a3a3;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -517,13 +517,18 @@ onMounted(() => {
   }
 
   &.success {
-    background: #16a34a;
+    background: #28a745;
   }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .success-message {
@@ -531,20 +536,20 @@ onMounted(() => {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  background: #dcfce7;
-  border: 1px solid #bbf7d0;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
   border-radius: 0.75rem;
   animation: slideIn 0.3s ease-out;
 }
 
 .success-icon {
-  color: #16a34a;
+  color: #28a745;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .success-text {
-  color: #166534;
+  color: #155724;
   font-weight: 600;
 }
 
@@ -553,6 +558,7 @@ onMounted(() => {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -695,7 +701,7 @@ onMounted(() => {
 .related-price {
   font-size: 1rem;
   font-weight: 700;
-  color: #2d5016;
+  color: #212529;
 }
 
 .error-state {
@@ -717,7 +723,7 @@ onMounted(() => {
 }
 
 .back-btn {
-  background: #84cc16;
+  background: #495057;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -727,7 +733,7 @@ onMounted(() => {
   transition: all 0.3s ease;
 
   &:hover {
-    background: #65a30d;
+    background: #343a40;
   }
 }
 </style>

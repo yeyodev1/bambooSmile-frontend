@@ -148,20 +148,22 @@ onMounted(() => {
   }
 
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    
+    .product-item {
+      flex: 0 0 auto;
+      width: 200px;
     }
 
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (min-width: 1200px) {
-      grid-template-columns: repeat(5, 1fr);
+    @media (max-width: 768px) {
+      gap: 1rem;
+      
+      .product-item {
+        width: 180px;
+      }
     }
   }
 }
