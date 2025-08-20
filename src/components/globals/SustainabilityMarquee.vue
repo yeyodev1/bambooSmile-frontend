@@ -85,9 +85,11 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:color';
+
 .sustainable-marquee {
   padding: 3rem 0;
-  background: linear-gradient(135deg, $BAMBOO-GREEN 0%, lighten($BAMBOO-GREEN, 10%) 100%);
+  background: linear-gradient(135deg, $accent-600 0%, color.adjust($accent-600, $lightness: 10%) 100%);
   overflow: hidden;
   position: relative;
 
@@ -126,11 +128,11 @@ onMounted(() => {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-weight: 800;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  color: white;
+  color: $neutral-50;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   line-height: 1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba($neutral-900, 0.1);
 
   &.marquee-separator {
     font-weight: 400;
@@ -178,9 +180,9 @@ onMounted(() => {
 // Efecto de brillo sutil
 .marquee-text:not(.marquee-separator) {
   background: linear-gradient(90deg,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.8) 100%);
+      rgba($neutral-50, 0.8) 0%,
+      rgba($neutral-50, 1) 50%,
+      rgba($neutral-50, 0.8) 100%);
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
