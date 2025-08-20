@@ -89,7 +89,7 @@ const shopNow = () => {
   if (ctaButton) {
     const originalText = ctaButton.textContent
     ctaButton.textContent = '¡Añadido al Carrito! ✓'
-    ctaButton.style.background = '#28a745'
+    ctaButton.style.background = 'var(--neutral-700)'
 
     setTimeout(() => {
       ctaButton.textContent = originalText
@@ -106,11 +106,13 @@ const addToCart = (product: ProductWithRating, event?: Event) => {
   if (button) {
     const originalText = button.textContent
     button.textContent = '¡Añadido! ✓'
-    button.style.background = '#28a745'
+    button.style.background = 'var(--neutral-700)'
+    button.style.color = 'var(--neutral-50)'
 
     setTimeout(() => {
       button.textContent = originalText
       button.style.background = ''
+      button.style.color = ''
     }, 2000)
   }
 }
@@ -267,7 +269,7 @@ onMounted(() => {
                 class="product-card__add-to-cart"
                 @click="addToCart(product, $event)"
               >
-                Add to Cart
+                Añadir al Carrito
               </button>
             </div>
           </div>
@@ -279,6 +281,14 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
+@import '@/styles/colorVariables.module.scss';
+
+:root {
+  --neutral-50: #{$neutral-50};
+  --neutral-700: #{$neutral-700};
+  --neutral-900: #{$neutral-900};
+  --accent-600: #{$accent-600};
+}
 
 .featured-product-section {
   background: $neutral-100;
