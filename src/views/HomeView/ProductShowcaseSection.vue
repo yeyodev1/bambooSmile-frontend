@@ -19,16 +19,7 @@ const router = useRouter()
 const cartStore = useCartStore()
 const productsStore = useProductsStore()
 
-const isVisible = ref(false)
 const cardsVisible = ref<boolean[]>([])
-const currentImageIndex = ref(0)
-
-// Producto destacado - usando pasta con Sangre de Drago con múltiples imágenes
-const featuredProduct = computed((): ProductWithRating => ({
-  ...higieneBucal[6], // Pasta Dental con Sangre de Drago Natural 125ml
-  rating: 4.9,
-  reviews: 234
-}));
 
 // Productos recomendados - mix de cepillos e higiene bucal
 const recommendedProducts = computed((): ProductWithRating[] => [
@@ -66,37 +57,7 @@ const generateStars = (rating: number) => {
   }
 }
 
-// Cambiar imagen del producto destacado
-const changeImage = (index: number) => {
-  currentImageIndex.value = index
-}
-
-// Auto-cambio de imágenes cada 3 segundos
-const startImageRotation = () => {
-  setInterval(() => {
-    if (featuredProduct.value.images.length > 1) {
-      currentImageIndex.value = (currentImageIndex.value + 1) % featuredProduct.value.images.length
-    }
-  }, 3000)
-}
-
-const shopNow = () => {
-  // Solo añadir al carrito
-  cartStore.addToCart(featuredProduct.value as any, 1)
-
-  // Mostrar feedback visual en el botón
-  const ctaButton = document.querySelector('.featured-product__cta') as HTMLButtonElement
-  if (ctaButton) {
-    const originalText = ctaButton.textContent
-    ctaButton.textContent = '¡Añadido al Carrito! ✓'
-    ctaButton.style.background = 'var(--neutral-700)'
-
-    setTimeout(() => {
-      ctaButton.textContent = originalText
-      ctaButton.style.background = ''
-    }, 2000)
-  }
-}
+// Función para añadir productos al carrito (opcional - se puede remover si no se usa)
 
 const addToCart = (product: ProductWithRating, event?: Event) => {
   cartStore.addToCart(product as any, 1)
@@ -121,18 +82,11 @@ onMounted(() => {
   // Inicializar array de visibilidad para las tarjetas
   cardsVisible.value = new Array(recommendedProducts.value.length).fill(false)
 
-  // Iniciar rotación automática de imágenes
-  startImageRotation()
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          if (entry.target.classList.contains('featured-product')) {
-            isVisible.value = true
-          }
-
-          if (entry.target.classList.contains('recommendations-grid')) {
+          if (entry.target.classList.contains('product-showcase__grid')) {
             // Animar tarjetas con delay escalonado
             recommendedProducts.value.forEach((_, index) => {
               setTimeout(() => {
@@ -146,132 +100,52 @@ onMounted(() => {
     { threshold: 0.2 }
   )
 
-  const featuredElement = document.querySelector('.featured-product')
-  const gridElement = document.querySelector('.recommendations-grid')
-
-  if (featuredElement) observer.observe(featuredElement)
+  const gridElement = document.querySelector('.product-showcase__grid')
   if (gridElement) observer.observe(gridElement)
 })
 </script>
 
 <template>
-  <section class="featured-product-section">
-    <!-- Producto Destacado -->
-    <div class="featured-product" :class="{ 'featured-product--visible': isVisible }">
-      <div class="featured-product__container">
-        <div class="featured-product__content">
-          <div class="featured-product__image-wrapper">
-            <div class="featured-product__gallery">
-              <img 
-                :src="featuredProduct.images[currentImageIndex]" 
-                :alt="featuredProduct.name"
-                class="featured-product__image"
-              />
-              
-              <!-- Indicadores de imagen -->
-              <div v-if="featuredProduct.images.length > 1" class="featured-product__indicators">
-                <button 
-                  v-for="(image, index) in featuredProduct.images" 
-                  :key="index"
-                  @click="changeImage(index)"
-                  class="featured-product__indicator"
-                  :class="{ 'featured-product__indicator--active': currentImageIndex === index }"
-                >
-                  <img :src="image" :alt="`${featuredProduct.name} vista ${index + 1}`" />
-                </button>
-              </div>
-            </div>
+  <section class="product-showcase">
+    <div class="product-showcase__container">
+      <div class="product-showcase__grid">
+        <div 
+          v-for="(product, index) in recommendedProducts" 
+          :key="product.name"
+          class="product-item"
+          :class="{ 'product-item--visible': cardsVisible[index] }"
+        >
+          <div class="product-item__image">
+            <img 
+              :src="product.images[0]" 
+              :alt="product.name"
+            />
           </div>
+          
+          <div class="product-item__info">
+            <h3 class="product-item__name">{{ product.name }}</h3>
             
-            <div class="featured-product__info">
-              <h2 class="featured-product__title">Producto Destacado</h2>
-              <h3 class="featured-product__name">{{ featuredProduct.name }}</h3>
-              
-              <div class="featured-product__rating">
-                <div class="featured-product__stars">
-                  <span 
-                    v-for="n in generateStars(featuredProduct.rating).full" 
-                    :key="`full-${n}`"
-                    class="featured-product__star featured-product__star--full"
-                  >★</span>
-                  <span 
-                    v-if="generateStars(featuredProduct.rating).half"
-                    class="featured-product__star featured-product__star--half"
-                  >★</span>
-                  <span 
-                    v-for="n in generateStars(featuredProduct.rating).empty" 
-                    :key="`empty-${n}`"
-                    class="featured-product__star featured-product__star--empty"
-                  >★</span>
-                </div>
-                <span class="featured-product__reviews">({{ featuredProduct.reviews }} reseñas)</span>
+            <div class="product-item__rating">
+              <div class="product-item__stars">
+                <span 
+                  v-for="n in generateStars(product.rating).full" 
+                  :key="`full-${n}`"
+                  class="product-item__star product-item__star--full"
+                >★</span>
+                <span 
+                  v-if="generateStars(product.rating).half"
+                  class="product-item__star product-item__star--half"
+                >★</span>
+                <span 
+                  v-for="n in generateStars(product.rating).empty" 
+                  :key="`empty-${n}`"
+                  class="product-item__star product-item__star--empty"
+                >★</span>
               </div>
-              
-              <p class="featured-product__price">${{ featuredProduct.precio }}</p>
-            
-            <button 
-              class="featured-product__cta"
-              @click="shopNow"
-            >
-              Añadir al Carrito
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Recomendaciones -->
-    <div class="recommendations">
-      <div class="recommendations__container">
-        <h2 class="recommendations__title">Productos Recomendados</h2>
-        
-        <div class="recommendations-grid">
-          <div 
-            v-for="(product, index) in recommendedProducts" 
-            :key="product.name"
-            class="product-card"
-            :class="{ 'product-card--visible': cardsVisible[index] }"
-          >
-            <div class="product-card__image-wrapper">
-              <img 
-                :src="product.images[0]" 
-                :alt="product.name"
-                class="product-card__image"
-              />
+              <span class="product-item__reviews">{{ product.reviews }} Reviews</span>
             </div>
             
-            <div class="product-card__content">
-              <h3 class="product-card__name">{{ product.name }}</h3>
-              
-              <div class="product-card__rating">
-                <div class="product-card__stars">
-                  <span 
-                    v-for="n in generateStars(product.rating).full" 
-                    :key="`full-${n}`"
-                    class="product-card__star product-card__star--full"
-                  >★</span>
-                  <span 
-                    v-if="generateStars(product.rating).half"
-                    class="product-card__star product-card__star--half"
-                  >★</span>
-                  <span 
-                    v-for="n in generateStars(product.rating).empty" 
-                    :key="`empty-${n}`"
-                    class="product-card__star product-card__star--empty"
-                  >★</span>
-                </div>
-                <span class="product-card__reviews">({{ product.reviews }})</span>
-              </div>
-              
-              <p class="product-card__price">${{ product.precio }}</p>
-              
-              <button 
-                class="product-card__add-to-cart"
-                @click="addToCart(product, $event)"
-              >
-                Añadir al Carrito
-              </button>
-            </div>
+            <p class="product-item__price">From $ {{ product.precio }}</p>
           </div>
         </div>
       </div>
@@ -280,334 +154,82 @@ onMounted(() => {
 </template>
 
 <style lang="scss" scoped>
-@use 'sass:color';
 @import '@/styles/colorVariables.module.scss';
 
-:root {
-  --neutral-50: #{$neutral-50};
-  --neutral-700: #{$neutral-700};
-  --neutral-900: #{$neutral-900};
-  --accent-600: #{$accent-600};
-}
+.product-showcase {
+  background: $neutral-50;
+  padding: 4rem 0;
 
-.featured-product-section {
-  background: $neutral-100;
-  padding: 8rem 0;
-}
-
-// Producto Destacado
-.featured-product {
-  margin-bottom: 8rem;
-
-  &__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  &__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s ease;
-
-    @media (max-width: 968px) {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-      text-align: center;
-    }
-  }
-
-  &--visible &__content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  &__image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, $neutral-100 0%, $neutral-200 100%);
-    border-radius: 30px;
-    box-shadow: 0 20px 60px rgba($neutral-900, 0.08);
-    position: relative;
-    overflow: hidden;
-    height: auto;
-
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
-  }
-
-  &__gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  &__image {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: 450px;
-    object-fit: contain;
-    transition: all 0.5s ease;
-    border-radius: 15px;
-    display: block;
-
-    @media (max-width: 768px) {
-      max-height: 350px;
-    }
-
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
-
-  &__indicators {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-
-    @media (max-width: 968px) {
-      display: none;
-    }
-  }
-
-  &__indicator {
-    width: 60px;
-    height: 60px;
-    border: 3px solid transparent;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: $neutral-50;
-    padding: 4px;
-    position: relative;
-    z-index: 5;
-
-    @media (max-width: 640px) {
-      width: 50px;
-      height: 50px;
-      border-width: 2px;
-    }
-
-    &:hover {
-      border-color: $accent-600;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba($accent-600, 0.2);
-    }
-
-    &--active {
-      border-color: $accent-600;
-      box-shadow: 0 8px 25px rgba($accent-600, 0.3);
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-  }
-
-  &__info {
-    @media (max-width: 968px) {
-      order: -1;
-    }
-  }
-
-  &__title {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: $accent-600;
-    margin: 0 0 1rem 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  &__name {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    font-weight: 700;
-    color: $neutral-900;
-    margin: 0 0 2rem 0;
-    line-height: 1.2;
-  }
-
-  &__rating {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-
-    @media (max-width: 968px) {
-      justify-content: center;
-    }
-  }
-
-  &__stars {
-    display: flex;
-    gap: 0.2rem;
-  }
-
-  &__star {
-    font-size: 1.2rem;
-
-    &--full {
-      color: #ffc107;
-    }
-
-    &--half {
-      color: #ffc107;
-      opacity: 0.5;
-    }
-
-    &--empty {
-      color: #e9ecef;
-    }
-  }
-
-  &__reviews {
-    font-size: 0.9rem;
-    color: $neutral-600;
-  }
-
-  &__price {
-    font-size: 2rem;
-    font-weight: 700;
-    color: $accent-600;
-    margin: 0 0 2rem 0;
-  }
-
-  &__cta {
-    background: $accent-600;
-    color: $neutral-50;
-    border: none;
-    padding: 1.2rem 3rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba($accent-600, 0.3);
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      background: color.adjust($accent-600, $lightness: -10%);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba($accent-600, 0.4);
-    }
-
-    &:active {
-      transform: translateY(-1px);
-    }
-
-    @media (max-width: 640px) {
-      padding: 1rem 2.5rem;
-      font-size: 1rem;
-    }
-  }
-}
-
-// Recomendaciones
-.recommendations {
   &__container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
-  &__title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-    font-weight: 700;
-    color: $neutral-900;
-    text-align: center;
-    margin: 0 0 4rem 0;
-  }
-}
-
-.recommendations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media (max-width: 968px) {
+  &__grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 }
 
-.product-card {
-  background: $neutral-50;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 8px 30px rgba($neutral-900, 0.08);
-  transition: all 0.8s ease;
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   opacity: 0;
   transform: translateY(20px);
-  border: 1px solid rgba($neutral-300, 0.3);
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba($neutral-900, 0.15);
-  }
-
+  transition: all 0.6s ease;
+  
   &--visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  &__image-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    margin-bottom: 1.5rem;
-    background: $neutral-100;
-    border-radius: 15px;
-    overflow: hidden;
-  }
-
   &__image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.1);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 
-  &__content {
-    text-align: center;
+  &__info {
+    width: 100%;
   }
 
   &__name {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 400;
     color: $neutral-900;
-    margin: 0 0 1rem 0;
-    line-height: 1.4;
-    min-height: 2.8rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    min-height: 2.6rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
@@ -620,7 +242,7 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   &__stars {
@@ -629,51 +251,30 @@ onMounted(() => {
   }
 
   &__star {
-    font-size: 1rem;
-
-    &--full {
-      color: #ffc107;
-    }
-
+    font-size: 0.8rem;
+    color: $neutral-400;
+    
+    &--full,
     &--half {
-      color: #ffc107;
-      opacity: 0.5;
+      color: $neutral-400;
     }
-
+    
     &--empty {
-      color: #e9ecef;
+      color: $neutral-300;
     }
   }
 
   &__reviews {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: $neutral-600;
+    font-weight: 400;
   }
 
   &__price {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: $accent-600;
-    margin: 0 0 1.5rem 0;
-  }
-
-  &__add-to-cart {
-    width: 100%;
-    background: transparent;
-    color: $accent-600;
-    border: 2px solid $accent-600;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: $accent-600;
-      color: $neutral-50;
-      transform: translateY(-2px);
-    }
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: $neutral-700;
+    margin: 0;
   }
 }
 </style>
