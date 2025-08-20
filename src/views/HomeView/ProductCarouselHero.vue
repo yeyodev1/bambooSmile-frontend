@@ -20,7 +20,7 @@ const slides = [
     description: '¡Más de 10,000 familias brillan con bambooSmile! Únete a la revolución del cuidado dental eco-friendly.',
     cta: '¡Descubre la Magia!',
     image: pasta1Image,
-    background: 'linear-gradient(135deg, #f8fffe 0%, #e8f5f3 100%)'
+    background: 'linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%)'
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ const slides = [
     description: '¡Suscríbete y recibe tu pasta Fresh mensualmente con un SUPER descuento! ¡Nunca te quedes sin tu sonrisa perfecta!',
     cta: '¡Quiero Mi Descuento!',
     image: pasta2Image,
-    background: 'linear-gradient(135deg, #fff8f0 0%, #f0e8d8 100%)',
+    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
     isPromo: true
   },
   {
@@ -39,7 +39,7 @@ const slides = [
     description: '¡Descubre el poder milenario! Nuestra fórmula revolucionaria con Sangre de Dragón fortalece y regenera naturalmente.',
     cta: '¡Descúbrelo Ya!',
     image: pasta3Image,
-    background: 'linear-gradient(135deg, #f0f8ff 0%, #e0f0ff 100%)',
+    background: 'linear-gradient(135deg, #f1f3f4 0%, #dee2e6 100%)',
     isNew: true
   },
   {
@@ -49,7 +49,7 @@ const slides = [
     description: '¡WOW! Pasta dental con sabor explosivo a naranja. 100% natural, 200% divertida. ¡Tus peques la amarán!',
     cta: '¡Ver Colección Kids!',
     image: pasta4Image,
-    background: 'linear-gradient(135deg, #fff5f0 0%, #ffe8d8 100%)'
+    background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)'
   }
 ]
 const nextSlide = () => {
@@ -192,11 +192,13 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 @use 'sass:color';
+@import '@/styles/colorVariables.module.scss';
 
 .hero-carousel {
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 600px;
   overflow: hidden;
   font-family: 'Inter', 'Helvetica Neue', sans-serif;
 
@@ -283,12 +285,12 @@ onUnmounted(() => {
     letter-spacing: 0.5px;
 
     &--promo {
-      background: linear-gradient(135deg, #ff6b6b, #ff5252);
+      background: linear-gradient(135deg, $accent-600, color.adjust($accent-600, $lightness: -10%));
       color: white;
     }
 
     &--new {
-      background: linear-gradient(135deg, $BAMBOO-GREEN, color.adjust($BAMBOO-GREEN, $lightness: -10%));
+      background: linear-gradient(135deg, $accent-600, color.adjust($accent-600, $lightness: -10%));
       color: white;
     }
   }
@@ -298,7 +300,7 @@ onUnmounted(() => {
     font-weight: 800;
     line-height: 0.9;
     margin: 0 0 1rem 0;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     letter-spacing: -0.02em;
   }
 
@@ -307,14 +309,14 @@ onUnmounted(() => {
     font-weight: 600;
     line-height: 1.3;
     margin: 0 0 1.5rem 0;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 15%);
+    color: $neutral-700;
   }
 
   &__description {
     font-size: 1.125rem;
     line-height: 1.6;
     margin: 0 0 2.5rem 0;
-    color: color.adjust($BAMBOO-BLACK, $lightness: 25%);
+    color: $neutral-600;
     max-width: 500px;
 
     @media (max-width: 768px) {
@@ -328,9 +330,9 @@ onUnmounted(() => {
     gap: 0.5rem;
     padding: 1rem 2rem;
     background: transparent;
-    border: 2px solid $BAMBOO-BLACK;
+    border: 2px solid $neutral-900;
     border-radius: 0;
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -339,7 +341,7 @@ onUnmounted(() => {
     transition: all 0.3s ease;
 
     &:hover {
-      background: $BAMBOO-BLACK;
+      background: $neutral-900;
       color: white;
       transform: translateY(-2px);
 
@@ -383,7 +385,7 @@ onUnmounted(() => {
     height: clamp(250px, 35vw, 450px);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba($BAMBOO-BLACK, 0.1);
+    box-shadow: 0 20px 60px rgba($neutral-900, 0.1);
   }
 
   &__image {
@@ -399,7 +401,7 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba($BAMBOO-GREEN, 0.1), rgba($BAMBOO-GREEN, 0.05));
+    background: linear-gradient(135deg, rgba($accent-600, 0.1), rgba($accent-600, 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -441,17 +443,17 @@ onUnmounted(() => {
     height: 12px;
     border-radius: 50%;
     border: none;
-    background: rgba($BAMBOO-BLACK, 0.3);
+    background: rgba($neutral-900, 0.3);
     cursor: pointer;
     transition: all 0.3s ease;
 
     &--active {
-      background: $BAMBOO-BLACK;
+      background: $neutral-900;
       transform: scale(1.2);
     }
 
     &:hover {
-      background: rgba($BAMBOO-BLACK, 0.6);
+      background: rgba($neutral-900, 0.6);
     }
   }
 
@@ -468,9 +470,9 @@ onUnmounted(() => {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid rgba($BAMBOO-BLACK, 0.2);
+    border: 1px solid rgba($neutral-900, 0.2);
     background: rgba(white, 0.9);
-    color: $BAMBOO-BLACK;
+    color: $neutral-900;
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -480,9 +482,9 @@ onUnmounted(() => {
     backdrop-filter: blur(10px);
 
     &:hover {
-      background: $BAMBOO-BLACK;
+      background: $neutral-900;
       color: white;
-      border-color: $BAMBOO-BLACK;
+      border-color: $neutral-900;
       transform: scale(1.1);
     }
   }
@@ -493,13 +495,13 @@ onUnmounted(() => {
     left: 0;
     right: 0;
     height: 3px;
-    background: rgba($BAMBOO-BLACK, 0.1);
+    background: rgba($neutral-900, 0.1);
     z-index: 10;
   }
 
   &__progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, $BAMBOO-GREEN, color.adjust($BAMBOO-GREEN, $lightness: -10%));
+    background: linear-gradient(90deg, $accent-600, color.adjust($accent-600, $lightness: -10%));
     transition: width 0.8s ease;
   }
 
