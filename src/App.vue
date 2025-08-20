@@ -13,7 +13,7 @@ import Footer from './components/globals/TheFooter.vue'
 
 <style lang="scss">
 .main-content {
-  margin-top: 56px;
+  margin-top: 86px;
   min-height: 100vh;
   background: $white;
 }
