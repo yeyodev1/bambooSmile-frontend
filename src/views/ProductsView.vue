@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProductsStore } from '@/stores/products'
 import { useCartStore } from '@/stores/cart'
+import ProductSearch from '@/components/globals/ProductSearch.vue'
 
 const router = useRouter()
 const productsStore = useProductsStore()
@@ -77,6 +78,11 @@ const goToCart = () => {
       <p class="products-subtitle">
         Descubre nuestra línea completa de productos sostenibles para el cuidado personal
       </p>
+      
+      <!-- Search Component -->
+      <div class="search-container">
+        <ProductSearch />
+      </div>
     </div>
 
     <!-- Category Selector -->
@@ -241,6 +247,20 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 768px) {
     font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.search-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
     padding: 0 1rem;
   }
 }
