@@ -30,7 +30,9 @@ export const higieneBucal: HigieneBucal[] = [
   },
   {
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
-    precio: '5.67',
+    precio: '7.73',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png',
     ],
@@ -99,6 +101,8 @@ Eleva tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero. Con s
   {
     name: 'Pasta Dental con Sangre de Drago Natural 125ml',
     precio: '7.73',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png',
     ],
@@ -117,6 +121,8 @@ Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Den
   {
     name: 'Pasta Dental Natural con Carbón Activado 125ml',
     precio: '7.73',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313654/Pasta_dental_Carbon_Activado_125ml_cmuqvl.png',
     ],
@@ -137,6 +143,8 @@ Añade nuestra Pasta Dental Natural con Carbón Activado de 125 ml a tu rutina d
   {
     name: 'Pasta Dental Natural con Carbón Activado 60ml',
     precio: '4.12',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313608/Pasta_dental_Carbo%CC%81n_Activado_60ml_nktyer.png',
     ],
@@ -155,6 +163,8 @@ Agrega nuestra Pasta Dental Natural con Carbón Activado de 60 ml a tu rutina di
   {
     name: 'Pasta Dental Natural con Sangre de Drago 60ml',
     precio: '4.12',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313562/Pasta_dental_Sangre_de_Drago_60ml_rkxwqy.png',
     ],
@@ -173,6 +183,8 @@ Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Den
   {
     name: 'Pasta dental natural Fresh 250ml',
     precio: '11.85',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313508/Pasta_dental_Fresh_250ml_isyntm.png',
     ],
@@ -191,6 +203,8 @@ Disfruta de una limpieza suave, refrescante y natural que deja tu boca con una s
   {
     name: 'Pasta dental natural Fresh 60ml',
     precio: '4.12',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313474/Pasta_dental_Fresh_60ml_lalzoa.png',
     ],
@@ -209,6 +223,8 @@ Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 60
   {
     name: 'Pasta dental natural Fresh de 125ml',
     precio: '7.73',
+    flavor: 'Menta',
+    flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
     ],
@@ -227,6 +243,8 @@ Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 12
   {
     name: 'Pasta Dental Natural Kids 125ml',
     precio: '7.73',
+    flavor: 'Naranja dulce',
+    flavorIcon: '🍊',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png',
     ],
@@ -245,6 +263,8 @@ Cuida de las sonrisas de tus hijos de manera natural y divertida con nuestra Pas
   {
     name: 'Pasta Dental Natural Kids 60ml',
     precio: '4.12',
+    flavor: 'Naranja dulce',
+    flavorIcon: '🍊',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313416/Pasta_Dental_Kids_60ml_gnpfl2.png',
     ],
