@@ -80,9 +80,9 @@ const goToCart = () => {
       </p>
       
       <!-- Search Component -->
-      <div class="search-container">
-        <ProductSearch />
-      </div>
+      <!-- <div class="search-container"> -->
+        <!-- <ProductSearch /> -->
+      <!-- </div> -->
     </div>
 
     <!-- Category Selector -->
@@ -258,7 +258,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   position: relative;
   z-index: 1000;
-  
+
   @media (max-width: 768px) {
     margin-top: 1.5rem;
     padding: 0 1rem;
