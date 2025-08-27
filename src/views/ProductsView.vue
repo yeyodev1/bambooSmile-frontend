@@ -298,12 +298,12 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
   gap: 4rem 2rem;
   margin-bottom: 4rem;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     gap: 3rem 1.5rem;
   }
 
@@ -359,14 +359,14 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 .product-image {
   width: 100%;
   height: 420px;
-  overflow: visible;
-  background: transparent;
-  border-radius: 0;
+  overflow: hidden;
+  background: $white;
+  border-radius: 12px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
 
   img {
@@ -375,6 +375,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     object-fit: contain;
     transition: $transition-elegant;
     filter: none;
+    border-radius: 8px;
   }
 
   &:hover img {
@@ -569,7 +570,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
-  } 
+  }
 
   &.loading {
     pointer-events: none;
