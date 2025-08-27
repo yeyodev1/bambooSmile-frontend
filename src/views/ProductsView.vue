@@ -175,30 +175,55 @@ const goToCart = () => {
 </template>
 
 <style lang="scss" scoped>
+@import '@/styles/colorVariables.module.scss';
+
+$transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
 .products-view {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, $neutral-50 0%, $neutral-100 100%);
+  min-height: 100vh;
 
   @media (max-width: 768px) {
-    padding: 1rem 0.5rem;
+    padding: 2rem 1rem;
   }
 }
 
 .products-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  padding: 3rem 0;
+  background: $white;
+  border-radius: 24px;
+  margin-bottom: 4rem;
+  border: 1px solid $border-light;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $accent-600 0%, $accent-secondary 100%);
+  }
 
   @media (max-width: 768px) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem 1rem;
   }
 }
 
 .products-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: $text-primary;
   margin-bottom: 1rem;
+  letter-spacing: -0.03em;
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -211,7 +236,7 @@ const goToCart = () => {
 
 .products-subtitle {
   font-size: 1.125rem;
-  color: #6b7280;
+  color: $text-secondary;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -237,14 +262,15 @@ const goToCart = () => {
 
 .category-btn {
   padding: 0.75rem 1.5rem;
-  border: 2px solid #e5e7eb;
-  background: white;
-  color: #374151;
+  border: 1px solid $border-medium;
+  background: $white;
+  color: $text-secondary;
   border-radius: 2rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: $transition-elegant;
   font-size: 0.875rem;
+  box-shadow: $shadow-sm;
 
   @media (max-width: 768px) {
     padding: 0.625rem 1.25rem;
@@ -257,83 +283,107 @@ const goToCart = () => {
   }
 
   &:hover {
-    border-color: #374151;
-    background: #f9fafb;
+    border-color: $accent-primary;
+    background: $accent-50;
     transform: translateY(-2px);
+    box-shadow: $shadow-md;
   }
 
   &.active {
-    background: #374151;
-    border-color: #374151;
-    color: white;
+    background: $accent-primary;
+    border-color: $accent-primary;
+    color: $white;
     transform: translateY(-2px);
+    box-shadow: $shadow-md;
   }
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 4rem 2rem;
+  margin-bottom: 4rem;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 3rem 1.5rem;
   }
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2.5rem;
   }
 }
 
 .product-card {
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  transition: $transition-elegant;
+  border: none;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   }
 }
 
 .product-image {
   width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background: #f9fafb;
+  height: 420px;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    object-fit: contain;
+    transition: $transition-elegant;
+    filter: none;
   }
 
   &:hover img {
     transform: scale(1.05);
   }
+
+  @media (max-width: 768px) {
+    height: 360px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 320px;
+    padding: 0.5rem;
+  }
 }
 
 .product-info {
-  padding: 1.5rem;
+  padding: 0;
+  background: transparent;
+  text-align: center;
 
   @media (max-width: 768px) {
-    padding: 1.25rem;
+    padding: 0;
   }
 }
 
 .product-name {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 0.75rem;
+  color: $text-primary;
+  margin-bottom: 0.5rem;
   line-height: 1.4;
+  letter-spacing: -0.01em;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -341,7 +391,7 @@ const goToCart = () => {
 }
 
 .product-description {
-  color: #6b7280;
+  color: $text-secondary;
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -354,12 +404,13 @@ const goToCart = () => {
 .product-flavor {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  padding: 0.5rem;
-  background: #f0fdf4;
-  border-radius: 0.5rem;
-  border: 1px solid #bbf7d0;
+  padding: 0.5rem 0.75rem;
+  background: $neutral-100;
+  border-radius: 6px;
+  border: none;
 }
 
 .flavor-icon {
@@ -367,45 +418,46 @@ const goToCart = () => {
 }
 
 .flavor-text {
-  font-size: 0.875rem;
-  color: #166534;
+  font-size: 0.8rem;
+  color: $text-secondary;
   font-weight: 500;
 }
 
 .product-footer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   gap: 1rem;
 
   @media (max-width: 480px) {
-    flex-direction: column;
     gap: 0.75rem;
   }
 }
 
 .product-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 
   @media (max-width: 480px) {
-    width: 100%;
     flex-direction: column;
     gap: 0.5rem;
   }
 }
 
 .view-product-btn {
-  background: transparent;
-  color: #374151;
-  border: 2px solid #374151;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
+  background: $neutral-100;
+  color: $text-primary;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: $transition-elegant;
   font-size: 0.8rem;
+  letter-spacing: 0;
 
   @media (max-width: 480px) {
     width: 100%;
@@ -413,8 +465,8 @@ const goToCart = () => {
   }
 
   &:hover {
-    background: #374151;
-    color: white;
+    background: $neutral-200;
+    color: $text-primary;
     transform: translateY(-1px);
   }
 
@@ -426,7 +478,9 @@ const goToCart = () => {
 .product-price {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1f2937;
+  color: $text-primary;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
 
   @media (max-width: 768px) {
     font-size: 1.125rem;
@@ -434,20 +488,21 @@ const goToCart = () => {
 }
 
 .add-to-cart-btn {
-  background: #1f2937;
-  color: white;
+  background: $text-primary;
+  color: $white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: $transition-elegant;
   font-size: 0.8rem;
   position: relative;
-  min-width: 80px;
+  min-width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  letter-spacing: 0;
 
   @media (max-width: 480px) {
     width: 100%;
@@ -456,7 +511,7 @@ const goToCart = () => {
   }
 
   &:hover:not(:disabled) {
-    background: #111827;
+    background: $accent-primary;
     transform: translateY(-1px);
   }
 
@@ -509,19 +564,20 @@ const goToCart = () => {
 }
 
 .toast-content {
-  background: white;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e5e7eb;
+  background: $white;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: $shadow-lg;
+  border: 1px solid $border-light;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
   position: relative;
+  backdrop-filter: blur(20px);
   
   @media (max-width: 768px) {
-    padding: 0.875rem;
-    gap: 0.625rem;
+    padding: 1rem;
+    gap: 0.75rem;
   }
 }
 
@@ -540,47 +596,50 @@ const goToCart = () => {
 }
 
 .toast-title {
-  font-weight: 600;
-  color: #1f2937;
+  font-weight: 700;
+  color: $text-primary;
   margin: 0 0 0.25rem 0;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
   
   @media (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
 .toast-subtitle {
-  color: #6b7280;
+  color: $text-secondary;
   margin: 0;
-  font-size: 0.75rem;
-  line-height: 1.3;
+  font-size: 0.8rem;
+  line-height: 1.4;
   
   @media (max-width: 768px) {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 }
 
 .toast-cart-btn {
-  background: #1f2937;
-  color: white;
+  background: $accent-primary;
+  color: $white;
   border: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 0.625rem 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: $transition-elegant;
   flex-shrink: 0;
+  box-shadow: $shadow-sm;
   
   @media (max-width: 768px) {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
   
   &:hover {
-    background: #111827;
+    background: $accent-700;
     transform: translateY(-1px);
+    box-shadow: $shadow-md;
   }
   
   &:active {
@@ -590,31 +649,33 @@ const goToCart = () => {
 
 .toast-close {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.75rem;
+  right: 0.75rem;
   background: none;
   border: none;
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: $text-muted;
   cursor: pointer;
   padding: 0;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease;
+  transition: $transition-elegant;
+  border-radius: 50%;
   
   @media (max-width: 768px) {
-    top: 0.375rem;
-    right: 0.375rem;
+    top: 0.625rem;
+    right: 0.625rem;
     font-size: 1.125rem;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
   
   &:hover {
-    color: #6b7280;
+    color: $text-secondary;
+    background: $neutral-100;
   }
 }
 
@@ -645,13 +706,17 @@ const goToCart = () => {
 
 .empty-state {
   text-align: center;
-  padding: 4rem 2rem;
-  color: #6b7280;
-  font-size: 1.125rem;
+  padding: 6rem 2rem;
+  color: $text-secondary;
+  font-size: 1.25rem;
+  background: $white;
+  border-radius: 32px;
+  border: 1px solid $border-light;
+  box-shadow: $shadow-sm;
 
   @media (max-width: 768px) {
-    padding: 3rem 1rem;
-    font-size: 1rem;
+    padding: 4rem 1.5rem;
+    font-size: 1.125rem;
   }
 }
 </style>
