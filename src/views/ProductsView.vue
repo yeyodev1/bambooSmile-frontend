@@ -38,24 +38,24 @@ const goToProductDetail = (productName: string) => {
 // Función para agregar al carrito
 const addToCart = async (product: any, event: Event) => {
   event.stopPropagation() // Evitar que se active el click del card
-  
+
   addingToCart.value = product.name
-  
+
   // Simular un pequeño delay para mostrar el estado de carga
   await new Promise(resolve => setTimeout(resolve, 300))
-  
+
   cartStore.addToCart(product, 1)
-  
+
   addingToCart.value = null
-  
+
   // Mostrar toast de éxito
   showSuccessToast.value = true
-  
+
   // Limpiar timeout anterior si existe
   if (toastTimeout.value) {
     clearTimeout(toastTimeout.value)
   }
-  
+
   // Ocultar toast después de 4 segundos
   toastTimeout.value = setTimeout(() => {
     showSuccessToast.value = false
@@ -183,7 +183,6 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: 1400px;
   margin: 0 auto;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, $neutral-50 0%, $neutral-100 100%);
   min-height: 100vh;
 
   @media (max-width: 768px) {
@@ -195,7 +194,6 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   margin-bottom: 4rem;
   padding: 3rem 0;
-  background: $white;
   border-radius: 24px;
   margin-bottom: 4rem;
   border: 1px solid $border-light;
@@ -327,7 +325,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     transform: translateY(-2px);
-    
+
     @media (min-width: 769px) {
       .product-actions {
         opacity: 1;
@@ -591,6 +589,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -603,7 +602,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   right: 20px;
   z-index: 1000;
   max-width: 400px;
-  
+
   @media (max-width: 768px) {
     top: 10px;
     right: 10px;
@@ -623,7 +622,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 1rem;
   position: relative;
   backdrop-filter: blur(20px);
-  
+
   @media (max-width: 768px) {
     padding: 1rem;
     gap: 0.75rem;
@@ -633,7 +632,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 .toast-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
-  
+
   @media (max-width: 768px) {
     font-size: 1.25rem;
   }
@@ -650,7 +649,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 0 0.25rem 0;
   font-size: 0.9rem;
   letter-spacing: -0.01em;
-  
+
   @media (max-width: 768px) {
     font-size: 0.85rem;
   }
@@ -661,7 +660,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0;
   font-size: 0.8rem;
   line-height: 1.4;
-  
+
   @media (max-width: 768px) {
     font-size: 0.75rem;
   }
@@ -679,18 +678,18 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transition: $transition-elegant;
   flex-shrink: 0;
   box-shadow: $shadow-sm;
-  
+
   @media (max-width: 768px) {
     padding: 0.5rem 0.75rem;
     font-size: 0.75rem;
   }
-  
+
   &:hover {
     background: $accent-700;
     transform: translateY(-1px);
     box-shadow: $shadow-md;
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -713,7 +712,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: center;
   transition: $transition-elegant;
   border-radius: 50%;
-  
+
   @media (max-width: 768px) {
     top: 0.625rem;
     right: 0.625rem;
@@ -721,7 +720,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     width: 20px;
     height: 20px;
   }
-  
+
   &:hover {
     color: $text-secondary;
     background: $neutral-100;
