@@ -9,29 +9,29 @@ export interface HigieneBucal {
 
 export const higieneBucal: HigieneBucal[] = [
   {
-    name: 'Pasta Dental Natural Fresh 100 gr',
+    name: 'Pasta Dental Natural Fresh 125 ml',
     precio: '5.67',
     images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755267043/pasta-125_bu89sh.jpg'],
-    description: `Refresca tu sonrisa con nuestra Pasta Dental Natural Fresh de 100 gr. Formulada con ingredientes naturales y cuidadosamente seleccionados, esta pasta dental ofrece una limpieza efectiva y una sensación de frescura duradera, todo mientras cuidas tu salud bucal y el medio ambiente.`,
+    description: `Refresca tu sonrisa con nuestra Pasta Dental Natural Fresh de 125 ml. Formulada con ingredientes naturales y cuidadosamente seleccionados, esta pasta dental ofrece una limpieza efectiva y una sensación de frescura duradera, todo mientras cuidas tu salud bucal y el medio ambiente.`,
     flavor: 'Menta',
     flavorIcon: '🌿',
   },
   {
-    name: 'Pasta Dental Natural Kids 100 gr',
+    name: 'Pasta Dental Natural Kids 125 ml',
     precio: '5.67',
     images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755267281/pasta-nino_fgvhie.jpg'],
-    description: `Cuida la sonrisa de los más pequeños con nuestra Pasta Dental Natural Kids de 100 gr. Especialmente formulada para niños, esta pasta dental combina ingredientes naturales y suaves que proporcionan una limpieza efectiva mientras protegen los dientes en desarrollo.`,
+    description: `Cuida la sonrisa de los más pequeños con nuestra Pasta Dental Natural Kids de 125 ml. Especialmente formulada para niños, esta pasta dental combina ingredientes naturales y suaves que proporcionan una limpieza efectiva mientras protegen los dientes en desarrollo.`,
     flavor: 'Naranja dulce',
     flavorIcon: '🍊',
   },
   {
-    name: 'Pasta Dental Natural Sangre de Drago 100 gr',
+    name: 'Pasta Dental Natural Sangre de Drago 125 ml',
     precio: '5.67',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755201596/pasta-drago_2_t4cigy.png',
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755201313/pastas_ft2ns7.jpg',
     ],
-    description: `Descubre el poder curativo de la naturaleza con nuestra Pasta Dental Natural Sangre de Drago de 100 gr. Enriquecida con extracto de Sangre de Drago, conocido por sus propiedades regenerativas y antiinflamatorias, esta pasta dental ofrece una experiencia de cuidado bucal única y efectiva.`,
+    description: `Descubre el poder curativo de la naturaleza con nuestra Pasta Dental Natural Sangre de Drago de 125 ml. Enriquecida con extracto de Sangre de Drago, conocido por sus propiedades regenerativas y antiinflamatorias, esta pasta dental ofrece una experiencia de cuidado bucal única y efectiva.`,
     flavor: 'Canela',
     flavorIcon: '🌶️',
   },
@@ -191,7 +191,7 @@ Disfruta de una limpieza suave, refrescante y natural que deja tu boca con una s
     name: 'Pasta dental natural Fresh 60ml',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755267186/Empaque-Pasta-Dental-Fresh-60ml-min_bmmcge.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313474/Pasta_dental_Fresh_60ml_lalzoa.png',
     ],
     description: `Nuestra Pasta Dental Natural Fresh de 60ml es la elección perfecta para quienes buscan una limpieza dental completa y refrescante con ingredientes naturales. Formulada con una combinación de ingredientes naturales y frescos, esta pasta dental proporciona una experiencia de limpieza suave y efectiva que deja tu boca con una sensación de frescura duradera y una sonrisa radiante.
 
@@ -302,7 +302,7 @@ Continúa con tu compromiso con la sostenibilidad y la salud oral con nuestro Re
     name: 'Refill Pasta Dental Kids 125ml funda Kraft',
     precio: '5.93',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755279914/Refill-Kids-N_tnutbq.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313337/Refill_Pasta_dental_Kids_dinkat.png',
     ],
     description: `Haz que el cuidado dental sea más sostenible y conveniente con nuestro Refill de Pasta Dental Kids de 125 ml en funda Kraft. Diseñado pensando en el medio ambiente y en la comodidad de los padres, este refill es la opción perfecta para reabastecer el tubo de pasta dental de tus hijos de manera fácil y eco-amigable.
 
@@ -356,7 +356,7 @@ Haz que tu cuidado bucal sea más ecológico y fresco con nuestro Refill de Past
     name: 'Refill Pasta Dental Sangre de Drago 125ml funda Kraft',
     precio: '5.93',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280040/Refill-Sangre-de-Drago-N_s5jsus.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313196/Refill_Sangre_de_Drago_zgcltk.png',
     ],
     description: `Haz que tu rutina de cuidado bucal sea más sostenible y práctica con nuestro Refill de Pasta Dental Sangre de Drago de 125 ml en funda Kraft. Con una fórmula enriquecida con el poder regenerativo de la Sangre de Drago y un empaque eco-amigable, este refill ofrece una opción consciente y conveniente para mantener una sonrisa saludable y radiante.
 
