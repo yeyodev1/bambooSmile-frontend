@@ -211,9 +211,8 @@ Eleva tu experiencia de cuidado personal mientras cuidas el medio ambiente con n
     name: 'Limpiador de Lengua de Acero Inoxidable',
     precio: '8.76',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281935/Limpiador-de-lengua_z8vybx.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281963/empaque_mtasbb.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281985/cuarto_qypdqf.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311990/Limpiador_de_Lengua_1_qis1fe.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311981/Limpiador_de_Lengua_vpi3jp.png',
     ],
     description: `Transforma tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero, diseñado para ofrecerte una limpieza completa y refrescante de la lengua. Fabricado con acero inoxidable de alta calidad, este limpiador elimina eficazmente las bacterias y los residuos de la superficie de la lengua, ayudando a prevenir el mal aliento y promoviendo una salud bucal óptima.
 
