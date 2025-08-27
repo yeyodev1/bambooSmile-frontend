@@ -12,7 +12,7 @@ export const higieneBucal: HigieneBucal[] = [
     name: 'Pasta Dental Natural Fresh 125ml',
     precio: '5.67',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
     ],
     description: `Refresca tu sonrisa con nuestra Pasta Dental Natural Fresh de 125 ml. Formulada con ingredientes naturales y cuidadosamente seleccionados, esta pasta dental ofrece una limpieza efectiva y una sensación de frescura duradera, todo mientras cuidas tu salud bucal y el medio ambiente.`,
     flavor: 'Menta',
@@ -22,7 +22,7 @@ export const higieneBucal: HigieneBucal[] = [
     name: 'Pasta Dental Natural Kids 125ml',
     precio: '5.67',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png',
     ],
     description: `Cuida la sonrisa de los más pequeños con nuestra Pasta Dental Natural Kids de 125 ml. Especialmente formulada para niños, esta pasta dental combina ingredientes naturales y suaves que proporcionan una limpieza efectiva mientras protegen los dientes en desarrollo.`,
     flavor: 'Naranja dulce',
@@ -32,8 +32,7 @@ export const higieneBucal: HigieneBucal[] = [
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
     precio: '5.67',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309530/Cepillo_Adulto_Rosado_ghye7u.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309626/Cepillo_Adulto_Verde_rly3pt.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png',
     ],
     description: `Descubre el poder curativo de la naturaleza con nuestra Pasta Dental Natural Sangre de Drago de 125 ml. Enriquecida con extracto de Sangre de Drago, conocido por sus propiedades regenerativas y antiinflamatorias, esta pasta dental ofrece una experiencia de cuidado bucal única y efectiva.`,
   },
@@ -41,7 +40,7 @@ export const higieneBucal: HigieneBucal[] = [
     name: 'Enjuague Bucal Natural Envase de Vidrio Reutilizable 250ml',
     precio: '5.67',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311906/Enjuague_Bucal_egs2qd.png',
     ],
     description: `Refresca tu aliento y cuida tu salud bucal con nuestro Enjuague Bucal Natural formulado con ingredientes naturales y respetuosos con el medio ambiente, este enjuague bucal proporciona una limpieza profunda y una protección duradera para tus dientes y encías.
 
@@ -59,8 +58,8 @@ Agrega nuestro Enjuague Bucal Natural a tu rutina diaria de cuidado bucal y disf
     name: 'Hilo Dental de Fibras de Bambú con Carbón Activado',
     precio: '5.67',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310692/Cepillo_Nin%CC%83o_Rosado_oicbkn.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310692/Cepillo_Nin%CC%83o_Rosado_oicbkn.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311944/Hilo_Dental_iyjwfd.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311957/Hilo_Refill_wodlmq.png',
     ],
     description: `Mantén una higiene bucal impecable de manera natural y sostenible con nuestro Hilo Dental de Fibras de Bambú con Carbón Activado. Diseñado para proporcionar una limpieza profunda y efectiva entre los dientes, este hilo dental es una opción eco-friendly que promueve la salud oral mientras cuidas el medio ambiente.
 
@@ -80,8 +79,8 @@ Eleva tu rutina de higiene bucal mientras cuidas el medio ambiente con nuestro H
     name: 'Limpiador de Lengua de Acero Inoxidable',
     precio: '8.76',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311981/Limpiador_de_Lengua_vpi3jp.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311990/Limpiador_de_Lengua_1_qis1fe.png',
     ],
     description: `Transforma tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero, diseñado para ofrecerte una limpieza completa y refrescante de la lengua. Fabricado con acero inoxidable de alta calidad, este limpiador elimina eficazmente las bacterias y los residuos de la superficie de la lengua, ayudando a prevenir el mal aliento y promoviendo una salud bucal óptima.
 
@@ -101,7 +100,7 @@ Eleva tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero. Con s
     name: 'Pasta Dental con Sangre de Drago Natural 125ml',
     precio: '7.73',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309530/Cepillo_Adulto_Rosado_ghye7u.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png',
     ],
     description: `Experimenta el poder regenerativo de la naturaleza con nuestra Pasta Dental con Sangre de Drago Natural de 125 ml. Enriquecida con uno de los secretos mejor guardados de la selva amazónica, esta pasta dental ofrece una protección completa para tus dientes y encías, utilizando ingredientes naturales de alta calidad.
 
@@ -119,7 +118,7 @@ Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Den
     name: 'Pasta Dental Natural con Carbón Activado 125ml',
     precio: '7.73',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313654/Pasta_dental_Carbon_Activado_125ml_cmuqvl.png',
     ],
     description: `Descubre una nueva dimensión en el cuidado bucal con nuestra Pasta Dental Natural con Carbón Activado de 125 ml. Formulada con ingredientes naturales de alta calidad y enriquecida con las propiedades del carbón activado, esta pasta dental ofrece una limpieza profunda y una protección completa para tus dientes y encías.
 
@@ -139,7 +138,7 @@ Añade nuestra Pasta Dental Natural con Carbón Activado de 125 ml a tu rutina d
     name: 'Pasta Dental Natural con Carbón Activado 60ml',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309626/Cepillo_Adulto_Verde_rly3pt.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313608/Pasta_dental_Carbo%CC%81n_Activado_60ml_nktyer.png',
     ],
     description: `Experimenta una limpieza dental profunda y natural con nuestra Pasta Dental con Carbón Activado de 60 ml. Formulada con ingredientes cuidadosamente seleccionados, esta pasta dental ofrece una alternativa natural para mantener tus dientes y encías saludables.
 
@@ -157,7 +156,7 @@ Agrega nuestra Pasta Dental Natural con Carbón Activado de 60 ml a tu rutina di
     name: 'Pasta Dental Natural con Sangre de Drago 60ml',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313562/Pasta_dental_Sangre_de_Drago_60ml_rkxwqy.png',
     ],
     description: `Descubre el poder regenerativo de la naturaleza con nuestra Pasta Dental Natural con Sangre de Drago de 60 ml. Formulada con uno de los secretos mejor guardados de la selva amazónica, esta pasta dental ofrece una protección completa para tus dientes y encías, utilizando ingredientes naturales de calidad.
 
@@ -175,7 +174,7 @@ Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Den
     name: 'Pasta dental natural Fresh 250ml',
     precio: '11.85',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313508/Pasta_dental_Fresh_250ml_isyntm.png',
     ],
     description: `Nuestra Pasta Dental Natural Fresh de 250ml es la opción ideal para aquellos que buscan una limpieza dental completa y una sensación de frescura duradera. Formulada con una combinación de ingredientes naturales y refrescantes, esta pasta dental proporciona una limpieza suave pero efectiva que deja tu boca con una sensación revitalizante y una sonrisa radiante.
 
@@ -193,7 +192,7 @@ Disfruta de una limpieza suave, refrescante y natural que deja tu boca con una s
     name: 'Pasta dental natural Fresh 60ml',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310692/Cepillo_Nin%CC%83o_Rosado_oicbkn.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313474/Pasta_dental_Fresh_60ml_lalzoa.png',
     ],
     description: `Nuestra Pasta Dental Natural Fresh de 60ml es la elección perfecta para quienes buscan una limpieza dental completa y refrescante con ingredientes naturales. Formulada con una combinación de ingredientes naturales y frescos, esta pasta dental proporciona una experiencia de limpieza suave y efectiva que deja tu boca con una sensación de frescura duradera y una sonrisa radiante.
 
@@ -211,7 +210,7 @@ Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 60
     name: 'Pasta dental natural Fresh de 125ml',
     precio: '7.73',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
     ],
     description: `Nuestra Pasta Dental Natural Fresh de 125ml ofrece una experiencia de limpieza dental completa y refrescante con ingredientes naturales y una frescura duradera. Formulada con una mezcla de ingredientes naturales y frescos, esta pasta dental proporciona una limpieza suave pero efectiva que deja tu boca con una sensación de frescura revitalizante y una sonrisa radiante que perdura.
 
@@ -229,7 +228,7 @@ Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 12
     name: 'Pasta Dental Natural Kids 125ml',
     precio: '7.73',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310692/Cepillo_Nin%CC%83o_Rosado_oicbkn.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png',
     ],
     description: `¡Hacer del cepillado una aventura divertida y saludable para tus hijos nunca ha sido tan fácil con nuestra Pasta Dental Natural Kids de 125 ml en delicioso sabor a Naranja Dulce! Diseñada específicamente para los más pequeños de la casa, esta pasta dental ofrece una fórmula suave y eficaz que promueve una higiene bucal óptima y una sonrisa brillante.
 
@@ -247,7 +246,7 @@ Cuida de las sonrisas de tus hijos de manera natural y divertida con nuestra Pas
     name: 'Pasta Dental Natural Kids 60ml',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309626/Cepillo_Adulto_Verde_rly3pt.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313416/Pasta_Dental_Kids_60ml_gnpfl2.png',
     ],
     description: `Haz que el momento del cepillado sea divertido y delicioso para tus pequeños con nuestra Pasta Dental Natural Kids de 60 ml con sabor a naranja dulce. Especialmente formulada para los más jóvenes de la casa, esta pasta dental ofrece una experiencia suave y segura para promover una higiene bucal óptima desde una edad temprana.
 
@@ -267,8 +266,8 @@ Haz que el cuidado bucal sea una experiencia divertida y deliciosa para tus hijo
     name: 'Porta Cepillo de Bambú',
     precio: '10.30',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311999/Porta_Cepillo_1_vhgyqc.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756312010/Porta_Cepillo_qc8wcv.png',
     ],
     description: `Mantén tu baño organizado de manera elegante y sostenible con nuestros Porta Cepillos de Bambú. Fabricados con bambú, una opción respetuosa con el medio ambiente, estos porta cepillos ofrecen una solución duradera y estéticamente agradable para almacenar tus cepillos de dientes de forma segura y ordenada.
 
@@ -286,9 +285,9 @@ Embellece tu baño y contribuye a un estilo de vida más sostenible con nuestros
     name: 'Refill Hilo Dental de Fibras de Bambú con Carbón Activado',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309530/Cepillo_Adulto_Rosado_ghye7u.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309626/Cepillo_Adulto_Verde_rly3pt.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311944/Hilo_Dental_iyjwfd.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311957/Hilo_Refill_wodlmq.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311968/Hilo_Refill_1_wiepmn.png',
     ],
     description: `Mantén tu compromiso con la sostenibilidad y la salud oral con nuestro Refill de Hilo Dental de Fibras de Bambú con Carbón Activado. Diseñado para reemplazar de manera fácil y conveniente el hilo dental agotado de tu dispensador, este refill es una opción eco-friendly que te permite continuar con tu rutina de cuidado bucal de manera responsable.
 
@@ -304,7 +303,7 @@ Continúa con tu compromiso con la sostenibilidad y la salud oral con nuestro Re
     name: 'Refill Pasta Dental Kids 125ml funda Kraft',
     precio: '5.93',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310692/Cepillo_Nin%CC%83o_Rosado_oicbkn.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311968/Hilo_Refill_1_wiepmn.png',
     ],
     description: `Haz que el cuidado dental sea más sostenible y conveniente con nuestro Refill de Pasta Dental Kids de 125 ml en funda Kraft. Diseñado pensando en el medio ambiente y en la comodidad de los padres, este refill es la opción perfecta para reabastecer el tubo de pasta dental de tus hijos de manera fácil y eco-amigable.
 
@@ -322,7 +321,7 @@ Haz que el cuidado dental de tus hijos sea más fácil, económico y ecológico 
     name: 'Refill Pasta Dental Natural Carbón Activado 125ml funda Kraft',
     precio: '5.93',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313289/Refill_Pasta_dental_Carbo%CC%81n_Activado_gzwskg.png',
     ],
     description: `Haz que tu rutina de cuidado bucal sea más sostenible y conveniente con nuestro Refill de Pasta Dental Natural con Carbón Activado de 125 ml en funda Kraft. Diseñado para reabastecer tu suministro de pasta dental de manera eco-amigable, este refill ofrece una opción respetuosa con el medio ambiente y práctica para mantener una sonrisa saludable y brillante.
 
@@ -340,7 +339,7 @@ Haz que tu cuidado bucal sea más ecológico y práctico con nuestro Refill de P
     name: 'Refill Pasta Dental Natural Fresh 125ml funda Kraft',
     precio: '5.93',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756328373/Refill_Pasta_dental_Fresh_w4vw6q.png',
     ],
     description: `Haz que tu cuidado bucal sea más sostenible y fresco con nuestro Refill de Pasta Dental Natural Fresh de 125 ml en funda Kraft. Diseñado para recargar tu tubo de pasta dental de manera eco-amigable, este refill ofrece una opción respetuosa con el medio ambiente y refrescante para mantener tu sonrisa radiante y saludable.
 
@@ -358,7 +357,7 @@ Haz que tu cuidado bucal sea más ecológico y fresco con nuestro Refill de Past
     name: 'Refill Pasta Dental Sangre de Drago 125ml funda Kraft',
     precio: '5.93',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309530/Cepillo_Adulto_Rosado_ghye7u.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313196/Refill_Sangre_de_Drago_zgcltk.png',
     ],
     description: `Haz que tu rutina de cuidado bucal sea más sostenible y práctica con nuestro Refill de Pasta Dental Sangre de Drago de 125 ml en funda Kraft. Con una fórmula enriquecida con el poder regenerativo de la Sangre de Drago y un empaque eco-amigable, este refill ofrece una opción consciente y conveniente para mantener una sonrisa saludable y radiante.
 
@@ -376,7 +375,7 @@ Haz que tu cuidado bucal sea más ecológico y práctico con nuestro Refill de P
     name: 'Spray Bucal Natural 60ml',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756312032/Spray_bucal_60ml_otwih4.png',
     ],
     description: `Mantén tu aliento fresco y tu boca saludable con nuestro Spray Bucal Natural de 60 ml. Formulado con ingredientes naturales seleccionados cuidadosamente, este spray refrescante es la solución perfecta para mantener la higiene oral en cualquier momento y lugar.
 
