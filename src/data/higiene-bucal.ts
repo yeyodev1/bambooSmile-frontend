@@ -11,7 +11,9 @@ export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Fresh 125ml',
     precio: '5.67',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png'],
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756148985/Cepillo_bambooEco_ud4rcd.png',
+    ],
     description: `Refresca tu sonrisa con nuestra Pasta Dental Natural Fresh de 125 ml. Formulada con ingredientes naturales y cuidadosamente seleccionados, esta pasta dental ofrece una limpieza efectiva y una sensación de frescura duradera, todo mientras cuidas tu salud bucal y el medio ambiente.`,
     flavor: 'Menta',
     flavorIcon: '🌿',
@@ -19,7 +21,9 @@ export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Kids 125ml',
     precio: '5.67',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png'],
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756308894/Cepillo_bambooEco_Carbo%CC%81n_Activado_dppj2i.png',
+    ],
     description: `Cuida la sonrisa de los más pequeños con nuestra Pasta Dental Natural Kids de 125 ml. Especialmente formulada para niños, esta pasta dental combina ingredientes naturales y suaves que proporcionan una limpieza efectiva mientras protegen los dientes en desarrollo.`,
     flavor: 'Naranja dulce',
     flavorIcon: '🍊',
@@ -32,8 +36,6 @@ export const higieneBucal: HigieneBucal[] = [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309626/Cepillo_Adulto_Verde_rly3pt.png',
     ],
     description: `Descubre el poder curativo de la naturaleza con nuestra Pasta Dental Natural Sangre de Drago de 125 ml. Enriquecida con extracto de Sangre de Drago, conocido por sus propiedades regenerativas y antiinflamatorias, esta pasta dental ofrece una experiencia de cuidado bucal única y efectiva.`,
-    flavor: 'Canela',
-    flavorIcon: '🌶️',
   },
   {
     name: 'Enjuague Bucal Natural Envase de Vidrio Reutilizable 250ml',
