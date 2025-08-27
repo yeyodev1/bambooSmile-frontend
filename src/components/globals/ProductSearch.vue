@@ -165,7 +165,7 @@ onUnmounted(() => {
     <!-- Search Input -->
     <div class="search-input-container">
       <div class="search-icon">
-        🔍
+        <i class="fas fa-search"></i>
       </div>
       <input
         ref="searchInput"
@@ -231,7 +231,7 @@ onUnmounted(() => {
 
         <!-- No Results -->
         <div v-else class="no-results">
-          <div class="no-results-icon">🔍</div>
+          <div class="no-results-icon"><i class="fas fa-search"></i></div>
           <p class="no-results-text">No se encontraron productos</p>
           <p class="no-results-suggestion">Intenta con otros términos de búsqueda</p>
         </div>
