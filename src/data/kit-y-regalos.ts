@@ -1,15 +1,17 @@
 export interface KitYRegalos {
-  name: string;
-  precio: string;
-  images: string[];
-  description: string;
+  name: string
+  precio: string
+  images: string[]
+  description: string
 }
 
 export const kitYRegalos: KitYRegalos[] = [
   {
     name: 'Kit Eat and Drink',
     precio: '12.36',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282844/kit_cmnt6p.jpg'],
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313747/Kit_de_Cubiertos_gbfkkl.png',
+    ],
     description: `Sumérgete en una experiencia culinaria consciente y sostenible con nuestro Kit Eat and Drink. Este completo conjunto está diseñado para acompañarte en tus aventuras gastronómicas, ofreciéndote cubiertos, palillos y sorbetes de bambú, una alternativa eco-amigable y elegante a los utensilios desechables.
 
 Cubiertos de Bambú: Nuestro kit incluye cubiertos fabricados con bambú, una opción sostenible y biodegradable. Estos cubiertos son duraderos y resistentes, perfectos para disfrutar de tus comidas favoritas en cualquier lugar. Además, su diseño elegante agrega un toque de estilo a tus momentos de comida.
