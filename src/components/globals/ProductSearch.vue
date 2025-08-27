@@ -15,15 +15,15 @@ const resultsContainer = ref<HTMLElement | null>(null)
 // Computed para filtrar productos basado en la búsqueda
 const filteredProducts = computed(() => {
   if (!searchQuery.value.trim()) return []
-  
+
   const query = searchQuery.value.toLowerCase().trim()
-  
+
   return productsStore.allProducts
     .filter((product: Product) => {
       const nameMatch = product.name.toLowerCase().includes(query)
       const descriptionMatch = product.description.toLowerCase().includes(query)
       const flavorMatch = ('flavor' in product && product.flavor) ? product.flavor.toLowerCase().includes(query) : false
-      
+
       return nameMatch || descriptionMatch || flavorMatch
     })
     .slice(0, 8) // Limitar a 8 resultados para mejor UX
@@ -45,7 +45,7 @@ const closeSearch = () => {
 // Función para manejar la navegación con teclado
 const handleKeydown = (event: KeyboardEvent) => {
   if (!isOpen.value || filteredProducts.value.length === 0) return
-  
+
   switch (event.key) {
     case 'ArrowDown':
       event.preventDefault()
@@ -72,7 +72,7 @@ const handleKeydown = (event: KeyboardEvent) => {
 // Función para hacer scroll al elemento seleccionado
 const scrollToSelected = () => {
   if (!resultsContainer.value) return
-  
+
   const selectedElement = resultsContainer.value.children[selectedIndex.value] as HTMLElement
   if (selectedElement) {
     selectedElement.scrollIntoView({ block: 'nearest' })
@@ -87,7 +87,7 @@ const formatPrice = (price: string) => {
 // Función para resaltar texto coincidente
 const highlightMatch = (text: string, query: string) => {
   if (!query.trim()) return text
-  
+
   const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
   return text.replace(regex, '<mark>$1</mark>')
 }
@@ -95,15 +95,15 @@ const highlightMatch = (text: string, query: string) => {
 // Función para actualizar posición del dropdown
 const updateDropdownPosition = () => {
   if (!searchInput.value || !resultsContainer.value) return
-  
+
   const inputRect = searchInput.value.getBoundingClientRect()
   const containerElement = resultsContainer.value
-  
+
   // Calcular posición
   const top = inputRect.bottom + 8 // 8px de margen
   const left = inputRect.left
   const width = inputRect.width
-  
+
   // Establecer variables CSS
   containerElement.style.setProperty('--search-results-top', `${top}px`)
   containerElement.style.setProperty('--search-results-left', `${left}px`)
@@ -114,7 +114,7 @@ const updateDropdownPosition = () => {
 watch(searchQuery, (newQuery) => {
   isOpen.value = newQuery.trim().length > 0
   selectedIndex.value = -1
-  
+
   if (isOpen.value) {
     // Actualizar posición cuando se abre
     nextTick(() => {
@@ -140,7 +140,7 @@ const handleScroll = () => {
 const handleClickOutside = (event: Event) => {
   const target = event.target as HTMLElement
   const searchContainer = searchInput.value?.closest('.product-search')
-  
+
   if (searchContainer && !searchContainer.contains(target)) {
     closeSearch()
   }
@@ -252,6 +252,7 @@ $transition-elegant: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
   z-index: 1000;
   isolation: isolate;
+  width: 90%;
 }
 
 .search-input-container {
@@ -418,7 +419,7 @@ $transition-elegant: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: $text-primary;
   margin: 0 0 0.25rem 0;
   line-height: 1.3;
-  
+
   :deep(mark) {
     background: $accent-200;
     color: $accent-800;
@@ -437,7 +438,7 @@ $transition-elegant: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: $text-secondary;
   margin: 0 0 0.5rem 0;
   line-height: 1.4;
-  
+
   :deep(mark) {
     background: $accent-200;
     color: $accent-800;
@@ -558,7 +559,7 @@ $transition-elegant: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 .search-results::-webkit-scrollbar-thumb {
   background: $border-medium;
   border-radius: 3px;
-  
+
   &:hover {
     background: $text-muted;
   }
