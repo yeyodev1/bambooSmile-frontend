@@ -298,7 +298,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
   gap: 4rem 2rem;
   margin-bottom: 4rem;
 
