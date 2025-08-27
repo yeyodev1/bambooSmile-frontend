@@ -326,7 +326,35 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
+    
+    @media (min-width: 769px) {
+      .product-actions {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+  }
+
+  // Touch devices - show actions on tap/touch
+  &:active {
+    @media (max-width: 768px) {
+      .product-actions {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+    }
+  }
+
+  // Ensure actions are always visible on mobile
+  @media (max-width: 768px) {
+    .product-actions {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
   }
 }
 
@@ -427,7 +455,14 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  min-height: 80px;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    min-height: auto;
+    gap: 1rem;
+  }
 
   @media (max-width: 480px) {
     gap: 0.75rem;
@@ -440,6 +475,16 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   align-items: center;
   justify-content: center;
   width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -448,16 +493,17 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .view-product-btn {
-  background: $neutral-100;
+  background: rgba(255, 255, 255, 0.9);
   color: $text-primary;
-  border: none;
-  padding: 0.625rem 1.25rem;
-  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
   transition: $transition-elegant;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0;
+  backdrop-filter: blur(10px);
 
   @media (max-width: 480px) {
     width: 100%;
@@ -465,9 +511,10 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:hover {
-    background: $neutral-200;
+    background: $white;
     color: $text-primary;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   &:active {
@@ -491,18 +538,19 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: $text-primary;
   color: $white;
   border: none;
-  padding: 0.625rem 1.25rem;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   transition: $transition-elegant;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   position: relative;
-  min-width: 100px;
+  min-width: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 480px) {
     width: 100%;
@@ -513,6 +561,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover:not(:disabled) {
     background: $accent-primary;
     transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
 
   &:active:not(:disabled) {
