@@ -10,7 +10,7 @@ export const eatAndDrinkData: EatAndDrink[] = [
     name: 'Kit Eat and Drink',
     precio: '12.36',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282553/Nuevo-Kit-de-Cubiertos_bdgl8a.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313747/Kit_de_Cubiertos_gbfkkl.png',
     ],
     description: `Sumérgete en una experiencia culinaria consciente y sostenible con nuestro Kit Eat and Drink. Este completo conjunto está diseñado para acompañarte en tus aventuras gastronómicas, ofreciéndote cubiertos, palillos y sorbetes de bambú, una alternativa eco-amigable y elegante a los utensilios desechables.
 
@@ -30,8 +30,7 @@ Disfruta de tus comidas con conciencia y estilo con nuestro Kit Eat and Drink. C
     name: 'Refill de cepillo lavaplatos',
     precio: '5.50',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282620/refill-cepillo-lavaplatos_f85x8q.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282711/refill_zcrwzj.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313757/Refill_Lavaplatos_b1r9dg.png',
     ],
     description: `Refill de cepillo para lavar los platos, de bambú y cerdas de sisal.`,
   },
