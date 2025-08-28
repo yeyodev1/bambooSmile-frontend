@@ -199,6 +199,7 @@
       align-items: center;
       justify-content: center;
       gap: 1rem;
+      color: $white;
 
       @media (min-width: 768px) {
         font-size: 3.5rem;
@@ -214,6 +215,7 @@
       line-height: 1.6;
       opacity: 0.95;
       margin: 0;
+      color: $white;
 
       @media (min-width: 768px) {
         font-size: 1.4rem;
