@@ -1,6 +1,9 @@
 @use './colorVariables.module.scss' as *;
 @use './fonts.modules.scss' as *;
 
+// Importación global de fuentes Helvetica
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 // Reset y estilos base
 *,
 *::before,
