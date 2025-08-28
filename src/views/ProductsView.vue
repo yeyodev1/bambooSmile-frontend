@@ -363,29 +363,38 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: center;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
+  cursor: zoom-in;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: $transition-elegant;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     filter: none;
     border-radius: 8px;
   }
 
   &:hover img {
-    transform: scale(1.05);
+    transform: scale(1.3);
   }
 
   @media (max-width: 768px) {
     height: 360px;
     padding: 0.75rem;
     margin-bottom: 1rem;
+    
+    &:hover img {
+      transform: scale(1.2);
+    }
   }
 
   @media (max-width: 480px) {
     height: 320px;
     padding: 0.5rem;
+    
+    &:hover img {
+      transform: scale(1.15);
+    }
   }
 }
 
