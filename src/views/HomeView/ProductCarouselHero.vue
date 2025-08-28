@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
-import pasta1Image from '@/assets/products/pastas/pasta-1.jpeg'
-import pasta2Image from '@/assets/products/pastas/pasta-2.jpeg'
-import pasta3Image from '@/assets/products/pastas/pasta-3.jpeg'
-import pasta4Image from '@/assets/products/pastas/pasta-4.jpeg'
+// Importando las mejores imágenes PNG de productos
+const pasta1Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png'
+const pasta2Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png'
+const pasta3Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png'
+const pasta4Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png'
 
 const currentSlide = ref(0)
 const isVisible = ref(false)
@@ -47,13 +48,13 @@ const slides = [
   },
   {
     id: 4,
-    title: '¡Línea Kids! 🌈',
-    subtitle: '¡Diversión Natural para Pequeñas Sonrisas!',
-    description: '¡WOW! Pasta dental con sabor explosivo a naranja. 100% natural, 200% divertida. ¡Tus peques la amarán!',
-    cta: '¡Ver Colección Kids!',
+    title: '¡Cepillo Premium! ✨',
+    subtitle: '¡10,000 Cerdas de Lujo!',
+    description: '¡Experimenta una limpieza sin igual! Nuestro cepillo premium con 10,000 cerdas suaves te brinda la experiencia de cepillado más completa.',
+    cta: '¡Descubre el Premium!',
     image: pasta4Image,
     background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)',
-    whatsappMessage: 'Hola! Me interesa la línea Kids de pasta dental con sabor a naranja para mis pequeños. ¿Podrían darme más información sobre esta colección? 🌈'
+    whatsappMessage: 'Hola! Me interesa el Cepillo Premium con 10,000 cerdas. ¿Podrían darme más información sobre este producto de lujo? ✨'
   }
 ]
 const nextSlide = () => {
