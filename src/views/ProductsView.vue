@@ -74,15 +74,7 @@ const goToCart = () => {
   <div class="products-view">
     <!-- Header -->
     <div class="products-header">
-      <h1 class="products-title">Nuestros Productos</h1>
-      <p class="products-subtitle">
-        Descubre nuestra línea completa de productos sostenibles para el cuidado personal
-      </p>
-      
-      <!-- Search Component -->
-      <!-- <div class="search-container"> -->
-        <!-- <ProductSearch /> -->
-      <!-- </div> -->
+      <h1 class="products-title">Productos</h1>
     </div>
 
     <!-- Category Selector -->
