@@ -96,7 +96,7 @@ onMounted(() => {
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
       <button @click="goBack" class="breadcrumb-link">
-        ← Volver a productos
+        <i class="fas fa-arrow-left"></i> Volver a productos
       </button>
     </nav>
 
@@ -169,28 +169,28 @@ onMounted(() => {
           :class="{ loading: isAddingToCart, success: showAddedMessage }"
         >
           <span v-if="isAddingToCart">Agregando...</span>
-          <span v-else-if="showAddedMessage">✓ Agregado al carrito</span>
+          <span v-else-if="showAddedMessage"><i class="fas fa-check"></i> Agregado al carrito</span>
           <span v-else>Agregar al carrito - {{ formatPrice((parseFloat(product.precio) * quantity).toFixed(2)) }}</span>
         </button>
         
         <!-- Success Message -->
         <div v-if="showAddedMessage" class="success-message">
-          <span class="success-icon">✓</span>
+          <i class="fas fa-check-circle success-icon"></i>
           <span class="success-text">Producto agregado al carrito exitosamente</span>
         </div>
 
         <!-- Product Features -->
         <div class="product-features">
           <div class="feature">
-            <span class="feature-icon">🌱</span>
+            <i class="fas fa-leaf feature-icon"></i>
             <span class="feature-text">100% Natural</span>
           </div>
           <div class="feature">
-            <span class="feature-icon">♻️</span>
+            <i class="fas fa-recycle feature-icon"></i>
             <span class="feature-text">Eco-friendly</span>
           </div>
           <div class="feature">
-            <span class="feature-icon">🚚</span>
+            <i class="fas fa-shipping-fast feature-icon"></i>
             <span class="feature-text">Envíos nacionales</span>
           </div>
         </div>
@@ -300,20 +300,27 @@ onMounted(() => {
 
 .main-image {
   width: 100%;
-  height: 400px;
+  height: 500px;
   border-radius: 1rem;
   overflow: hidden;
   background: #f9fafb;
+  position: relative;
+  cursor: zoom-in;
 
   @media (max-width: 768px) {
-    height: 300px;
+    height: 350px;
   }
 }
 
 .main-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .thumbnails {
@@ -545,7 +552,6 @@ onMounted(() => {
 .success-icon {
   color: #28a745;
   font-size: 1.25rem;
-  font-weight: 700;
 }
 
 .success-text {
@@ -583,6 +589,9 @@ onMounted(() => {
 
 .feature-icon {
   font-size: 1.25rem;
+  color: #495057;
+  width: 20px;
+  text-align: center;
 }
 
 .feature-text {
