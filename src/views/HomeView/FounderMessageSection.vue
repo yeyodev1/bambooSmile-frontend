@@ -351,11 +351,13 @@ onMounted(() => {
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 8px;
+      color: $white;
     }
 
     p {
       font-size: 1rem;
       opacity: 0.9;
+      color: $white;
     }
   }
 
