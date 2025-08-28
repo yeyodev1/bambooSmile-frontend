@@ -191,26 +191,9 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 .products-header {
   text-align: center;
   margin-bottom: 4rem;
-  padding: 3rem 0;
-  border-radius: 24px;
-  margin-bottom: 4rem;
-  border: 1px solid $border-light;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, $accent-600 0%, $accent-secondary 100%);
-  }
 
   @media (max-width: 768px) {
     margin-bottom: 3rem;
-    padding: 2rem 1rem;
   }
 }
 
