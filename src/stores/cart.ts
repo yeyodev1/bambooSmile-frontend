@@ -52,8 +52,41 @@ export const useCartStore = defineStore('cart', () => {
     }, 0)
   })
 
+  // Constantes de envío
+  const SHIPPING_COST = 3.50
+  const FREE_SHIPPING_THRESHOLD = 35.00
+
+  // Cálculo del costo de envío
+  const shippingCost = computed(() => {
+    return totalPrice.value >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST
+  })
+
+  // Total con envío incluido
+  const totalWithShipping = computed(() => {
+    return totalPrice.value + shippingCost.value
+  })
+
   const formattedTotal = computed(() => {
     return `$${totalPrice.value.toFixed(2)}`
+  })
+
+  const formattedShipping = computed(() => {
+    return shippingCost.value === 0 ? 'GRATIS' : `$${shippingCost.value.toFixed(2)}`
+  })
+
+  const formattedTotalWithShipping = computed(() => {
+    return `$${totalWithShipping.value.toFixed(2)}`
+  })
+
+  // Verificar si califica para envío gratis
+  const qualifiesForFreeShipping = computed(() => {
+    return totalPrice.value >= FREE_SHIPPING_THRESHOLD
+  })
+
+  // Cantidad restante para envío gratis
+  const amountForFreeShipping = computed(() => {
+    const remaining = FREE_SHIPPING_THRESHOLD - totalPrice.value
+    return remaining > 0 ? remaining : 0
   })
 
   const isEmpty = computed(() => {
@@ -150,7 +183,13 @@ export const useCartStore = defineStore('cart', () => {
       message += `   Subtotal: $${(parseFloat(item.product.precio) * item.quantity).toFixed(2)}\n\n`
     })
     
-    message += `💰 *TOTAL: ${formattedTotal.value}*\n\n`
+    message += `💰 *RESUMEN:*\n`
+    message += `   Subtotal: ${formattedTotal.value}\n`
+    message += `   Envío: ${formattedShipping.value}\n`
+    if (qualifiesForFreeShipping.value) {
+      message += `   🎉 ¡Envío gratis por compra mayor a $35!\n`
+    }
+    message += `   *TOTAL FINAL: ${formattedTotalWithShipping.value}*\n\n`
     message += `¡Gracias por tu pedido! 🌱`
     
     return encodeURIComponent(message)
@@ -179,6 +218,14 @@ export const useCartStore = defineStore('cart', () => {
     totalPrice,
     formattedTotal,
     isEmpty,
+    
+    // Shipping computed
+    shippingCost,
+    totalWithShipping,
+    formattedShipping,
+    formattedTotalWithShipping,
+    qualifiesForFreeShipping,
+    amountForFreeShipping,
     
     // Actions
     addToCart,
