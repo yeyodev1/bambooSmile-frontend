@@ -76,27 +76,27 @@ Uso en la Ducha: Nuestro cepillo corporal está diseñado para ser utilizado dur
 
 Añade nuestro Cepillo Corporal a tu rutina de cuidado personal y descubre los beneficios de una piel suave, radiante y revitalizada. ¡Transforma tu baño en un spa y disfruta de una experiencia de cuidado corporal incomparable!`,
   },
-  {
-    name: 'Cepillo de Bambú Pequeño para Cabello',
-    precio: '5.77',
-    images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281164/cepillo_sxvdzl.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281181/cepillo_uyvxmt.jpg',
-    ],
-    description: `Nuestro Cepillo de Bambú Pequeño para Cabello combina estilo natural y portabilidad para ofrecerte un peinado suave y sin esfuerzo dondequiera que estés. Con un diseño compacto y cerdas suaves, este cepillo es perfecto para llevarlo contigo a todas partes y mantener tu cabello fresco y manejable en cualquier momento del día.
+  //   {
+  //     name: 'Cepillo de Bambú Pequeño para Cabello',
+  //     precio: '5.77',
+  //     images: [
+  //       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281164/cepillo_sxvdzl.png',
+  //       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281181/cepillo_uyvxmt.jpg',
+  //     ],
+  //     description: `Nuestro Cepillo de Bambú Pequeño para Cabello combina estilo natural y portabilidad para ofrecerte un peinado suave y sin esfuerzo dondequiera que estés. Con un diseño compacto y cerdas suaves, este cepillo es perfecto para llevarlo contigo a todas partes y mantener tu cabello fresco y manejable en cualquier momento del día.
 
-Material Sostenible: Fabricado con bambú sostenible, este cepillo ofrece una alternativa respetuosa con el medio ambiente a los cepillos convencionales. El bambú es conocido por su resistencia y durabilidad, lo que garantiza un cepillado efectivo y duradero sin dañar el medio ambiente.
+  // Material Sostenible: Fabricado con bambú sostenible, este cepillo ofrece una alternativa respetuosa con el medio ambiente a los cepillos convencionales. El bambú es conocido por su resistencia y durabilidad, lo que garantiza un cepillado efectivo y duradero sin dañar el medio ambiente.
 
-Diseño Compacto: Con un tamaño pequeño y compacto, nuestro cepillo de bambú se adapta fácilmente a tu bolso, mochila o bolsa de viaje, permitiéndote retocar tu peinado sobre la marcha. Nunca más tendrás que preocuparte por el cabello desordenado cuando estés fuera de casa.
+  // Diseño Compacto: Con un tamaño pequeño y compacto, nuestro cepillo de bambú se adapta fácilmente a tu bolso, mochila o bolsa de viaje, permitiéndote retocar tu peinado sobre la marcha. Nunca más tendrás que preocuparte por el cabello desordenado cuando estés fuera de casa.
 
-Cerdas Suaves: Las cerdas suaves y flexibles de nuestro cepillo desenredan suavemente los nudos y alisan el cabello sin causar roturas ni daños. Disfruta de un peinado suave y sedoso con cada pasada, sin tirones ni molestias.
+  // Cerdas Suaves: Las cerdas suaves y flexibles de nuestro cepillo desenredan suavemente los nudos y alisan el cabello sin causar roturas ni daños. Disfruta de un peinado suave y sedoso con cada pasada, sin tirones ni molestias.
 
-Multiusos: Este cepillo es adecuado para todo tipo de cabello, desde liso hasta rizado. Úsalo para desenredar, peinar o dar volumen a tu cabello con facilidad y precisión, creando looks impecables y naturales en cualquier momento y lugar.
+  // Multiusos: Este cepillo es adecuado para todo tipo de cabello, desde liso hasta rizado. Úsalo para desenredar, peinar o dar volumen a tu cabello con facilidad y precisión, creando looks impecables y naturales en cualquier momento y lugar.
 
-Estilo Natural: Con su diseño de bambú natural y elegante, este cepillo añade un toque de estilo a tu rutina de peinado. Disfruta de la belleza y la simplicidad del bambú mientras cuidas tu cabello con un producto eco-amigable.
+  // Estilo Natural: Con su diseño de bambú natural y elegante, este cepillo añade un toque de estilo a tu rutina de peinado. Disfruta de la belleza y la simplicidad del bambú mientras cuidas tu cabello con un producto eco-amigable.
 
-Lleva el estilo natural y la portabilidad a tu rutina de peinado con nuestro Cepillo de Bambú Pequeño para Cabello. Disfruta de un cabello suave, manejable y radiante estés donde estés.`,
-  },
+  // Lleva el estilo natural y la portabilidad a tu rutina de peinado con nuestro Cepillo de Bambú Pequeño para Cabello. Disfruta de un cabello suave, manejable y radiante estés donde estés.`,
+  //   },
   {
     name: 'Cepillo Facial',
     precio: '15.45',
