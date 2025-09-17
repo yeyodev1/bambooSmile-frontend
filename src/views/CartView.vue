@@ -190,11 +190,22 @@ const confirmDelete = () => {
         </div>
         <div class="summary-row">
           <span class="summary-label">Envío:</span>
-          <span class="summary-value free">GRATIS</span>
+          <span class="summary-value" :class="{ free: cartStore.qualifiesForFreeShipping }">
+            {{ cartStore.formattedShipping }}
+          </span>
+        </div>
+        <!-- Mensaje de envío gratis -->
+        <div v-if="!cartStore.qualifiesForFreeShipping && cartStore.amountForFreeShipping > 0" class="free-shipping-notice">
+          <i class="fas fa-truck"></i>
+          Agrega ${{ cartStore.amountForFreeShipping.toFixed(2) }} más para envío gratis
+        </div>
+        <div v-else-if="cartStore.qualifiesForFreeShipping" class="free-shipping-achieved">
+          <i class="fas fa-check-circle"></i>
+          ¡Felicidades! Tu envío es gratis
         </div>
         <div class="summary-row total">
           <span class="summary-label">Total:</span>
-          <span class="summary-value">{{ cartStore.formattedTotal }}</span>
+          <span class="summary-value">{{ cartStore.formattedTotalWithShipping }}</span>
         </div>
       </div>
 
@@ -242,8 +253,24 @@ const confirmDelete = () => {
                 <span class="summary-item-price">{{ formatPrice(getItemSubtotal(item.product.precio, item.quantity)) }}</span>
               </div>
             </div>
+            <div class="summary-shipping">
+              <div class="shipping-row">
+                <span>Subtotal:</span>
+                <span>{{ cartStore.formattedTotal }}</span>
+              </div>
+              <div class="shipping-row">
+                <span>Envío:</span>
+                <span :class="{ 'free-text': cartStore.qualifiesForFreeShipping }">
+                  {{ cartStore.formattedShipping }}
+                </span>
+              </div>
+              <div v-if="cartStore.qualifiesForFreeShipping" class="free-shipping-badge">
+                <i class="fas fa-gift"></i>
+                ¡Envío gratis!
+              </div>
+            </div>
             <div class="summary-total">
-              <strong>Total: {{ cartStore.formattedTotal }}</strong>
+              <strong>Total: {{ cartStore.formattedTotalWithShipping }}</strong>
             </div>
           </div>
 
@@ -601,6 +628,42 @@ const confirmDelete = () => {
   }
 }
 
+.free-shipping-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid #f59e0b;
+  border-radius: 0.5rem;
+  color: #92400e;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+
+  i {
+    color: #f59e0b;
+  }
+}
+
+.free-shipping-achieved {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 1px solid #10b981;
+  border-radius: 0.5rem;
+  color: #065f46;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+
+  i {
+    color: #10b981;
+  }
+}
+
 .cart-actions {
   display: flex;
   gap: 1rem;
@@ -795,6 +858,63 @@ const confirmDelete = () => {
 .summary-item-price {
   font-weight: 600;
   color: #2d5016;
+}
+
+.summary-shipping {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.shipping-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  span:first-child {
+    color: #6b7280;
+  }
+
+  span:last-child {
+    font-weight: 600;
+    color: #2d5016;
+
+    &.free-text {
+      color: #16a34a;
+    }
+  }
+}
+
+.free-shipping-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  border: 1px solid #10b981;
+  border-radius: 0.375rem;
+  color: #065f46;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  text-align: center;
+  justify-content: center;
+
+  i {
+    color: #10b981;
+  }
 }
 
 .summary-total {
