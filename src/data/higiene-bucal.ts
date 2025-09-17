@@ -10,7 +10,7 @@ export interface HigieneBucal {
 export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Fresh 125ml',
-    precio: '5.67',
+    precio: '7,73',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
     ],
@@ -20,7 +20,7 @@ export const higieneBucal: HigieneBucal[] = [
   },
   {
     name: 'Pasta Dental Natural Kids 125ml',
-    precio: '5.67',
+    precio: '7,73',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png',
     ],
@@ -31,8 +31,8 @@ export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
     precio: '7.73',
-    flavor: 'Menta',
-    flavorIcon: '🌿',
+    flavor: 'Naranja',
+    flavorIcon: '🍊',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png',
     ],
