@@ -144,4 +144,22 @@ Rutina de Cuidado Bucal: Fomenta una rutina diaria de cuidado bucal saludable y 
 
 Haz del cepillado una experiencia divertida y efectiva para tus hijos con nuestro Cepillo Premium Verde para Niños con Cerdas Suaves. Con un diseño vibrante y cerdas suaves, es la herramienta perfecta para cuidar de las sonrisas más preciosas.`,
   },
+  {
+    name: 'Cepillo Premium Amarillo Niños',
+    precio: '5.15',
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758307677/Cepillo_Nin%CC%83o_Amarillo_fdfyov.png',
+    ],
+    description: `Nuestro Cepillo Premium Amarillo para Niños está diseñado para ofrecer un cuidado delicado y divertido para las sonrisas más jóvenes. Con cerdas suaves y un diseño vibrante, este cepillo hace que el cepillado sea una experiencia agradable y efectiva, alentando a los niños a adoptar buenos hábitos de higiene bucal desde una edad temprana.
+
+Cerdas Suaves: Las cerdas suaves y flexibles están diseñadas específicamente para las delicadas encías y dientes de los niños, proporcionando una limpieza suave y eficaz sin causar molestias ni irritación. Cada pasada es suave y reconfortante, asegurando una experiencia de cepillado agradable y sin estrés.
+
+Mango Ergonómico: El mango ergonómico está diseñado para adaptarse cómodamente a las manos pequeñas de los niños, proporcionando un agarre seguro y fácil manejo durante el cepillado. Los niños pueden sostener el cepillo con confianza y control, lo que les ayuda a desarrollar habilidades de cepillado independiente.
+
+Calidad Premium: Fabricado con materiales de alta calidad, nuestro cepillo premium está diseñado para ofrecer un rendimiento excepcional y una durabilidad a largo plazo. Es una inversión en la salud bucal a largo plazo de tu hijo.
+
+Rutina de Cuidado Bucal: Fomenta una rutina diaria de cuidado bucal saludable y divertida con nuestro Cepillo Premium Amarillo para Niños. Cada cepillado es una oportunidad para enseñar a tus hijos la importancia de mantener una sonrisa feliz y saludable.
+
+Haz del cepillado una experiencia divertida y efectiva para tus hijos con nuestro Cepillo Premium Amarillo para Niños con Cerdas Suaves. Con un diseño vibrante y cerdas suaves, es la herramienta perfecta para cuidar de las sonrisas más preciosas.`,
+  },
 ]
