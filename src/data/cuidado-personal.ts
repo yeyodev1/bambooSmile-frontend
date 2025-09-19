@@ -207,27 +207,27 @@ Biodegradable y Libre de Plástico: Al optar por nuestra jabonera de bambú, est
 
 Eleva tu experiencia de cuidado personal mientras cuidas el medio ambiente con nuestra Jabonera de Bambú Natural. Con su diseño funcional, materiales sostenibles y estética atractiva, es la elección perfecta para aquellos que buscan integrar la sostenibilidad en cada aspecto de su vida diaria.`,
   },
-  {
-    name: 'Limpiador de Lengua de Acero Inoxidable',
-    precio: '8.76',
-    images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311990/Limpiador_de_Lengua_1_qis1fe.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311981/Limpiador_de_Lengua_vpi3jp.png',
-    ],
-    description: `Transforma tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero, diseñado para ofrecerte una limpieza completa y refrescante de la lengua. Fabricado con acero inoxidable de alta calidad, este limpiador elimina eficazmente las bacterias y los residuos de la superficie de la lengua, ayudando a prevenir el mal aliento y promoviendo una salud bucal óptima.
+  //   {
+  //     name: 'Limpiador de Lengua de Acero Inoxidable',
+  //     precio: '8.76',
+  //     images: [
+  //       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311990/Limpiador_de_Lengua_1_qis1fe.png',
+  //       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311981/Limpiador_de_Lengua_vpi3jp.png',
+  //     ],
+  //     description: `Transforma tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero, diseñado para ofrecerte una limpieza completa y refrescante de la lengua. Fabricado con acero inoxidable de alta calidad, este limpiador elimina eficazmente las bacterias y los residuos de la superficie de la lengua, ayudando a prevenir el mal aliento y promoviendo una salud bucal óptima.
 
-Diseño Ergonómico: El limpiador de lengua presenta un diseño ergonómico que se adapta cómodamente a la forma de tu lengua, facilitando su uso y maximizando la eficacia de la limpieza. Su mango antideslizante proporciona un agarre firme y seguro, permitiéndote controlar fácilmente la presión y el movimiento durante el uso.
+  // Diseño Ergonómico: El limpiador de lengua presenta un diseño ergonómico que se adapta cómodamente a la forma de tu lengua, facilitando su uso y maximizando la eficacia de la limpieza. Su mango antideslizante proporciona un agarre firme y seguro, permitiéndote controlar fácilmente la presión y el movimiento durante el uso.
 
-Acero Inoxidable de Calidad: Fabricado con acero inoxidable de alta calidad, este limpiador de lengua es resistente a la corrosión y fácil de limpiar, garantizando una higiene óptima en todo momento. Su construcción duradera te permite disfrutar de una limpieza efectiva de la lengua durante mucho tiempo.
+  // Acero Inoxidable de Calidad: Fabricado con acero inoxidable de alta calidad, este limpiador de lengua es resistente a la corrosión y fácil de limpiar, garantizando una higiene óptima en todo momento. Su construcción duradera te permite disfrutar de una limpieza efectiva de la lengua durante mucho tiempo.
 
-Eliminación de Bacterias: Las bacterias y los residuos que se acumulan en la lengua pueden ser una de las principales causas del mal aliento. Nuestro limpiador de lengua de acero elimina eficazmente estas impurezas, dejando tu lengua limpia, fresca y revitalizada después de cada uso.
+  // Eliminación de Bacterias: Las bacterias y los residuos que se acumulan en la lengua pueden ser una de las principales causas del mal aliento. Nuestro limpiador de lengua de acero elimina eficazmente estas impurezas, dejando tu lengua limpia, fresca y revitalizada después de cada uso.
 
-Uso Versátil: Este limpiador de lengua es adecuado para personas de todas las edades y puede incorporarse fácilmente a tu rutina diaria de cuidado bucal. Úsalo junto con el cepillado regular de dientes y el enjuague bucal para obtener una limpieza completa y una sensación de frescura duradera.
+  // Uso Versátil: Este limpiador de lengua es adecuado para personas de todas las edades y puede incorporarse fácilmente a tu rutina diaria de cuidado bucal. Úsalo junto con el cepillado regular de dientes y el enjuague bucal para obtener una limpieza completa y una sensación de frescura duradera.
 
-Compromiso con la Salud Bucal: En nuestro compromiso con la salud bucal, este limpiador de lengua está diseñado para ser una herramienta efectiva y fácil de usar que promueve una higiene bucal óptima. Con su diseño y su calidad superior, es la elección perfecta para quienes buscan una limpieza completa y refrescante de la lengua.
+  // Compromiso con la Salud Bucal: En nuestro compromiso con la salud bucal, este limpiador de lengua está diseñado para ser una herramienta efectiva y fácil de usar que promueve una higiene bucal óptima. Con su diseño y su calidad superior, es la elección perfecta para quienes buscan una limpieza completa y refrescante de la lengua.
 
-Eleva tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero. Con su diseño ergonómico, durabilidad y eficacia en la eliminación de bacterias, es la herramienta ideal para mantener tu lengua limpia, fresca y saludable todos los días.`,
-  },
+  // Eleva tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero. Con su diseño ergonómico, durabilidad y eficacia en la eliminación de bacterias, es la herramienta ideal para mantener tu lengua limpia, fresca y saludable todos los días.`,
+  //   },
   //   {
   //     name: 'Pads Desmaquillantes de Tela',
   //     precio: '5.41',
