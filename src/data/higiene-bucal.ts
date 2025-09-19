@@ -19,16 +19,6 @@ export const higieneBucal: HigieneBucal[] = [
     flavorIcon: '🌿',
   },
   {
-    name: 'Pasta Dental Natural Kids 125ml',
-    precio: '7,73',
-    images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png',
-    ],
-    description: `Cuida la sonrisa de los más pequeños con nuestra Pasta Dental Natural Kids de 125 ml. Especialmente formulada para niños, esta pasta dental combina ingredientes naturales y suaves que proporcionan una limpieza efectiva mientras protegen los dientes en desarrollo.`,
-    flavor: 'Naranja dulce',
-    flavorIcon: '🍊',
-  },
-  {
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
     precio: '7.73',
     flavor: 'Naranja',
@@ -44,6 +34,8 @@ export const higieneBucal: HigieneBucal[] = [
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311906/Enjuague_Bucal_egs2qd.png',
     ],
+    flavor: 'Menta y eucalipto',
+    flavorIcon: '🌿',
     description: `Refresca tu aliento y cuida tu salud bucal con nuestro Enjuague Bucal Natural formulado con ingredientes naturales y respetuosos con el medio ambiente, este enjuague bucal proporciona una limpieza profunda y una protección duradera para tus dientes y encías.
 
 Limpieza Profunda: Nuestra fórmula natural ayuda a eliminar eficazmente las bacterias y los residuos de alimentos, dejando tu boca limpia y fresca después de cada enjuague. Disfruta de una sensación de limpieza duradera que te deja con un aliento fresco y una sonrisa radiante.
@@ -320,30 +312,10 @@ Conveniencia y Economía: Al adquirir nuestro refill de hilo dental, estás opta
 Continúa con tu compromiso con la sostenibilidad y la salud oral con nuestro Refill de Hilo Dental de Fibras de Bambú con Carbón Activado. Es la elección perfecta para aquellos que buscan una alternativa eco-friendly y conveniente para mantener una sonrisa saludable y radiante.`,
   },
   {
-    name: 'Refill Pasta Dental Kids 125ml funda Kraft',
-    precio: '5.93',
-    flavor: 'Naranja dulce',
-    flavorIcon: '🍊',
-    images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311968/Hilo_Refill_1_wiepmn.png',
-    ],
-    description: `Haz que el cuidado dental sea más sostenible y conveniente con nuestro Refill de Pasta Dental Kids de 125 ml en funda Kraft. Diseñado pensando en el medio ambiente y en la comodidad de los padres, este refill es la opción perfecta para reabastecer el tubo de pasta dental de tus hijos de manera fácil y eco-amigable.
-
-Sostenibilidad en Acción: Nuestra funda Kraft está fabricada con materiales ecológicos y reciclables, lo que la convierte en una alternativa respetuosa con el medio ambiente al embalaje tradicional de plástico. Contribuye a reducir el desperdicio y proteger nuestro planeta mientras cuidas de la salud bucal de tus hijos.
-
-Fácil de Usar: Simplemente corta la esquina de la funda Kraft y vierte la pasta dental en el tubo vacío. Su diseño práctico y rellenable hace que sea rápido y sencillo reabastecer el tubo de pasta dental de tus hijos, sin complicaciones ni desperdicio.
-
-Seguridad Garantizada: Nuestra pasta dental está especialmente formulada para niños, con ingredientes suaves y naturales que cuidan sus dientes y encías delicadas. Libre de flúor y otros químicos nocivos, puedes estar seguro de que estás brindando lo mejor a tus hijos.
-
-Modo de Uso: Rellena el tubo de pasta dental de tus hijos con el refill en funda Kraft cuando sea necesario. Recuerda supervisar el cepillado y asegurarte de que tus hijos utilicen la cantidad adecuada de pasta dental cada vez.
-
-Haz que el cuidado dental de tus hijos sea más fácil, económico y ecológico con nuestro Refill de Pasta Dental Kids de 125 ml en funda Kraft. Una opción inteligente para una sonrisa sana y un planeta más verde.`,
-  },
-  {
     name: 'Refill Pasta Dental Natural Carbón Activado 125ml funda Kraft',
     precio: '5.93',
-    flavor: 'Menta',
-    flavorIcon: '🌿',
+    flavor: 'Canela, clavo de olor y carbón activado',
+    flavorIcon: '🍂',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313289/Refill_Pasta_dental_Carbo%CC%81n_Activado_gzwskg.png',
     ],
@@ -362,7 +334,7 @@ Haz que tu cuidado bucal sea más ecológico y práctico con nuestro Refill de P
   {
     name: 'Refill Pasta Dental Natural Fresh 125ml funda Kraft',
     precio: '5.93',
-    flavor: 'Menta',
+    flavor: 'Fresh',
     flavorIcon: '🌿',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756328373/Refill_Pasta_dental_Fresh_w4vw6q.png',
@@ -382,8 +354,8 @@ Haz que tu cuidado bucal sea más ecológico y fresco con nuestro Refill de Past
   {
     name: 'Refill Pasta Dental Sangre de Drago 125ml funda Kraft',
     precio: '5.93',
-    flavor: 'Menta',
-    flavorIcon: '🌿',
+    flavor: 'Canela, naranja y sangre de drago',
+    flavorIcon: '🍂',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313196/Refill_Sangre_de_Drago_zgcltk.png',
     ],
