@@ -62,20 +62,6 @@ Compromiso con la Sostenibilidad: Al elegir nuestras Brochas de Bambú para Maqu
 
 Embellece tu rostro de manera natural y sostenible con nuestras Brochas de Bambú para Maquillaje. Añade un toque de eco-conciencia a tu rutina de belleza diaria y siéntete bien contigo misma y con el medio ambiente.`,
   },
-  {
-    name: 'Cepillo Corporal',
-    precio: '13.39',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280855/cepillo_tw2tpr.png'],
-    description: `Transforma tu rutina de cuidado corporal con nuestro Cepillo Corporal, diseñado para exfoliar suavemente la piel y dejarla radiante y suave al tacto. Con cerdas naturales, este cepillo te brinda una experiencia de spa en la comodidad de tu hogar.
-
-Exfoliación Efectiva: Las cerdas naturales del cepillo corporal son ideales para eliminar las células muertas de la piel, estimular la circulación sanguínea y desatascar los poros. Disfruta de una piel más suave y radiante con cada uso.
-
-Eliminación de Toxinas: Al utilizar nuestro cepillo corporal regularmente, puedes ayudar a tu cuerpo a eliminar toxinas y impurezas, promoviendo una piel más limpia y saludable. La exfoliación estimula el sistema linfático, contribuyendo a la desintoxicación natural de tu cuerpo.
-
-Uso en la Ducha: Nuestro cepillo corporal está diseñado para ser utilizado durante la ducha. Simplemente aplícalo suavemente sobre la piel húmeda con movimientos circulares para una exfoliación suave y efectiva. Disfruta de una experiencia revitalizante que dejará tu piel suave y renovada.
-
-Añade nuestro Cepillo Corporal a tu rutina de cuidado personal y descubre los beneficios de una piel suave, radiante y revitalizada. ¡Transforma tu baño en un spa y disfruta de una experiencia de cuidado corporal incomparable!`,
-  },
   //   {
   //     name: 'Cepillo de Bambú Pequeño para Cabello',
   //     precio: '5.77',
@@ -121,9 +107,7 @@ Añade nuestro Cepillo Facial a tu rutina de cuidado de la piel y disfruta de un
     name: 'Cepillo Grande de Bambú para Cabello',
     precio: '8.76',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281439/Cepillo-Grande_hxmhcp.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281484/cepillo_pahwlo.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281561/cepillo_tfpyfz.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758309521/Cepillo_Grande_nhonsy.png',
     ],
     description: `Experimenta un cuidado del cabello más natural y sostenible con nuestro Cepillo Grande de Bambú. Diseñado para desenredar suavemente y distribuir los aceites naturales del cabello, este cepillo es una opción eco-friendly que promueve la salud capilar mientras cuidas el medio ambiente.
 
