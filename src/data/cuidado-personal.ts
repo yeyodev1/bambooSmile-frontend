@@ -250,7 +250,7 @@ Eleva tu experiencia de cuidado personal mientras cuidas el medio ambiente con n
     name: 'Peineta de bambú',
     precio: '4.74',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282147/Peineta_r7jwxe.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758309079/Peineta_de_bambu%CC%81_t3yekx.jpg',
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282215/peineta_gqkpr7.jpg',
     ],
     description: `Agrega un toque de elegancia natural a tu rutina de peinado con nuestra Peineta de Bambú. Hecha a mano con bambú sostenible, esta peineta combina belleza y funcionalidad para ofrecerte un peinado suave y sin estática, mientras cuida y protege tu cabello con delicadeza y estilo.
