@@ -21,8 +21,8 @@ export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
     precio: '7.73',
-    flavor: 'Naranja',
-    flavorIcon: '🍊',
+    flavor: 'Clavo de olor',
+    flavorIcon: '🍂',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png',
     ],
