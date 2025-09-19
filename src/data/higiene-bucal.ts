@@ -155,7 +155,7 @@ Agrega nuestra Pasta Dental Natural con Carbón Activado de 60 ml a tu rutina di
   {
     name: 'Pasta Dental Natural con Sangre de Drago 60ml',
     precio: '4.12',
-    flavor: 'Canela',
+    flavor: 'Clavo de olor',
     flavorIcon: '🍂',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313562/Pasta_dental_Sangre_de_Drago_60ml_rkxwqy.png',
@@ -354,7 +354,7 @@ Haz que tu cuidado bucal sea más ecológico y fresco con nuestro Refill de Past
   {
     name: 'Refill Pasta Dental Sangre de Drago 125ml funda Kraft',
     precio: '5.93',
-    flavor: 'Canela',
+    flavor: 'Clavo de olor',
     flavorIcon: '🍂',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313196/Refill_Sangre_de_Drago_zgcltk.png',
