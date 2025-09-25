@@ -10,7 +10,7 @@ export const cuidadoPersonalData: CuidadoPersonal[] = [
     name: 'Afeitadora de Acero Inoxidable Metálica',
     precio: '25.75',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758815317/Afeitadora-negra_1_usywn2.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758821255/Afeitadora_negra-Photoroom_tpnrnw.png',
     ],
     description: `Descubre una forma más sostenible de afeitarte con nuestra Afeitadora de Acero Inoxidable Metálica. Diseñada con un enfoque en la durabilidad, esta afeitadora ofrece un afeitado preciso y cómodo sin comprometer el cuidado del planeta.
 
@@ -26,7 +26,7 @@ Eleva tu experiencia de afeitado mientras cuidas el medio ambiente con nuestra A
     name: 'Afeitadora de Acero Inoxidable Rosada',
     precio: '25.75',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814819/Afeitadora-rosa_1_lcu5rx.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758821154/Afeitadora_rosa-Photoroom_qjgoak.png',
     ],
     description: `Descubre una forma más sostenible de afeitarte con nuestra Afeitadora de Acero Inoxidable Metálica. Diseñada con un enfoque en la durabilidad, esta afeitadora ofrece un afeitado preciso y cómodo sin comprometer el cuidado del planeta.
 
@@ -42,7 +42,7 @@ Eleva tu experiencia de afeitado mientras cuidas el medio ambiente con nuestra A
     name: 'Brochas de Bambú para Maquillaje',
     precio: '19.78',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814967/Brochas-Maquillaje_1_igtn1z.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758821347/Brochas_Maquillaje-Photoroom_tswvoi.png',
     ],
     description: `Descubre la belleza natural y sostenible con nuestras Brochas de Bambú para Maquillaje. Hechas con materiales eco-amigables, estas brochas no solo son suaves y eficientes, sino que también ofrecen una alternativa respetuosa con el medio ambiente para tu rutina de maquillaje diaria.
 
@@ -157,7 +157,7 @@ Añade nuestro Cepillo para Barba Pequeño a tu arsenal de cuidado personal y di
     name: 'Exfoliador de Sisal',
     precio: '3.09',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758815166/Exfoliador-Sisal_1_jj46l9.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758821297/Exfoliador_Sisal-Photoroom_uvvety.png',
     ],
     description: `Descubre una manera natural y efectiva de revitalizar tu piel con nuestro Exfoliador de Sisal. Diseñado para proporcionar una exfoliación suave y rejuvenecedora, este exfoliador es una opción eco-friendly que te ayudará a mantener una piel radiante mientras cuidas el planeta.
 
@@ -271,7 +271,7 @@ Añade un toque de naturaleza y sostenibilidad a tu rutina de cuidado capilar co
     name: 'Refill de cuchillas',
     precio: '2.99',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814039/Refill-Cuchillas_1_to7br0.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758821040/Refill_Cuchillas-Photoroom_rkjcuv.png',
     ],
     description: `Mantén tu rutina de afeitado fresca y eco-amigable con nuestro refill de cuchillas. Diseñado para ser compatible con rasuradora de acero, este refill te ofrece una forma conveniente y sostenible de renovar tu experiencia de afeitado sin comprometer la calidad ni el rendimiento, incluyen 10 cuchillas.`,
   },
@@ -279,7 +279,7 @@ Añade un toque de naturaleza y sostenibilidad a tu rutina de cuidado capilar co
     name: 'Rodillo de Jade y Gua-Sha',
     precio: '22.25',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814208/Ritual-de-Jade_2_m4acuy.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758821396/Ritual_de_Jade-Photoroom_ndqlmf.png',
     ],
     description: `Transforma tu rutina de cuidado de la piel en un ritual de relajación y rejuvenecimiento con nuestro Kit de Belleza Facial, que incluye un Rodillo de Jade y una Gua-Sha. Inspirado en las antiguas técnicas de belleza china, este conjunto te ayudará a mejorar la circulación, reducir la hinchazón y promover una piel radiante y saludable.
 
