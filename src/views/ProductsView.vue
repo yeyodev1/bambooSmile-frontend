@@ -161,7 +161,7 @@ const goToCart = () => {
             <p class="toast-subtitle">Ve a tu carrito en la esquina superior derecha</p>
           </div>
           <button class="toast-cart-btn" @click="goToCart">
-            🛒 Ir al carrito
+            <i class="fas fa-shopping-cart"></i> Ir al carrito
           </button>
           <button class="toast-close" @click="showSuccessToast = false">
             ×
@@ -672,7 +672,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toast-cart-btn {
-  background: $accent-primary;
+  background: $accent-600;
   color: $white;
   border: none;
   padding: 0.625rem 1rem;
@@ -690,7 +690,7 @@ $transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:hover {
-    background: $accent-700;
+    background: darken($accent-600, 8%);
     transform: translateY(-1px);
     box-shadow: $shadow-md;
   }
