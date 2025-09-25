@@ -10,7 +10,7 @@ export interface HigieneBucal {
 export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Fresh 125ml',
-    precio: '7,73',
+    precio: '7.73',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
     ],
