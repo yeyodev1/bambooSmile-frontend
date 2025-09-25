@@ -212,26 +212,6 @@ Refresca el Aliento: Nuestra pasta dental neutraliza los malos olores y refresca
 Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 60ml. Disfruta de una limpieza suave, refrescante y natural que deja tu boca con una sensación de frescura duradera y una sonrisa radiante.`,
   },
   {
-    name: 'Pasta dental natural Fresh de 125ml',
-    precio: '7.73',
-    flavor: 'Menta',
-    flavorIcon: '🌿',
-    images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
-    ],
-    description: `Nuestra Pasta Dental Natural Fresh de 125ml ofrece una experiencia de limpieza dental completa y refrescante con ingredientes naturales y una frescura duradera. Formulada con una mezcla de ingredientes naturales y frescos, esta pasta dental proporciona una limpieza suave pero efectiva que deja tu boca con una sensación de frescura revitalizante y una sonrisa radiante que perdura.
-
-Ingredientes Naturales Seleccionados: Elaborada con una cuidadosa selección de ingredientes naturales, nuestra pasta dental ofrece una alternativa suave y eficaz a las fórmulas convencionales. Libre de sulfatos, parabenos y fluoruro artificial, es una opción segura y saludable para toda la familia.
-
-Frescura Duradera y Refrescante: La acción refrescante de nuestra pasta dental proporciona una sensación de frescura duradera que revitaliza tu boca y te deja con una sensación de limpieza y confort durante horas después del cepillado. Disfruta de una sensación refrescante que te acompaña a lo largo del día.
-
-Limpieza Suave y Efectiva: La textura suave de nuestra pasta dental elimina suavemente la placa y las impurezas, mientras que los ingredientes activos naturales promueven la salud de las encías y fortalecen el esmalte dental. Obtén una limpieza completa y una protección duradera para tus dientes y encías.
-
-Refresca el Aliento: Nuestra pasta dental neutraliza los malos olores y refresca el aliento, dejándote con una sensación de confianza y comodidad en todo momento. Disfruta de un aliento fresco y una sonrisa radiante que te hace sentir seguro y listo para enfrentar el día.
-
-Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 125ml. Disfruta de una limpieza suave, refrescante y natural que deja tu boca con una sensación de frescura duradera y una sonrisa radiante.`,
-  },
-  {
     name: 'Pasta Dental Natural Kids 125ml',
     precio: '7.73',
     flavor: 'Naranja dulce',
