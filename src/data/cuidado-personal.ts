@@ -10,8 +10,7 @@ export const cuidadoPersonalData: CuidadoPersonal[] = [
     name: 'Afeitadora de Acero Inoxidable Metálica',
     precio: '25.75',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280173/Rasuradora-Negra-1_y7tdei.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280215/cortador_cbnohh.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758815317/Afeitadora-negra_1_usywn2.png',
     ],
     description: `Descubre una forma más sostenible de afeitarte con nuestra Afeitadora de Acero Inoxidable Metálica. Diseñada con un enfoque en la durabilidad, esta afeitadora ofrece un afeitado preciso y cómodo sin comprometer el cuidado del planeta.
 
@@ -27,8 +26,7 @@ Eleva tu experiencia de afeitado mientras cuidas el medio ambiente con nuestra A
     name: 'Afeitadora de Acero Inoxidable Rosada',
     precio: '25.75',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280261/Rasuradora-Rosa_qnyire.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280591/rosaaa_sp61n7.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814819/Afeitadora-rosa_1_lcu5rx.jpg',
     ],
     description: `Descubre una forma más sostenible de afeitarte con nuestra Afeitadora de Acero Inoxidable Metálica. Diseñada con un enfoque en la durabilidad, esta afeitadora ofrece un afeitado preciso y cómodo sin comprometer el cuidado del planeta.
 
@@ -44,9 +42,7 @@ Eleva tu experiencia de afeitado mientras cuidas el medio ambiente con nuestra A
     name: 'Brochas de Bambú para Maquillaje',
     precio: '19.78',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280736/brochas_mlyen7.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280743/brochass_pmoy1i.jpg',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755280773/brochass_dznght.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814967/Brochas-Maquillaje_1_igtn1z.jpg',
     ],
     description: `Descubre la belleza natural y sostenible con nuestras Brochas de Bambú para Maquillaje. Hechas con materiales eco-amigables, estas brochas no solo son suaves y eficientes, sino que también ofrecen una alternativa respetuosa con el medio ambiente para tu rutina de maquillaje diaria.
 
@@ -87,7 +83,8 @@ Embellece tu rostro de manera natural y sostenible con nuestras Brochas de Bamb�
     name: 'Cepillo Facial',
     precio: '15.45',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281247/cepillo-facial_g6ieg9.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758816258/Cepillo_para_cara_lunpok.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758816263/Cepillo_para_cara_2_miufau.jpg',
     ],
     description: `Dale a tu piel el cuidado que se merece con nuestro Cepillo Facial, diseñado para proporcionar una limpieza profunda y una renovación suave. Con cerdas suaves y un diseño ergonómico, este cepillo es la herramienta perfecta para eliminar las impurezas, el maquillaje y el exceso de grasa, dejando tu piel fresca, radiante y rejuvenecida.
 
@@ -125,7 +122,8 @@ Transforma tu rutina de cuidado del cabello mientras cuidas el medio ambiente co
     name: 'Cepillo para Barba',
     precio: '7.73',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281630/cepillo-barba_pml4ea.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758816140/Cepillo_para_barba__dpixcj.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758816149/Cepillo_para_barba_2_bnzpjt.jpg',
     ],
     description: `Mantén tu barba impecable y bien peinada en cualquier momento y lugar con nuestro Cepillo para Barba. Diseñado para caber cómodamente en tu bolsillo, este cepillo combina estilo y funcionalidad para ayudarte a lucir siempre tu mejor aspecto.
 
@@ -159,8 +157,7 @@ Añade nuestro Cepillo para Barba Pequeño a tu arsenal de cuidado personal y di
     name: 'Exfoliador de Sisal',
     precio: '3.09',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281679/Funda-de-Sisal_kqtrtm.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281765/exfoliador_coed2b.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758815166/Exfoliador-Sisal_1_jj46l9.jpg',
     ],
     description: `Descubre una manera natural y efectiva de revitalizar tu piel con nuestro Exfoliador de Sisal. Diseñado para proporcionar una exfoliación suave y rejuvenecedora, este exfoliador es una opción eco-friendly que te ayudará a mantener una piel radiante mientras cuidas el planeta.
 
@@ -178,8 +175,7 @@ Eleva tu rutina de cuidado personal mientras cuidas el medio ambiente con nuestr
     name: 'Jabonera de Bambú',
     precio: '3.09',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281809/Jabonera_iivvdv.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755281851/jabonera_tgdgcp.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758816067/Jabonera_de_bambu%CC%81_dtaepz.jpg',
     ],
     description: `Descubre una forma más ecológica y elegante de mantener tus jabones con nuestra Jabonera de Bambú Natural. Diseñada con un enfoque en la sostenibilidad y la belleza natural, esta jabonera ofrece una solución práctica y respetuosa con el medio ambiente para tu baño o cocina.
 
@@ -254,7 +250,9 @@ Añade un toque de belleza natural y sostenibilidad a tu colección de accesorio
   {
     name: 'Peinilla de bambú',
     precio: '2.78',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282292/Peine_k3xb81.jpg'],
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758815986/Peinilla_de_bambu%CC%81_muehoj.jpg',
+    ],
     description: `Añade un toque de estilo natural y sostenible a tu rutina de cuidado capilar con nuestra Peinilla de Bambú. Hecha a mano con bambú sostenible, esta peinilla ofrece un peinado suave y sin estática, mientras que cuida y protege tu cabello de manera delicada y respetuosa.
 
 Material Natural: Nuestra peinilla está fabricada con bambú, una materia prima sostenible y renovable que ofrece durabilidad y resistencia. El bambú es conocido por su suavidad y su capacidad para reducir la estática, lo que lo convierte en el material ideal para el cuidado del cabello.
@@ -272,14 +270,16 @@ Añade un toque de naturaleza y sostenibilidad a tu rutina de cuidado capilar co
   {
     name: 'Refill de cuchillas',
     precio: '2.99',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282348/refill_nkjkkb.jpg'],
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814039/Refill-Cuchillas_1_to7br0.png',
+    ],
     description: `Mantén tu rutina de afeitado fresca y eco-amigable con nuestro refill de cuchillas. Diseñado para ser compatible con rasuradora de acero, este refill te ofrece una forma conveniente y sostenible de renovar tu experiencia de afeitado sin comprometer la calidad ni el rendimiento, incluyen 10 cuchillas.`,
   },
   {
     name: 'Rodillo de Jade y Gua-Sha',
     precio: '22.25',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282386/Rodillo-de-jade_qk1mni.jpg',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758814208/Ritual-de-Jade_2_m4acuy.png',
     ],
     description: `Transforma tu rutina de cuidado de la piel en un ritual de relajación y rejuvenecimiento con nuestro Kit de Belleza Facial, que incluye un Rodillo de Jade y una Gua-Sha. Inspirado en las antiguas técnicas de belleza china, este conjunto te ayudará a mejorar la circulación, reducir la hinchazón y promover una piel radiante y saludable.
 

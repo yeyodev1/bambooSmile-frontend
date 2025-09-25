@@ -6,26 +6,26 @@ export interface EatAndDrink {
 }
 
 export const eatAndDrinkData: EatAndDrink[] = [
-//   {
-//     name: 'Kit Eat and Drink',
-//     precio: '12.36',
-//     images: [
-//       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313747/Kit_de_Cubiertos_gbfkkl.png',
-//     ],
-//     description: `Sumérgete en una experiencia culinaria consciente y sostenible con nuestro Kit Eat and Drink. Este completo conjunto está diseñado para acompañarte en tus aventuras gastronómicas, ofreciéndote cubiertos, palillos y sorbetes de bambú, una alternativa eco-amigable y elegante a los utensilios desechables.
+  //   {
+  //     name: 'Kit Eat and Drink',
+  //     precio: '12.36',
+  //     images: [
+  //       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756313747/Kit_de_Cubiertos_gbfkkl.png',
+  //     ],
+  //     description: `Sumérgete en una experiencia culinaria consciente y sostenible con nuestro Kit Eat and Drink. Este completo conjunto está diseñado para acompañarte en tus aventuras gastronómicas, ofreciéndote cubiertos, palillos y sorbetes de bambú, una alternativa eco-amigable y elegante a los utensilios desechables.
 
-// Cubiertos de Bambú: Nuestro kit incluye cubiertos fabricados con bambú, una opción sostenible y biodegradable. Estos cubiertos son duraderos y resistentes, perfectos para disfrutar de tus comidas favoritas en cualquier lugar. Además, su diseño elegante agrega un toque de estilo a tus momentos de comida.
+  // Cubiertos de Bambú: Nuestro kit incluye cubiertos fabricados con bambú, una opción sostenible y biodegradable. Estos cubiertos son duraderos y resistentes, perfectos para disfrutar de tus comidas favoritas en cualquier lugar. Además, su diseño elegante agrega un toque de estilo a tus momentos de comida.
 
-// Palillos de Bambú: Los palillos de bambú son una alternativa eco-amigable a los palillos de plástico desechables. Ligeros y resistentes, son ideales para disfrutar de la cocina asiática de una manera más consciente y respetuosa con el medio ambiente.
+  // Palillos de Bambú: Los palillos de bambú son una alternativa eco-amigable a los palillos de plástico desechables. Ligeros y resistentes, son ideales para disfrutar de la cocina asiática de una manera más consciente y respetuosa con el medio ambiente.
 
-// Sorbete de Bambú: Completa tu experiencia con nuestro sorbete de bambú, diseñado para disfrutar de tus bebidas favoritas de forma sostenible. Con su superficie suave y resistente, este sorbete te permite disfrutar de tus bebidas frías de manera cómoda y libre de residuos plásticos.
+  // Sorbete de Bambú: Completa tu experiencia con nuestro sorbete de bambú, diseñado para disfrutar de tus bebidas favoritas de forma sostenible. Con su superficie suave y resistente, este sorbete te permite disfrutar de tus bebidas frías de manera cómoda y libre de residuos plásticos.
 
-// Conveniencia y Sostenibilidad: Este kit es perfecto para llevar contigo a picnics, viajes, o simplemente para el uso diario en casa. Al optar por utensilios de bambú, estás reduciendo significativamente tu huella de carbono y contribuyendo a la conservación del medio ambiente.
+  // Conveniencia y Sostenibilidad: Este kit es perfecto para llevar contigo a picnics, viajes, o simplemente para el uso diario en casa. Al optar por utensilios de bambú, estás reduciendo significativamente tu huella de carbono y contribuyendo a la conservación del medio ambiente.
 
-// Regalo Consciente: Nuestro Kit Eat and Drink también es una excelente opción de regalo para amigos y seres queridos que aprecian la sostenibilidad y la calidad. Sorprende a alguien especial con este kit práctico y elegante que les ayudará a disfrutar de sus comidas de una manera más consciente y respetuosa con el planeta.
+  // Regalo Consciente: Nuestro Kit Eat and Drink también es una excelente opción de regalo para amigos y seres queridos que aprecian la sostenibilidad y la calidad. Sorprende a alguien especial con este kit práctico y elegante que les ayudará a disfrutar de sus comidas de una manera más consciente y respetuosa con el planeta.
 
-// Disfruta de tus comidas con conciencia y estilo con nuestro Kit Eat and Drink. Con cubiertos, palillos y sorbetes de bambú, este conjunto te ofrece una forma sostenible y elegante de disfrutar de tus momentos gastronómicos favoritos, dondequiera que vayas.`,
-//   },
+  // Disfruta de tus comidas con conciencia y estilo con nuestro Kit Eat and Drink. Con cubiertos, palillos y sorbetes de bambú, este conjunto te ofrece una forma sostenible y elegante de disfrutar de tus momentos gastronómicos favoritos, dondequiera que vayas.`,
+  //   },
   {
     name: 'Refill de cepillo lavaplatos',
     precio: '5.50',
@@ -37,7 +37,9 @@ export const eatAndDrinkData: EatAndDrink[] = [
   {
     name: 'Sorbete de Bambú',
     precio: '1.55',
-    images: ['https://res.cloudinary.com/dpimsaaa4/image/upload/v1755282774/sorbete_xycdsb.jpg'],
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758815893/Sorbete_de_bambu%CC%81_vzrspi.jpg',
+    ],
     description: `Disfruta de tus bebidas favoritas de manera sostenible y elegante con nuestros Sorbetes de Bambú. Fabricados con bambú, una alternativa ecológica y biodegradable a los sorbetes de plástico desechables, estos sorbetes te permiten disfrutar de tus bebidas de forma consciente y respetuosa con el medio ambiente.
 
 Material Sostenible: Nuestros sorbetes están hechos de bambú, una planta de rápido crecimiento y altamente renovable. Al optar por sorbetes de bambú, estás contribuyendo a la reducción de residuos plásticos y al cuidado del medio ambiente.
