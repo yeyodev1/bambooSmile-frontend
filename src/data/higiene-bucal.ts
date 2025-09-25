@@ -276,9 +276,7 @@ Embellece tu baño y contribuye a un estilo de vida más sostenible con nuestros
     name: 'Refill Hilo Dental de Fibras de Bambú con Carbón Activado',
     precio: '4.12',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311944/Hilo_Dental_iyjwfd.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311957/Hilo_Refill_wodlmq.png',
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311968/Hilo_Refill_1_wiepmn.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1758824582/Empaque_Hilo_Dental_con_Carbo%CC%81n_Activado_nsq8ao.jpg',
     ],
     description: `Mantén tu compromiso con la sostenibilidad y la salud oral con nuestro Refill de Hilo Dental de Fibras de Bambú con Carbón Activado. Diseñado para reemplazar de manera fácil y conveniente el hilo dental agotado de tu dispensador, este refill es una opción eco-friendly que te permite continuar con tu rutina de cuidado bucal de manera responsable.
 
