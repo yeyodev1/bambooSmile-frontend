@@ -10,7 +10,7 @@ export interface HigieneBucal {
 export const higieneBucal: HigieneBucal[] = [
   {
     name: 'Pasta Dental Natural Fresh 125ml',
-    precio: '7.73',
+    precio: '8.00',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png',
     ],
@@ -20,7 +20,7 @@ export const higieneBucal: HigieneBucal[] = [
   },
   {
     name: 'Pasta Dental Natural Sangre de Drago 125ml',
-    precio: '7.73',
+    precio: '8.00',
     flavor: 'Canela',
     flavorIcon: '🍂',
     images: [
@@ -30,7 +30,7 @@ export const higieneBucal: HigieneBucal[] = [
   },
   {
     name: 'Enjuague Bucal Natural Envase de Vidrio Reutilizable 250ml',
-    precio: '5.67',
+    precio: '6.00',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311906/Enjuague_Bucal_egs2qd.png',
     ],
@@ -91,7 +91,7 @@ Eleva tu rutina de cuidado bucal con nuestro Limpiador de Lengua de Acero. Con s
   },
   {
     name: 'Pasta Dental con Sangre de Drago Natural 125ml',
-    precio: '7.73',
+    precio: '8.00',
     flavor: 'Canela',
     flavorIcon: '🍂',
     images: [
@@ -111,7 +111,7 @@ Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Den
   },
   {
     name: 'Pasta Dental Natural con Carbón Activado 125ml',
-    precio: '7.73',
+    precio: '8.00',
     flavor: 'Clavo de olor',
     flavorIcon: '🍂',
     images: [
@@ -133,7 +133,7 @@ Añade nuestra Pasta Dental Natural con Carbón Activado de 125 ml a tu rutina d
   },
   {
     name: 'Pasta Dental Natural con Carbón Activado 60ml',
-    precio: '4.12',
+    precio: '5.00',
     flavor: 'Clavo de olor',
     flavorIcon: '🍂',
     images: [
@@ -153,7 +153,7 @@ Agrega nuestra Pasta Dental Natural con Carbón Activado de 60 ml a tu rutina di
   },
   {
     name: 'Pasta Dental Natural con Sangre de Drago 60ml',
-    precio: '4.12',
+    precio: '5.00',
     flavor: 'Canela',
     flavorIcon: '🍂',
     images: [
@@ -173,7 +173,7 @@ Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Den
   },
   {
     name: 'Pasta dental natural Fresh 250ml',
-    precio: '11.85',
+    precio: '12',
     flavor: 'Menta',
     flavorIcon: '🌿',
     images: [
@@ -193,7 +193,7 @@ Disfruta de una limpieza suave, refrescante y natural que deja tu boca con una s
   },
   {
     name: 'Pasta dental natural Fresh 60ml',
-    precio: '4.12',
+    precio: '5.00',
     flavor: 'Menta',
     flavorIcon: '🌿',
     images: [
@@ -213,7 +213,7 @@ Refresca tu rutina de cuidado bucal con nuestra Pasta Dental Natural Fresh de 60
   },
   {
     name: 'Pasta Dental Natural Kids 125ml',
-    precio: '7.73',
+    precio: '8.00',
     flavor: 'Naranja dulce',
     flavorIcon: '🍊',
     images: [
@@ -233,7 +233,7 @@ Cuida de las sonrisas de tus hijos de manera natural y divertida con nuestra Pas
   },
   {
     name: 'Pasta Dental Natural Kids 60ml',
-    precio: '4.12',
+    precio: '5.00',
     flavor: 'Naranja dulce',
     flavorIcon: '🍊',
     images: [
@@ -290,7 +290,7 @@ Continúa con tu compromiso con la sostenibilidad y la salud oral con nuestro Re
   },
   {
     name: 'Refill Pasta Dental Natural Carbón Activado 125ml funda Kraft',
-    precio: '5.93',
+    precio: '6.00',
     flavor: 'Clavo de olor',
     flavorIcon: '🍂',
     images: [
@@ -310,7 +310,7 @@ Haz que tu cuidado bucal sea más ecológico y práctico con nuestro Refill de P
   },
   {
     name: 'Refill Pasta Dental Natural Fresh 125ml funda Kraft',
-    precio: '5.93',
+    precio: '6.00',
     flavor: 'Menta',
     flavorIcon: '🌿',
     images: [
@@ -330,7 +330,7 @@ Haz que tu cuidado bucal sea más ecológico y fresco con nuestro Refill de Past
   },
   {
     name: 'Refill Pasta Dental Sangre de Drago 125ml funda Kraft',
-    precio: '5.93',
+    precio: '6.00',
     flavor: 'Canela',
     flavorIcon: '🍂',
     images: [
@@ -350,7 +350,7 @@ Haz que tu cuidado bucal sea más ecológico y práctico con nuestro Refill de P
   },
   {
     name: 'Refill Pasta Dental Kids 125ml funda Kraft',
-    precio: '5.93',
+    precio: '6.00',
     flavor: 'Naranja dulce',
     flavorIcon: '🍊',
     images: [
@@ -370,7 +370,7 @@ Haz que el cuidado dental de tus hijos sea más fácil, económico y ecológico 
   },
   {
     name: 'Spray Bucal Natural 60ml',
-    precio: '4.12',
+    precio: '5.00',
     images: [
       'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756312032/Spray_bucal_60ml_otwih4.png',
     ],
