@@ -346,7 +346,7 @@ Haz que tu cuidado bucal sea más ecológico y práctico con nuestro Refill de P
     flavor: 'Naranja dulce',
     flavorIcon: '🍊',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759849020/Refill_Fresh_kpy8uc.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759850008/Refill_Kids_dwsqru.png',
     ],
     description: `Haz que el cuidado dental sea más sostenible y conveniente con nuestro Refill de Pasta Dental Kids de 125 ml en funda Kraft. Diseñado pensando en el medio ambiente y en la comodidad de los padres, este refill es la opción perfecta para reabastecer el tubo de pasta dental de tus hijos de manera fácil y eco-amigable.
 
