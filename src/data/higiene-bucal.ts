@@ -110,7 +110,7 @@ Modo de Uso: Cepilla tus dientes con una pequeña cantidad de pasta dental dos v
 Aprovecha el poder de la naturaleza para cuidar tu sonrisa con nuestra Pasta Dental con Sangre de Drago Natural de 125 ml. Una opción segura, efectiva y natural para una higiene bucal completa y duradera.`,
   },
   {
-    name: 'Pasta Dental Natural con Carbón Activado 125ml',
+    name: 'Pasta Dental Natural White 125ml',
     precio: '8.00',
     flavor: 'Clavo de olor',
     flavorIcon: '🍂',
@@ -286,7 +286,7 @@ Continúa con tu compromiso con la sostenibilidad y la salud oral con nuestro Re
     flavor: 'Clavo de olor',
     flavorIcon: '🍂',
     images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759849436/Refill_White_zq6mah.png',
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759849020/Refill_Fresh_kpy8uc.png',
     ],
     description: `Haz que tu rutina de cuidado bucal sea más sostenible y conveniente con nuestro Refill de Pasta Dental Natural con Carbón Activado de 125 ml en funda Kraft. Diseñado para reabastecer tu suministro de pasta dental de manera eco-amigable, este refill ofrece una opción respetuosa con el medio ambiente y práctica para mantener una sonrisa saludable y brillante.
 
