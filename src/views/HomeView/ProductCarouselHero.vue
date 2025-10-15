@@ -2,9 +2,9 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 // Importando las mejores imágenes PNG de productos
-const pasta1Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756310848/Pasta_dental_Fresh_125ml_rg9599.png'
-const pasta2Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311270/Pasta_dental_Kids_125ml_k6tmbj.png'
-const pasta3Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756311325/Pasta_dental_Sangre_de_drago_125ml_ckkwma.png'
+const pasta1Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759848582/fresh_60ml_zedhuw.png'
+const pasta2Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759848682/kids_60ml_ibmg3n.png'
+const pasta3Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759848582/fresh_60ml_zedhuw.png'
 const pasta4Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png'
 
 const currentSlide = ref(0)
