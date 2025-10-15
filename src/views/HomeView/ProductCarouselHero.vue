@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 // Importando las mejores imágenes PNG de productos
 const pasta1Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759848582/fresh_60ml_zedhuw.png'
 const pasta2Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759848682/kids_60ml_ibmg3n.png'
-const pasta3Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759848582/fresh_60ml_zedhuw.png'
+const pasta3Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1759849537/sensitive_60ml_ucyaby.png'
 const pasta4Image = 'https://res.cloudinary.com/dpimsaaa4/image/upload/v1756309667/Cepillo_10.000_Cerdas_wtobsm.png'
 
 const currentSlide = ref(0)
@@ -37,7 +37,7 @@ const slides = [
   },
   {
     id: 3,
-    title: '¡NUEVO! Sangre de Dragón 🌿',
+    title: '¡NUEVO! Pasta Sensitive 🌿',
     subtitle: '¡El Secreto Ancestral de la Amazonía!',
     description: '¡Descubre el poder milenario! Nuestra fórmula revolucionaria con Sangre de Dragón fortalece y regenera naturalmente.',
     cta: '¡Descúbrelo Ya!',
