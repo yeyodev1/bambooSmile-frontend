@@ -13,7 +13,21 @@ const autoplayInterval = ref<ReturnType<typeof setInterval> | null>(null)
 const isPaused = ref(false)
 
 
-const slides = [
+interface Slide {
+  id: number
+  title: string
+  subtitle: string
+  description: string
+  cta: string
+  image: string
+  background: string
+  whatsappMessage: string
+  isPromo?: boolean
+  isNew?: boolean
+}
+
+
+const slides: Slide[] = [
   {
     id: 1,
     title: '¡Gracias por Elegirnos! ✨',
@@ -24,6 +38,7 @@ const slides = [
     background: 'linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%)',
     whatsappMessage: 'Hola! Me interesa conocer más sobre bambooSmile y sus productos de cuidado dental eco-friendly. ¿Podrían darme más información? 😊'
   },
+  /*
   {
     id: 2,
     title: '¡AHORRA 20% HOY! 🌟',
@@ -35,6 +50,7 @@ const slides = [
     isPromo: true,
     whatsappMessage: 'Hola! Me interesa la suscripción mensual con 20% de descuento en pasta Fresh. ¿Podrían darme más detalles sobre esta promoción? 🌟'
   },
+  */
   {
     id: 3,
     title: '¡NUEVO! Pasta Sensitive 🌿',
@@ -86,7 +102,7 @@ const resumeAutoplay = () => {
   isPaused.value = false
 }
 
-const openWhatsApp = (slide: typeof slides[0]) => {
+const openWhatsApp = (slide: Slide) => {
   const phoneNumber = '593960800024'
   const message = encodeURIComponent(slide.whatsappMessage)
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
