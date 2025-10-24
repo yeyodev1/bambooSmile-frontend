@@ -20,4 +20,12 @@ export const kitYRegalos: KitYRegalos[] = [
   Regalo Consciente: Nuestro Kit Eat and Drink también es una excelente opción de regalo para amigos y seres queridos que aprecian la sostenibilidad y la calidad. Sorprende a alguien especial con este kit práctico y elegante que les ayudará a disfrutar de sus comidas de una manera más consciente y respetuosa con el planeta.
   Disfruta de tus comidas con conciencia y estilo con nuestro Kit Eat and Drink. Con cubiertos, palillos y sorbetes de bambú, este conjunto te ofrece una forma sostenible y elegante de disfrutar de tus momentos gastronómicos favoritos, dondequiera que vayas.`,
   },
+  {
+    name: 'Kit Shakira',
+    precio: '13',
+    images: [
+      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1761325527/Kit_Shakira_oro82v.png',
+    ],
+    description: 'Kit shakira, participa!',
+  },
 ]
