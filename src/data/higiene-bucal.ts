@@ -8,14 +8,14 @@ export interface HigieneBucal {
 }
 
 export const higieneBucal: HigieneBucal[] = [
-  {
-    name: 'Promo Refills 2 x 10',
-    precio: '10.00',
-    images: [
-      'https://res.cloudinary.com/dpimsaaa4/image/upload/v1764167717/promo_vpzjkg.jpg'
-    ],
-    description: `Promoción especial: paquete de 2 refills por $10. Mantén tu rutina sin interrupciones al mejor precio.`,
-  },
+  // {
+  //   name: 'Promo Refills 2 x 10',
+  //   precio: '10.00',
+  //   images: [
+  //     'https://res.cloudinary.com/dpimsaaa4/image/upload/v1764167717/promo_vpzjkg.jpg'
+  //   ],
+  //   description: `Promoción especial: paquete de 2 refills por $10. Mantén tu rutina sin interrupciones al mejor precio.`,
+  // },
   {
     name: 'Pasta Dental Natural Fresh 125ml',
     precio: '8.00',
